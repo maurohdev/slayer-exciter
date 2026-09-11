@@ -30,7 +30,7 @@ Due sezioni: quello che probabilmente hai già in casa, e quello da comprare. Pe
 | 7 | **1N4148** (lotto da 5+) | ~1 € | negozio elettronica / AliExpress | Clamp base-emettitore più veloce del LED (4 ns vs ~decine di ns): se il LED fa il suo dovere ma vuoi margine, mettilo in parallelo (stesso verso del LED). Costa centesimi. |
 | 8 | **100 nF ceramico + 470 µF 25 V elettrolitico** | ~1 € | negozio elettronica / AliExpress | Disaccoppio del nodo +12 V, il più vicino possibile a collettore/emettitore: chiudono localmente il percorso RF, stabilizzano l'oscillazione, riducono i disturbi verso la batteria. |
 | 9 | *(opz.)* **Resistori 4,7 kΩ / 22 kΩ / 47 kΩ** | ~1 € | qualsiasi | Manopole di tuning del drive di base: caldo-e-non-oscilla → 22 k in serie; non-parte-proprio → verso 4,7 k. |
-| 10 | *(opz.)* **BD139** (TO-126) | ~2 € | negozio elettronica / AliExpress | Piano B documentato: se il TIP41C non parte dopo il tuning, il BD139 (fT 250 MHz, stesso cablaggio, pin B-C-E compatibili) è l'upgrade più indolore. |
+| 10 | *(opz.)* **BD139** (TO-126) | ~2 € | negozio elettronica / AliExpress | Piano B documentato: se il TIP41C non parte dopo il tuning, il BD139 (fT 250 MHz) è l'upgrade più indolore. ⚠️ Pinout DIVERSO: BD139 = E-C-B (1=Emettitore, 2=Collettore, 3=Base) contro B-C-E del TIP41C → scambiare base ed emettitore al montaggio. |
 
 **Totale carrello indicativo: 20–30 €** (esclusa la batteria, se ce l'hai già).
 

@@ -110,7 +110,7 @@ Distanze realistiche a 12 V: LED 2–5 cm, neon 5–10 cm, CFL/tubo 10–30 cm (
 Con un transistor lento su una bobina piccola l'avvio è ai limiti. È la condizione dichiarata del progetto, non un difetto nascosto. La via d'uscita è ordinata:
 
 1. **Tuning** (invertire i fili della primaria è il fix n°1, copre il 90% dei casi): procedura completa nel [manuale](MANUALE_ASSEMBLAGGIO_E_COLLAUDO.md).
-2. Se dopo il tuning non parte: **BD139** (fT 250 MHz, ~2 €, stesso ordine di pin e stesso cablaggio) — upgrade documentato nell'analisi.
+2. Se dopo il tuning non parte: **BD139** (fT 250 MHz, ~2 €) — upgrade documentato nell'analisi. ⚠️ Pinout DIVERSO dal TIP41C: BD139 = E-C-B (1=Emettitore, 2=Collettore, 3=Base), quindi al montaggio vanno scambiati base ed emettitore.
 
 ---
 

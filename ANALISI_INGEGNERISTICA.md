@@ -105,7 +105,7 @@ Nota cablaggio: R, LED e fondo-L2 si incontrano tutti sul nodo BASE.
 ### 4.3 Nota comparativa (il progetto RESTA su TIP41C)
 | Alternativa | fT | Perché/Quando |
 |---|---|---|
-| BD139 (TO-126, 1,5 A, 80 V) | 250 MHz [13] | Miglior upgrade da ~2 €: ordine pin B-C-E come TIP41C (verificare sul datasheet del lotto), dissipatore compatibile. Se il TIP41C non parte dopo il tuning, è la sostituzione più indolore. |
+| BD139 (TO-126, 1,5 A, 80 V) | 250 MHz [13] | Miglior upgrade da ~2 €: fT molto più alta → oscilla con ampio margine. ⚠️ **PINOUT DIVERSO dal TIP41C**: BD139 = E-C-B (pin 1=Emettitore, 2=Collettore, 3=Base; datasheet onsemi/ST [1][13]), TIP41C = B-C-E → al montaggio vanno SCAMBIATI i collegamenti di base ed emettitore. Dissipatore compatibile. Se il TIP41C non parte dopo il tuning, è la sostituzione più indolore. |
 | 2N2222A (TO-92, 0,8 A, 40 V) | ~300 MHz | È lo standard delle mini-build 9 V [3][4][7], ma qui a 12 V rischia di morire sui picchi (VCEO 40 V) — il TIP41C è più robusto. |
 | MPSA42 (TO-92, 300 V, 0,5 A) | decine di MHz | Buono per versioni piccole; limitato in corrente. |
 | MOSFET + gate driver (es. IRF510/2SK2542 + MIC4452) | — | Versione "boost" tipo ElectroBOOM [3]: altra categoria di progetto (più vicino a un SSTC). Fuori scope qui. |

@@ -177,4 +177,4 @@ Fatto? Complimenti, hai un oscillatore RF auto-risonante funzionante 🎉 Ora re
 
 ---
 
-Problemi persistenti dopo tutta la tabella? L'upgrade documentato è il **BD139** (fT 250 MHz, stesso cablaggio e pin compatibili): dettagli nella sezione 8 di [TEORIA_E_FUNZIONAMENTO.md](TEORIA_E_FUNZIONAMENTO.md) e nell'[analisi](ANALISI_INGEGNERISTICA.md).
+Problemi persistenti dopo tutta la tabella? L'upgrade documentato è il **BD139** (fT 250 MHz): dettagli nella sezione 8 di [TEORIA_E_FUNZIONAMENTO.md](TEORIA_E_FUNZIONAMENTO.md) e nell'[analisi](ANALISI_INGEGNERISTICA.md). ⚠️ Attenzione: il BD139 ha **pinout diverso** (E-C-B: 1=Emettitore, 2=Collettore, 3=Base) rispetto al TIP41C (B-C-E) — al montaggio scambia base ed emettitore.
