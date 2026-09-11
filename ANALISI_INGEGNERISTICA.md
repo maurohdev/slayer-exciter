@@ -129,6 +129,8 @@ Lunghezza filo necessaria (N × c):
 
 **Verifica del vincolo rocchetto (35–40 m)**: ✔ soddisfatto in entrambi i casi. **Scelta consigliata: filo 0,15 mm** — a parità di tubo dà più spire → più induttanza → frequenza più bassa → vita più facile al TIP41C (§4.2). Se il rocchetto è da 35 m, avvolgere 360–370 spire (lasciando 1–2 m per i collegamenti) è perfettamente adeguato: L cala del ~19% e f sale di ~11%, restando nella finestra utile.
 
+> **⚠️ AGGIORNAMENTO 11/09 (decreto Mauro)**: l'acquisto va fatto in **0,20 mm (scelta) o 0,25 mm**, non 0,15. Consegne: 0,20 mm → 304 spire / 28,7 m / L 0,98 mH / f ~1,6–1,8 MHz col top load consigliato (β TIP41C 1,7–1,9: OK ma serve top load Ø 15–20 cm); 0,25 mm → 249 spire / 23,5 m / L 0,66 mH / f ~2,0–2,2 MHz (β ≤ 1,5: **montare direttamente il BD139**). I calcoli aggiornati vivono in CALCOLI_E_FORMULE.md (§1 e §4), che fa fede per la build. Il filo da ~3 m in casa (Ø 0,45 mm) NON è adatto alla secondaria.
+
 ### 5.2 Induttanza secondaria (formula di Wheeler)
 
 L [µH] = r²·N² / (9r + 10l) con r e l in pollici (r = 0,59 in, l = 2,76 in per il nostro tubo)

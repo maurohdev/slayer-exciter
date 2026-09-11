@@ -10,7 +10,7 @@ Guida pratica passo-passo, dalla bobina vuota al LED che si accende senza fili. 
 
 ## Fase A — La secondaria L2 (la parte che richiede pazienza)
 
-**Obiettivo**: 360–411 spire di filo smaltato 0,15 mm, adiacenti e tese, sul tubetto Ø 3 × 7 cm.
+**Obiettivo**: 250–304 spire di filo smaltato 0,20 mm (alternativa 0,25 mm → 249 spire), adiacenti e tese, sul tubetto Ø 3 × 7 cm.
 
 ### A.1 Prepara il tubo
 
@@ -23,18 +23,18 @@ Guida pratica passo-passo, dalla bobina vuota al LED che si accende senza fili. 
 Il trucco è **non tenere il tubo in mano**: bloccalo.
 
 - **Metodo 1 (il migliore)**: infila il tubo su un cacciavite o un bastone lungo fissato in morsa/tornio a mano. Gira il tubo tenendo il filo fermo con la mano: il filo si avvolge dritto da solo.
-- **Metodo 2 (hai un trapano)**: tubo su un mandrino/lunga vite, trapano a bassissima velocità. Occhio: a 0,15 mm il filo si spezza se tiri troppo.
+- **Metodo 2 (hai un trapano)**: tubo su un mandrino/lunga vite, trapano a bassissima velocità. Occhio: il filo sottile si spezza se tiri troppo.
 - **Metodo 3 (zero attrezzi)**: siedi con il tubo tra le ginocchia, rocchetto a terra srotolato per 2–3 m; una mano tende il filo con pressione costante, l'altra gira il tubo.
 
 Regole d'oro:
 
-1. **Tensione costante, mai strappi**: il filo da 0,15 mm si rompe se tiri. Se si spezza, non disperare: raschia lo smalto per ~1 cm su entrambi i capi, sovrapponili e salda con una goccia di stagno, isola con una goccia di smalto o di unghie, poi riprendi ad avvolgere.
+1. **Tensione costante, mai strappi**: il filo sottile si rompe se tiri. Se si spezza, non disperare: raschia lo smalto per ~1 cm su entrambi i capi, sovrapponili e salda con una goccia di stagno, isola con una goccia di smalto o di unghie, poi riprendi ad avvolgere.
 2. **Spire adiacenti, non sovrapposte**: ogni spira tocca la precedente. Se ne salti una, non tornare indietro: continua (una spira larga su 400 non cambia nulla).
 3. **Conta a blocchi**: segna ogni 50 spire con un pennarello sul tubo (o un post-it vicino). 400 spire contate una a una = errore garantito.
-4. **Lascia 10–15 cm di filo all'inizio** (lato fondo: andrà al nodo base) e **arriva a fine filo in cima**: se il rocchetto è da 40 m, avrai ~360–411 spire; se è da 35 m il filo finirà prima: bene lo stesso (≥ 360 spire è perfettamente adeguato).
+4. **Lascia 10–15 cm di filo all'inizio** (lato fondo: andrà al nodo base) e **arriva a fine corsa in cima**: il tubo va riempito del tutto (~304 spire col 0,20 mm; ~249 col 0,25 mm). Un rocchetto da 50 g contiene ~178 m (0,20) o ~114 m (0,25): avanzano decine di metri per eventuali riparazioni.
 5. **Fissaggio finale**: quando finisci, fissa le ultime spire con una striscia di nastro adesivo o una goccia di smalto/vernice/unghie su tutta la lunghezza (2–3 punti). La bobina non deve poter srotolarsi.
 
-> Verifica con il multimetro (fase F.1): la secondaria deve misurare **~30–40 Ω** in continua (38,7 m di rame da 0,15 mm: R = ρ·l/A ≈ 38 Ω). Circuito aperto = filo rotto; ~0 Ω = spire in corto.
+> Verifica con il multimetro (fase F.1): la secondaria deve misurare **~15–16 Ω** in continua (28,7 m di rame da 0,20 mm: R = ρ·l/A ≈ 16 Ω; ~8–9 Ω col 0,25 mm). Circuito aperto = filo rotto; ~0 Ω = spire in corto.
 
 ### A.3 Le due estremità
 

@@ -41,7 +41,7 @@ Questa è la topologia corretta, e non è quella che si immagina leggendo le gui
   (−) batteria ──────────── GND ──────────────────┤───────────────┘               │
                                                                                   │
                         FONDO secondaria L2 ●─────────────────────────────────────┘ ← il FONDO di L2 sale al nodo BASE (feedback)
-                        (filo 0,15 mm, 360–411 spire)
+                        (filo 0,20–0,25 mm, 250–304 spire)
                         SOMMITÀ L2 ── sferetta stagnola Ø 12–15 cm
 ```
 
@@ -90,7 +90,7 @@ Distanze realistiche a 12 V: LED 2–5 cm, neon 5–10 cm, CFL/tubo 10–30 cm (
 |---|---|
 | **Q1 TIP41C** | L'interruttore elettronico: 100 V / 6 A di targa lo rendono robusto ai picchi induttivi; il suo tallone d'Achille è la lentezza (fT 3 MHz min). Va in dissipatore: senza, a 3 W la giunzione sale di ~188 °C (Tj ≈ 213 °C: fuori specifica); col piccolo dissipatore previsto ΔT ≈ +75 °C. |
 | **L1 primaria (4 spire, filo isolato)** | Il ramo di POTENZA: trasferisce l'energia dal collettore alla secondaria per accoppiamento magnetico. 3–5 spire, avvolta alla base del tubo, **senso di avvolgimento opposto alla secondaria** (equivalente pratico: prova a invertire i due fili se non oscilla). |
-| **L2 secondaria (360–411 spire, 0,15 mm)** | Il risonatore: l'induttanza alta + capacità parassita/top load fanno la frequenza. Il filo FINE inizia alla base e finisce in cima sulla sferetta. |
+| **L2 secondaria (250–304 spire, 0,20–0,25 mm)** | Il risonatore: l'induttanza alta + capacità parassita/top load fanno la frequenza. Il filo FINE inizia alla base e finisce in cima sulla sferetta. |
 | **Top load stagnola Ø 12–15 cm** | Capacità terminale: abbassa la risonanza nella finestra dove il TIP41C ha guadagno sufficiente. È una condizione di funzionamento, non un dettaglio. |
 | **R 10 kΩ** | **Resistore di avvio**: fornisce la prima corrente di base (1,13 mA) che innesca l'oscillazione; poi il feedback prende il sopravvento e lo "bypassa". A 12 V con transistor di potenza è il valore esatto della build di riferimento. Non (solo) un limitatore protettivo. |
 | **LED (catodo alla base)** | Doppio uso: **diodo di clamp** che limita le escursioni negative della base a −0,7 V (protegge la giunzione B-E, VEBO max 5 V) **e** indicatore di accensione. In alternativa un 1N4148 (4 ns, più veloce). |

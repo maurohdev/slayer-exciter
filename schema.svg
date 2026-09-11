@@ -74,8 +74,8 @@
   <!-- L2 secondaria (molte spire) -->
   <path d="M420,150 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30" stroke="#1f6feb" stroke-width="2" fill="none"/>
   <text x="452" y="230" font-size="12" fill="#1f6feb">L2 · secondaria</text>
-  <text x="452" y="248" font-size="12" fill="#1f6feb">360–411 spire, filo</text>
-  <text x="452" y="266" font-size="12" fill="#1f6feb">smaltato 0,15 mm</text>
+  <text x="452" y="248" font-size="12" fill="#1f6feb">250–304 spire, filo</text>
+  <text x="452" y="266" font-size="12" fill="#1f6feb">smaltato 0,20–0,25 mm</text>
   <text x="452" y="284" font-size="12" fill="#555">(tubo Ø 3 × 7 cm)</text>
 
   <!-- Top load (sotto il binario +12V, collegato alla cima di L2) -->

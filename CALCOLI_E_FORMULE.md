@@ -30,9 +30,9 @@ N_max = lunghezza utile / passo
 - 0,15 mm, tubo pieno: 411 × 9,42 cm = **38,7 m** → un rocchetto da 35 m NON basta per riempire il tubo; da 40 m sì (avanzo 1,3 m). Col rocchetto da 35 m: 35 / 0,0942 = **371 spire** (tubo pieno al 90%) — perfettamente adeguato.
 - 0,20 mm, tubo pieno: 304 × 9,42 cm = **28,7 m** → il rocchetto da 35 m è comodo (avanzo 6,3 m).
 
-**Scelta: filo 0,15 mm.** A parità di tubo dà più spire → più induttanza → frequenza più bassa → vita più facile al TIP41C (che è lento). Se il rocchetto è da 35 m, avvolgere 360–370 spire lasciando 1–2 m per i collegamenti: L cala del ~19% e f sale di ~11%, restando nella finestra utile.
+**Scelta (decreto Mauro 11/09): filo 0,20 mm, alternativa 0,25 mm.** Il 0,15 mm resta documentato come riferimento (più spire → f più bassa → vita facile al TIP41C), ma si compra 0,20 o 0,25. Col 0,20 mm (304 spire, 28,7 m — un rocchetto da 50 g ne contiene ~178: riempi il tubo con margine enorme) la risonanza sale a ~1,6–1,8 MHz col top load consigliato: il TIP41C ci arriva con β ≈ 1,7–1,9 **a condizione di top load Ø 15–20 cm**. Con 0,25 mm (249 spire, 23,5 m, ~114 m per rotolo da 50 g) si sale a ~2,0 MHz, β ≤ 1,5: **col TIP41C è ai margini — in quel caso monta da subito il piano B BD139** (fT 190 MHz: a 2 MHz ha ancora β ≈ 95).
 
-> ⚠️ In pratica: contare le spire a strati o a blocchi (es. 10 file da 37), non una a una — e verificare la metratura reale del rocchetto prima di iniziare.
+> ⚠️ In pratica: contare le spire a strati o a blocchi (es. 10 file da 30 con 0,20 mm), non una a una — e verificare la metratura reale del rocchetto prima di iniziare.
 
 ## 2. Induttanza della secondaria (formula di Wheeler)
 
@@ -85,10 +85,11 @@ C_tot = C_med + C_top (stima prudenziale: somma piena, senza scontare la scherma
 |---|---|---|---|---|
 | **0,15 mm, 411 spire** | 1,79 mH | 8,3–10,0 pF | **1,19–1,31 MHz** | **2,3–2,5** ✔ |
 | 0,15 mm, 371 spire | 1,45 mH | 8,3–10,0 pF | 1,32–1,45 MHz | 2,1–2,3 ✔ |
-| 0,20 mm, 304 spire | 0,98 mH | 8,3–10,0 pF | 1,61–1,77 MHz | 1,7–1,9 ⚠ |
+| 0,20 mm, 304 spire | 0,98 mH | 8,3–10,0 pF | 1,61–1,77 MHz | 1,7–1,9 ⚠ (OK con top Ø 15–20 cm: f 1,42–1,61 MHz, β 1,9–2,1) |
+| 0,25 mm, 249 spire | 0,66 mH | 8,3–10,0 pF | 1,96–2,15 MHz | 1,4–1,5 🔴 solo con BD139 |
 | (confronto) 0,15 mm 411, top 5 cm | 1,79 mH | 4,4 pF | 1,79 MHz | 1,7 ⚠ |
 
-**Lettura**: la configurazione consigliata (0,15 mm + pallona Ø 12–15 cm) porta la risonanza a **~1,2–1,45 MHz**, dove al TIP41C resta β ≈ 2–2,5. Basta appena, ma basta: nell'anello dello slayer il rapporto di spire ~100:1 dà guadagno d'anello enorme. Con top load piccolo si sale a 1,8–2,4 MHz (β ≈ 1,2–1,7): alto rischio che non parta. Il top load grande è l'unica leva per abbassare f su un tubo dato. **Nota onesta**: i valori della tabella usano la sfera liscia equivalente — una pallina di stagnola accartocciata vale il 60–80% del valore, quindi la f reale sale fino a ~10–25% (con la Ø 12 cm leggera si può sfiorare 1,5 MHz, β ≈ 1,9). Rimedi: stagnola ben compressa e a strati densi, o mirare dritto alla Ø 15 cm.
+**Lettura**: con la scelta di Mauro (0,20 mm + pallona Ø 12–15 cm) la risonanza sta a **~1,6–1,8 MHz** dove il TIP41C ha β ≈ 1,7–1,9: funziona, ma il margine è sottile — **pillona Ø 15–20 cm consigliata** (riporta f a ~1,4–1,6 MHz, β ≈ 1,9–2,1) e il LED/1N4148 di clamp diventa ancora più importante. Con 0,25 mm si va a ~2,0–2,2 MHz (β ≤ 1,5): oltre la zona sicura del TIP41C, serve il BD139. Con top load piccolo si sale ancora più in alto (β ≈ 1,2–1,7): alto rischio che non parta. Il top load grande è l'unica leva per abbassare f su un tubo dato. **Nota onesta**: i valori della tabella usano la sfera liscia equivalente — una pallina di stagnola accartocciata vale il 60–80% del valore, quindi la f reale sale fino a ~10–25% (col 0,20 mm mirare dritto alla Ø 15–20 cm ben compressa).
 
 ## 5. La primaria
 
