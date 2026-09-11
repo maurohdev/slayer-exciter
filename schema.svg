@@ -91,7 +91,7 @@
   <text x="706" y="418" font-size="12" fill="#24292e" text-anchor="end">LED1 — clamp B-E</text>
   <text x="706" y="436" font-size="11" fill="#555" text-anchor="end">(catodo → base)</text>
 
-  <!-- TIP41C -->
+  <!-- Q1: BD139 (TIP41C = alternativa a bassa f) -->
   <circle cx="800" cy="335" r="42" fill="none" stroke="#24292e" stroke-width="2.5"/>
   <line x1="788" y1="313" x2="788" y2="357" stroke="#24292e" stroke-width="3"/>
   <line x1="762" y1="335" x2="788" y2="335" stroke="#24292e" stroke-width="2"/>
