@@ -1,13 +1,13 @@
 # ⚡ Slayer Exciter 12 V — mini bobina di Tesla da tavolo
 
-Mini bobina di Tesla a stato solido (topologia *Slayer Exciter*) che accende **LED e lampade al gas (neon, CFL) semplicemente avvicinandole**, senza cavi né contatti. Alimenta tutto una batteria Li-ion da 12 V, il circuito sono ~9 componenti, e il cuore è un vecchio e robusto TIP41C.
+Mini bobina di Tesla a stato solido (topologia *Slayer Exciter*) che accende **LED e lampade al gas (neon, CFL) semplicemente avvicinandole**, senza cavi né contatti. Alimenta tutto una batteria Li-ion da 12 V, il circuito sono ~9 componenti, e il cuore è un **BD139** (fT 190 MHz). **Versione attuale: secondaria in filo 0,25 mm (249 spire) + transistor titolare BD139.**
 
 Se hai basi di elettrotecnica e un saldatore, questo è uno dei progetti HV (alta tensione) più soddisfacenti col miglior rapporto semplicità/effetto che esista.
 
 ```
   +-------------------+     +------------------+     +--------------------------+
   | Batteria Li-ion   | --> | Oscillatore RF   | --> | Bobina risonante L2      |
-  | 12 V + fusibile   |     | TIP41C + L1 + R  |     | + top load stagnola      |
+  | 12 V + fusibile   |     | BD139 + L1 + R   |     | + top load stagnola      |
   | T2A + interruttore|     | (auto-accordante)|     | → campo E a qualche kV   |
   +-------------------+     +------------------+     +--------------------------+
                                                               |
@@ -31,7 +31,7 @@ Se hai basi di elettrotecnica e un saldatore, questo è uno dei progetti HV (alt
 1. **Fusibile T2A lento sempre montato** sul polo positivo della batteria, vicino ai poli: una Li-ion in corto eroga oltre 100 A e va a fuoco. Non è opzionale.
 2. La sferetta in funzione dà **scottature RF**: non si tocca, ci si avvicina con carichi tenuti per la plastica.
 3. Tieni il circuito **ad almeno 50 cm da telefoni, PC e radio**: l'EMI è reale, documentata, e fastidiosa.
-4. Il transistor scalda (1–3 W): **dissipatore + pasta termica obbligatori**, e si tocca solo da spento.
+4. Il transistor scalda (stima ~1–1,5 W, da validare al collaudo): **dissipatore + pasta termica obbligatori**, e si tocca solo da spento.
 
 Dettagli completi nella sezione sicurezza di [TEORIA_E_FUNZIONAMENTO.md](TEORIA_E_FUNZIONAMENTO.md) e nel [manuale](MANUALE_ASSEMBLAGGIO_E_COLLAUDO.md).
 
@@ -53,11 +53,11 @@ Maker principianti con basi di elettrotecnica: sai cos'è un transistor, un indu
 
 ## Stato del progetto
 
-**Prototipo documentato, non ancora costruito.** Questa repo nasce da un'analisi ingegneristica completa (calcoli verificati su build reali documentate, con fonti) ma **senza hardware ancora assemblato dalla repo stessa**. Le previsioni chiave: risonanza a ~1,2–1,45 MHz, assorbimento 0,5–0,9 A, dissipazione TIP41C 1–3 W.
+**Prototipo documentato, non ancora costruito.** Questa repo nasce da un'analisi ingegneristica completa (calcoli verificati su build reali documentate, con fonti) ma **senza hardware ancora assemblato dalla repo stessa**. Le previsioni chiave: risonanza a 1,96–2,15 MHz (2,0–2,5 MHz con stagnola accartocciata), assorbimento 0,5–0,9 A (stima), dissipazione BD139 ~1–1,5 W (stima da validare al collaudo).
 
 **Chi lo costruisce è invitato ad aprire una issue** con le proprie misure: frequenza misurata, assorbimento, corrente di base, distanza di accensione, colpo d'occhio del setup. Ogni dato reale rende la documentazione migliore per il prossimo.
 
-> Nota onesta: con un transistor "lento" come il TIP41C su una bobina piccola (Ø 3 × 7 cm) l'avvio dell'oscillazione è **ai limiti della finestra di funzionamento** — per questo il progetto impone un top load grande (Ø 12–15 cm) e una procedura di tuning. Se non parte dopo il tuning, l'upgrade documentato è il BD139 (stesso cablaggio, fT 190 MHz). Tutti i dettagli nell'analisi.
+> Nota onesta: la secondaria in filo 0,25 mm porta la risonanza a ~2 MHz — fuori dalla portata del TIP41C (β ≈ 1,2–1,5), per questo il transistor titolare è il BD139 (fT 190 MHz, β ≈ 76–95 a 2,0–2,5 MHz). Il TIP41C resta come alternativa documentata per build a bassa frequenza (filo più fine o top load enorme). Tutti i dettagli nell'analisi.
 
 ## Licenza
 

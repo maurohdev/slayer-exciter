@@ -10,7 +10,7 @@ Guida pratica passo-passo, dalla bobina vuota al LED che si accende senza fili. 
 
 ## Fase A — La secondaria L2 (la parte che richiede pazienza)
 
-**Obiettivo**: 250–304 spire di filo smaltato 0,20 mm (alternativa 0,25 mm → 249 spire), adiacenti e tese, sul tubetto Ø 3 × 7 cm.
+**Obiettivo**: **249 spire** di filo smaltato **0,25 mm** (scelta definitiva, decreto 11/09), adiacenti e tese, sul tubetto Ø 3 × 7 cm.
 
 ### A.1 Prepara il tubo
 
@@ -30,11 +30,11 @@ Regole d'oro:
 
 1. **Tensione costante, mai strappi**: il filo sottile si rompe se tiri. Se si spezza, non disperare: raschia lo smalto per ~1 cm su entrambi i capi, sovrapponili e salda con una goccia di stagno, isola con una goccia di smalto o di unghie, poi riprendi ad avvolgere.
 2. **Spire adiacenti, non sovrapposte**: ogni spira tocca la precedente. Se ne salti una, non tornare indietro: continua (una spira larga su 400 non cambia nulla).
-3. **Conta a blocchi**: segna ogni 50 spire con un pennarello sul tubo (o un post-it vicino). 400 spire contate una a una = errore garantito.
-4. **Lascia 10–15 cm di filo all'inizio** (lato fondo: andrà al nodo base) e **arriva a fine corsa in cima**: il tubo va riempito del tutto (~304 spire col 0,20 mm; ~249 col 0,25 mm). Un rocchetto da 50 g contiene ~178 m (0,20) o ~114 m (0,25): avanzano decine di metri per eventuali riparazioni.
+3. **Conta a blocchi**: segna ogni 50 spire con un pennarello sul tubo (o un post-it vicino). Le centinaia di spire contate una a una = errore garantito.
+4. **Lascia 10–15 cm di filo all'inizio** (lato fondo: andrà al nodo base) e **arriva a fine corsa in cima**: il tubo va riempito del tutto (**249 spire col 0,25 mm**). Un rocchetto da 50 g contiene ~114 m (rame; ~110 contando lo smalto): margine ~4,4× sul necessario, circa 4 riavvolgimenti completi per errori e riparazioni.
 5. **Fissaggio finale**: quando finisci, fissa le ultime spire con una striscia di nastro adesivo o una goccia di smalto/vernice/unghie su tutta la lunghezza (2–3 punti). La bobina non deve poter srotolarsi.
 
-> Verifica con il multimetro (fase F.1): la secondaria deve misurare **~15–16 Ω** in continua (28,7 m di rame da 0,20 mm: R = ρ·l/A ≈ 16 Ω; ~8–9 Ω col 0,25 mm). Circuito aperto = filo rotto; ~0 Ω = spire in corto.
+> Verifica con il multimetro (fase F.1): la secondaria deve misurare **~8–9 Ω** in continua (R = ρ·l/A su 23,5–25,5 m di rame da 0,25 mm). Circuito aperto = filo rotto; ~0 Ω = spire in corto.
 
 ### A.3 Le due estremità
 
@@ -54,7 +54,7 @@ Regole d'oro:
 
 ## Fase C — Il top load (la pallona)
 
-1. Stacca un foglio generoso di stagnola e **accartoccialo in una palla compatta da Ø 12–15 cm**. Non un ritaglio, non una pallina da 5 cm: una PALLONA. È la condizione di funzionamento del circuito (abbassa la risonanza a ~1,3 MHz, dove il TIP41C ha ancora guadagno).
+1. Stacca un foglio generoso di stagnola e **accartoccialo in una palla compatta da Ø 12–15 cm**. Non un ritaglio, non una pallina da 5 cm: una PALLONA. È la condizione di funzionamento del circuito (tiene la risonanza intorno a ~2 MHz, dove il BD139 titolare lavora con margine).
 2. Raschia lo smalto dell'estremità superiore della secondaria (5 mm), infilala dentro la palla e richiudi la stagnola attorno al filo.
 3. Il contatto stagnola–filo deve essere stretto (schiaccia bene). Appoggia poi la palla in cima al tubo: deve stare su da sola o con un collarino di nastro.
 
@@ -65,7 +65,7 @@ Regole d'oro:
 1. **Base**: un tagliere di legno o una tavoletta 15 × 20 cm circa. Tutto si monta SU una base: niente componenti penzolanti (l'HV non perdona i corti accidentali).
 2. **Posizioni** (con lo schema in mano):
    - tubo con bobine in verticale al centro (fissalo con una fascetta a un angolare, o due sostegni di legno);
-   - TIP41C con dissipatore + vite + velo di pasta termica, a 3–5 cm dalla base del tubo (i capi della primaria devono arrivarci senza tirare);
+   - Q1 (BD139) con dissipatore + vite + velo di pasta termica, a 3–5 cm dalla base del tubo (i capi della primaria devono arrivarci senza tirare);
    - batteria sul retro della base, con fascette;
    - interruttore e portafusibile sul bordo anteriore, comodi da raggiungere.
 3. **Fusibile F1**: in serie sul polo **positivo** della batteria, **il più vicino possibile ai poli**, PRIMA dell'interruttore. T2A slow 5×20 mm.
@@ -77,7 +77,7 @@ Regole d'oro:
 Ordine consigliato (dal semplice al critico):
 
 1. **Nodo base per primo** (è il cuore): salda insieme su un piccolo pezzo di perfoboard (o punto termico separato) i tre capi — R1 (che arriva da +12 V), LED1 (catodo verso questo nodo, anodo verso GND), e capo freddo di **L2 fondo**. Verifica due volte il verso del LED.
-2. **Q1 al dissipatore**, tre pin identificati (TIP41C TO-220 guardando la faccia stampata: pin 1 = base, 2 = collettore, 3 = emettitore — il collettore è anche la linguetta metallica).
+2. **Q1 al dissipatore**, tre pin identificati (BD139 TO-126 guardando la faccia stampata: pin 1 = **emettitore**, 2 = collettore, 3 = **base** — E-C-B, opposto al B-C-E del TIP41C: non scambiare base ed emettitore).
 3. **Collegamenti di potenza**: emettitore → GND; un capo di L1 → +12 V; l'altro capo di L1 → collettore.
 4. **Disaccoppiamento C1/C2**: 100 nF e 470 µF in parallelo tra +12 V e GND, **polo + dell'elettrolitico verso +12 V**, il più vicino possibile a collettore/emettitore.
 5. **Fusibile + interruttore** in serie al positivo della batteria, poi i due capi batteria (+ e −) per ultimi.
@@ -94,7 +94,7 @@ Ordine consigliato (dal semplice al critico):
 
 | Check | Strumento | Valore atteso |
 |---|---|---|
-| Continuità secondaria (fondo–cima) | multimetro Ω | ~30–40 Ω (circuito aperto = filo rotto; ~0 Ω = spire in corto) |
+| Continuità secondaria (fondo–cima) | multimetro Ω | ~8–9 Ω (circuito aperto = filo rotto; ~0 Ω = spire in corto) |
 | Nessun corto +12 V ↔ GND | multimetro Ω | ≠ 0 (miglia di Ω o più) |
 | Nodo base: LED1 nel verso giusto | diodo multimetro | conduce in un verso solo |
 | Fili primaria liberi e intercambiabili | occhio | sì (serviranno per il fix n°1) |
@@ -108,9 +108,9 @@ Se puoi: alimentatore da banco a **6 V con limitazione a 1 A**, oppure 4 pile AA
 | Assorbimento | **< 1 A** |
 | Transistor | **tiepido**, non bollente |
 | LED1 del circuito | si accende debolmente (indica oscillazione) |
-| Radio AM a 30–50 cm, sintonizzata su frequenza libera | **ronzio/fruscio violento** se oscilla: il circuito trasmette a ~1,3 MHz, dentro la banda MW |
+| Radio AM a 30–50 cm, sintonizzata su frequenza libera | **ronzio/fruscio violento** se oscilla: il circuito trasmette a ~2 MHz, dentro la banda MW |
 
-**Il trucco della radio AM** (rivelatore di oscillazione low-cost): la frequenza di lavoro (~1,2–1,45 MHz) cade proprio nella banda delle radio in AM (MW). Sintonizza una qualsiasi radio a pile su uno spazio vuoto della banda, avvicinala: se il circuito oscilla senti un rumore netto comparire — un "segnaletore" gratis, senza oscilloscopio, che senti anche quando l'accensione del LED non è visibile.
+**Il trucco della radio AM** (rivelatore di oscillazione low-cost): la frequenza di lavoro (~2 MHz) cade nella banda delle radio in AM (MW). Sintonizza una qualsiasi radio a pile su uno spazio vuoto della banda, avvicinala: se il circuito oscilla senti un rumore netto comparire — un "segnaletore" gratis, senza oscilloscopio, che senti anche quando l'accensione del LED non è visibile.
 
 ### F.3 — Non oscilla? (la successione dei fix, in ordine)
 
@@ -126,7 +126,7 @@ Se puoi: alimentatore da banco a **6 V con limitazione a 1 A**, oppure 4 pile AA
 |---|---|
 | Assorbimento in regime | **0,5–0,9 A** (punte 2–3 A per pochi ms all'accensione: normali, il T2A slow le regge) |
 | Potenza | 6–11 W |
-| Transistor + dissipatore | **molto caldo** al tatto: normale (1–3 W su un dissipatore piccolo) — se dopo ~1 minuto non riesci proprio a tenere il dito appoggiato, spegni e ricontrolla drive/oscillazione |
+| Transistor + dissipatore | **caldo** al tatto: normale (stima ~1–1,5 W su un dissipatore piccolo, da validare al collaudo) — se dopo ~1 minuto non riesci proprio a tenere il dito appoggiato, spegni e ricontrolla drive/oscillazione |
 | Fusibile | NON deve saltare in regime |
 | Radio AM | ronzio netto |
 
@@ -140,6 +140,8 @@ Avvicina (tenendoli per la plastica, mai per i terminali):
 | Lampadina al neon indicatore | **5–10 cm** |
 | CFL / tubo fluorescente | bagliore fino a **10–30 cm** |
 | Archetti da sferetta (cacciavite isolato) | **2–5 mm** |
+
+> Con la versione 0,25 mm/BD139 aspettarsi la **fascia bassa** degli intervalli finché non si misurano.
 
 ### F.6 — TEST FINALE ✅
 
@@ -172,9 +174,9 @@ Fatto? Complimenti, hai un oscillatore RF auto-risonante funzionante 🎉 Ora re
 2. **La sferetta non si tocca in funzione**: qualche kV a RF, corrente minima ma **scottature RF** reali.
 3. **≥ 50 cm da telefoni, PC, radio, schede di rete**: l'EMI di questi circuiti è documentata fino ad accendere elettrodomestici nei paraggi.
 4. **Una mano sola** quando sperimenti vicino al circuito acceso.
-5. **Dissipatore + pasta termica obbligatori**: da nudo il TIP41C sale di ~188 °C a 3 W (Tj ≈ 213 °C, ben oltre il limite di 150 °C).
+5. **Dissipatore + pasta termica obbligatori**: da nudo il BD139 non regge nemmeno la dissipazione stimata (~1–1,5 W, stima da validare al collaudo).
 6. Ogni modifica da spento; il transistor si tocca solo dopo qualche secondo.
 
 ---
 
-Problemi persistenti dopo tutta la tabella? L'upgrade documentato è il **BD139** (fT 190 MHz): dettagli nella sezione 8 di [TEORIA_E_FUNZIONAMENTO.md](TEORIA_E_FUNZIONAMENTO.md) e nell'[analisi](ANALISI_INGEGNERISTICA.md). ⚠️ Attenzione: il BD139 ha **pinout diverso** (E-C-B: 1=Emettitore, 2=Collettore, 3=Base) rispetto al TIP41C (B-C-E) — al montaggio scambia base ed emettitore. Pinout e fT da datasheet: https://www.st.com/resource/en/datasheet/bd139.pdf e https://www.onsemi.com/pdf/datasheet/bd139-d.pdf
+Problemi persistenti dopo tutta la tabella? L'alternativa documentata è il **TIP41C** (fT 3 MHz): praticabile SOLO riabbassando la frequenza (filo più fine → più spire, o top load enorme) — dettagli nella sezione 8 di [TEORIA_E_FUNZIONAMENTO.md](TEORIA_E_FUNZIONAMENTO.md) e nell'[analisi](ANALISI_INGEGNERISTICA.md). ⚠️ Attenzione: il TIP41C ha **pinout diverso** (B-C-E: 1=Base, 2=Collettore, 3=Emettitore) rispetto al BD139 (E-C-B) — al montaggio scambia base ed emettitore. Datasheet: https://www.st.com/resource/en/datasheet/tip41c.pdf · https://www.onsemi.com/pdf/datasheet/tip41c-d.pdf

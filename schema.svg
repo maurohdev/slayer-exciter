@@ -20,7 +20,7 @@
   <path d="M720,335 V373 M720,395 V540" stroke="#24292e" stroke-width="2" fill="none"/>
   <!-- L1: dal binario +12V al collettore -->
   <path d="M840,80 V100 M840,260 V290" stroke="#24292e" stroke-width="2" fill="none"/>
-  <!-- Collettore ed emettitore del TIP41C -->
+  <!-- Collettore ed emettitore del BD139 -->
   <path d="M788,322 L840,290" stroke="#24292e" stroke-width="2" fill="none"/>
   <path d="M788,348 L840,380 M840,380 V540" stroke="#24292e" stroke-width="2" fill="none"/>
   <!-- Secondaria L2: cima -> top load, fondo -> nodo base (feedback) -->
@@ -74,8 +74,8 @@
   <!-- L2 secondaria (molte spire) -->
   <path d="M420,150 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30" stroke="#1f6feb" stroke-width="2" fill="none"/>
   <text x="452" y="230" font-size="12" fill="#1f6feb">L2 · secondaria</text>
-  <text x="452" y="248" font-size="12" fill="#1f6feb">250–304 spire, filo</text>
-  <text x="452" y="266" font-size="12" fill="#1f6feb">smaltato 0,20–0,25 mm</text>
+  <text x="452" y="248" font-size="12" fill="#1f6feb">249 spire, filo</text>
+  <text x="452" y="266" font-size="12" fill="#1f6feb">smaltato 0,25 mm</text>
   <text x="452" y="284" font-size="12" fill="#555">(tubo Ø 3 × 7 cm)</text>
 
   <!-- Top load (sotto il binario +12V, collegato alla cima di L2) -->
@@ -99,8 +99,9 @@
   <text x="768" y="326" font-size="11" fill="#555">B</text>
   <text x="824" y="284" font-size="11" fill="#555">C</text>
   <text x="848" y="374" font-size="11" fill="#555">E</text>
-  <text x="772" y="440" font-size="13" fill="#24292e" text-anchor="middle" font-weight="bold">Q1 — TIP41C</text>
-  <text x="772" y="458" font-size="11" fill="#555" text-anchor="middle">(dissipatore + pasta)</text>
+  <text x="772" y="440" font-size="13" fill="#24292e" text-anchor="middle" font-weight="bold">Q1 — BD139</text>
+  <text x="772" y="458" font-size="11" fill="#555" text-anchor="middle">(TO-126 · dissipatore + pasta)</text>
+  <text x="772" y="476" font-size="10" fill="#555" text-anchor="middle">TIP41C = alternativa a bassa f (pinout B-C-E)</text>
 
   <!-- Nodi -->
   <circle cx="360" cy="80" r="4" fill="#c0392b"/>
@@ -120,6 +121,6 @@
   <text x="540" y="522" font-size="12" fill="#c0392b" text-anchor="middle" font-style="italic">feedback: il FONDO di L2 va alla base</text>
 
   <!-- Titolo e note -->
-  <text x="970" y="24" font-size="15" fill="#24292e" text-anchor="end" font-weight="bold">Slayer Exciter 12 V — TIP41C</text>
-  <text x="495" y="640" font-size="12" fill="#555" text-anchor="middle">f ≈ 1,2–1,45 MHz · I ≈ 0,5–0,9 A · tensione in cima ≈ qualche kV (RF, bassa corrente)</text>
+  <text x="970" y="24" font-size="15" fill="#24292e" text-anchor="end" font-weight="bold">Slayer Exciter 12 V — BD139</text>
+  <text x="495" y="640" font-size="12" fill="#555" text-anchor="middle">f ≈ 1,96–2,15 MHz (2,0–2,5 con stagnola accartocciata) · I ≈ 0,5–0,9 A · tensione in cima ≈ qualche kV (RF, bassa corrente)</text>
 </svg>
