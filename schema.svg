@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 990 660" font-family="system-ui, Segoe UI, Arial, sans-serif">
+  <!-- Slayer Exciter 12 V - schema elettrico (feedback dal FONDO della secondaria) -->
+  <rect x="0" y="0" width="990" height="660" fill="#ffffff"/>
+
+  <!-- ===================== FILI E BINARI ===================== -->
+  <!-- Batteria -> fusibile -> interruttore -> binario +12V -->
+  <path d="M80,150 V80 H130" stroke="#24292e" stroke-width="2" fill="none"/>
+  <path d="M170,80 H210" stroke="#24292e" stroke-width="2" fill="none"/>
+  <path d="M260,80 H300" stroke="#24292e" stroke-width="2" fill="none"/>
+  <!-- Binario +12V (rosso) -->
+  <path d="M300,80 H840" stroke="#c0392b" stroke-width="2.5" fill="none"/>
+  <!-- Ramo condensatori di disaccoppio -->
+  <path d="M360,80 V132 M360,142 V172 M360,186 V540" stroke="#24292e" stroke-width="2" fill="none"/>
+  <!-- R1 dal +12V alla base -->
+  <path d="M660,80 V110" stroke="#24292e" stroke-width="2" fill="none"/>
+  <path d="M660,210 V335" stroke="#24292e" stroke-width="2" fill="none"/>
+  <!-- Nodo base -> pin B -->
+  <path d="M660,335 H762" stroke="#24292e" stroke-width="2" fill="none"/>
+  <!-- LED dal nodo base a GND -->
+  <path d="M720,335 V373 M720,395 V540" stroke="#24292e" stroke-width="2" fill="none"/>
+  <!-- L1: dal binario +12V al collettore -->
+  <path d="M840,80 V100 M840,260 V290" stroke="#24292e" stroke-width="2" fill="none"/>
+  <!-- Collettore ed emettitore del TIP41C -->
+  <path d="M788,322 L840,290" stroke="#24292e" stroke-width="2" fill="none"/>
+  <path d="M788,348 L840,380 M840,380 V540" stroke="#24292e" stroke-width="2" fill="none"/>
+  <!-- Secondaria L2: cima -> top load, fondo -> nodo base (feedback) -->
+  <path d="M420,126 V150" stroke="#24292e" stroke-width="2" fill="none"/>
+  <path d="M420,450 V500 H660 V335" stroke="#c0392b" stroke-width="2" fill="none"/>
+  <!-- Binario GND -->
+  <path d="M80,540 H840" stroke="#24292e" stroke-width="2.5" fill="none"/>
+  <!-- Batteria: polo - verso GND -->
+  <path d="M80,215 V540" stroke="#24292e" stroke-width="2" fill="none"/>
+
+  <!-- ===================== SIMBOLI COMPONENTI ===================== -->
+  <!-- Batteria Li-ion (due celle) -->
+  <line x1="65" y1="170" x2="95" y2="170" stroke="#24292e" stroke-width="3"/>
+  <line x1="72" y1="185" x2="88" y2="185" stroke="#24292e" stroke-width="3"/>
+  <line x1="65" y1="200" x2="95" y2="200" stroke="#24292e" stroke-width="3"/>
+  <line x1="72" y1="215" x2="88" y2="215" stroke="#24292e" stroke-width="3"/>
+  <text x="102" y="168" font-size="14" fill="#c0392b" font-weight="bold">+</text>
+
+  <!-- Fusibile T2A -->
+  <rect x="130" y="72" width="40" height="16" fill="#fff" stroke="#24292e" stroke-width="2"/>
+  <line x1="130" y1="80" x2="170" y2="80" stroke="#24292e" stroke-width="2"/>
+  <text x="150" y="58" font-size="12" fill="#24292e" text-anchor="middle">F1 · T2A slow</text>
+
+  <!-- Interruttore -->
+  <circle cx="212" cy="80" r="3.5" fill="#24292e"/>
+  <line x1="212" y1="80" x2="256" y2="60" stroke="#24292e" stroke-width="2"/>
+  <circle cx="260" cy="80" r="3.5" fill="#24292e"/>
+  <text x="236" y="46" font-size="12" fill="#24292e" text-anchor="middle">SW1</text>
+
+  <!-- C1 100 nF -->
+  <line x1="344" y1="132" x2="376" y2="132" stroke="#24292e" stroke-width="2.5"/>
+  <line x1="344" y1="142" x2="376" y2="142" stroke="#24292e" stroke-width="2.5"/>
+  <text x="338" y="140" font-size="12" fill="#24292e" text-anchor="end">C1 100 nF</text>
+  <!-- C2 470 uF elettrolitico -->
+  <line x1="348" y1="172" x2="372" y2="172" stroke="#24292e" stroke-width="2.5"/>
+  <path d="M348,188 Q360,178 372,188" stroke="#24292e" stroke-width="2.5" fill="none"/>
+  <text x="352" y="166" font-size="12" fill="#c0392b" font-weight="bold">+</text>
+  <text x="340" y="184" font-size="12" fill="#24292e" text-anchor="end">C2 470 µF 25 V</text>
+
+  <!-- R1 10 kohm (zigzag verticale) -->
+  <path d="M660,110 l12,10 l-24,20 l24,20 l-24,20 l24,20 l-12,10" stroke="#24292e" stroke-width="2" fill="none"/>
+  <text x="694" y="150" font-size="13" fill="#24292e">R1 — 10 kΩ ¼ W</text>
+  <text x="694" y="168" font-size="11" fill="#555">(avvio: 1,1 mA)</text>
+
+  <!-- L1 primaria (4 spire) -->
+  <path d="M840,100 a20,20 0 0 1 0,40 a20,20 0 0 1 0,40 a20,20 0 0 1 0,40 a20,20 0 0 1 0,40" stroke="#1f6feb" stroke-width="2" fill="none"/>
+  <text x="872" y="120" font-size="12" fill="#1f6feb">L1 · primaria</text>
+  <text x="872" y="138" font-size="12" fill="#1f6feb">4 spire, filo isolato</text>
+  <text x="872" y="156" font-size="12" fill="#555">(senso opposto a L2)</text>
+
+  <!-- L2 secondaria (molte spire) -->
+  <path d="M420,150 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30" stroke="#1f6feb" stroke-width="2" fill="none"/>
+  <text x="452" y="230" font-size="12" fill="#1f6feb">L2 · secondaria</text>
+  <text x="452" y="248" font-size="12" fill="#1f6feb">370–411 spire, filo</text>
+  <text x="452" y="266" font-size="12" fill="#1f6feb">smaltato 0,15 mm</text>
+  <text x="452" y="284" font-size="12" fill="#555">(tubo Ø 3 × 7 cm)</text>
+
+  <!-- Top load (sotto il binario +12V, collegato alla cima di L2) -->
+  <circle cx="420" cy="106" r="20" fill="#fff" stroke="#24292e" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="420" y="30" font-size="12" fill="#24292e" text-anchor="middle" font-weight="bold">top load — stagnola Ø 12–15 cm</text>
+  <text x="420" y="46" font-size="11" fill="#555" text-anchor="middle">(C ≈ 8–10 pF)</text>
+
+  <!-- LED di clamp (catodo verso la base) -->
+  <polygon points="708,395 732,395 720,377" fill="none" stroke="#24292e" stroke-width="2"/>
+  <line x1="707" y1="373" x2="733" y2="373" stroke="#24292e" stroke-width="2.5"/>
+  <line x1="740" y1="386" x2="750" y2="377" stroke="#24292e" stroke-width="1.5"/>
+  <line x1="740" y1="396" x2="750" y2="387" stroke="#24292e" stroke-width="1.5"/>
+  <text x="706" y="418" font-size="12" fill="#24292e" text-anchor="end">LED1 — clamp B-E</text>
+  <text x="706" y="436" font-size="11" fill="#555" text-anchor="end">(catodo → base)</text>
+
+  <!-- TIP41C -->
+  <circle cx="800" cy="335" r="42" fill="none" stroke="#24292e" stroke-width="2.5"/>
+  <line x1="788" y1="313" x2="788" y2="357" stroke="#24292e" stroke-width="3"/>
+  <line x1="762" y1="335" x2="788" y2="335" stroke="#24292e" stroke-width="2"/>
+  <polygon points="820,365 809,363 813.5,356" fill="#24292e"/>
+  <text x="768" y="326" font-size="11" fill="#555">B</text>
+  <text x="824" y="284" font-size="11" fill="#555">C</text>
+  <text x="848" y="374" font-size="11" fill="#555">E</text>
+  <text x="772" y="440" font-size="13" fill="#24292e" text-anchor="middle" font-weight="bold">Q1 — TIP41C</text>
+  <text x="772" y="458" font-size="11" fill="#555" text-anchor="middle">(dissipatore + pasta)</text>
+
+  <!-- Nodi -->
+  <circle cx="360" cy="80" r="4" fill="#c0392b"/>
+  <circle cx="660" cy="80" r="4" fill="#c0392b"/>
+  <circle cx="840" cy="80" r="4" fill="#c0392b"/>
+  <circle cx="660" cy="335" r="4" fill="#24292e"/>
+  <circle cx="720" cy="335" r="4" fill="#24292e"/>
+  <circle cx="360" cy="540" r="4" fill="#24292e"/>
+  <circle cx="720" cy="540" r="4" fill="#24292e"/>
+
+  <!-- Etichette reti -->
+  <text x="298" y="68" font-size="13" fill="#c0392b" text-anchor="middle" font-weight="bold">+12 V</text>
+  <text x="700" y="323" font-size="11" fill="#555" text-anchor="middle" font-style="italic">nodo BASE</text>
+  <text x="95" y="528" font-size="12" fill="#555">GND — massa (polo − batteria)</text>
+  <text x="100" y="300" font-size="12" fill="#24292e">B1 — batteria Li-ion 12 V</text>
+  <text x="100" y="318" font-size="11" fill="#555">fusibile sul +, vicino ai poli</text>
+  <text x="540" y="522" font-size="12" fill="#c0392b" text-anchor="middle" font-style="italic">feedback: il FONDO di L2 va alla base</text>
+
+  <!-- Titolo e note -->
+  <text x="970" y="24" font-size="15" fill="#24292e" text-anchor="end" font-weight="bold">Slayer Exciter 12 V — TIP41C</text>
+  <text x="495" y="640" font-size="12" fill="#555" text-anchor="middle">f ≈ 1,2–1,4 MHz · I ≈ 0,5–0,9 A · tensione in cima ≈ qualche kV (RF, bassa corrente)</text>
+</svg>
