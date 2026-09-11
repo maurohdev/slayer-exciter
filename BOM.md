@@ -21,8 +21,8 @@ Due sezioni: quello che probabilmente hai già in casa, e quello da comprare. Pe
 
 | # | Componente | Prezzo indicativo | Dove | Scopo nel circuito |
 |---|---|---|---|---|
-| 1 | **TIP41C** (TO-220, NPN) | 1–2 € | negozio elettronica / AliExpress / Amazon | L'interruttore RF: robusto (100 V / 6 A), lento (fT 3 MHz min) — funziona con top load grande + tuning. Prendine 2: è il componente che può morire durante le prove. |
-| 2 | **Dissipatore per TO-220** (piccolo, con vite) | 2–4 € | negozio elettronica / Amazon | Smaltisce 1–3 W: senza, la giunzione sfora di 75–188 °C e il transistor muore. Obbligatorio. |
+| 1 | **TIP41C** (TO-220, NPN) | 1–2 € | negozio elettronica / AliExpress / Amazon | L'interruttore RF: robusto (100 V / 6 A), lento (fT 3 MHz min) — funziona con top load grande + tuning. Prendine 2: è il componente che può morire durante le prove. Valori da datasheet: https://www.st.com/resource/en/datasheet/tip41c.pdf · https://www.onsemi.com/pdf/datasheet/tip41c-d.pdf |
+| 2 | **Dissipatore per TO-220** (piccolo, con vite) | 2–4 € | negozio elettronica / Amazon | Smaltisce 1–3 W: senza, a 3 W la giunzione sale di ~188 °C (Tj ≈ 213 °C: fuori specifica) e il transistor muore. Obbligatorio. |
 | 3 | **Pasta termica** (tubetto) | 3–5 € | Amazon / negozio informatico | Velo tra transistor e dissipatore: senza, l'Rth sale e il dissipatore serve a poco. |
 | 4 | **Rame smaltato 0,15 mm, rocchetto 40 m** | 6–10 € | negozio elettronica / AliExpress / Amazon | Secondaria: 411 spire = 38,7 m (il rocchetto da 35 m NON basta per il tubo pieno — verificare la metratura reale!). Alternativa: 0,20 mm (28,7 m) ma la frequenza sale del ~30%. **Prima scelta: 0,15 mm.** |
 | 5 | **Filo isolato** (qualche decina di cm, 0,5–1 mm²) | 1–2 € | qualsiasi / avanzo impianto | Primaria: 4 spire (3–5) alla base del tubo. Senso di avvolgimento opposto alla secondaria. |
@@ -30,7 +30,7 @@ Due sezioni: quello che probabilmente hai già in casa, e quello da comprare. Pe
 | 7 | **1N4148** (lotto da 5+) | ~1 € | negozio elettronica / AliExpress | Clamp base-emettitore più veloce del LED (4 ns vs ~decine di ns): se il LED fa il suo dovere ma vuoi margine, mettilo in parallelo (stesso verso del LED). Costa centesimi. |
 | 8 | **100 nF ceramico + 470 µF 25 V elettrolitico** | ~1 € | negozio elettronica / AliExpress | Disaccoppio del nodo +12 V, il più vicino possibile a collettore/emettitore: chiudono localmente il percorso RF, stabilizzano l'oscillazione, riducono i disturbi verso la batteria. |
 | 9 | *(opz.)* **Resistori 4,7 kΩ / 22 kΩ / 47 kΩ** | ~1 € | qualsiasi | Manopole di tuning del drive di base: caldo-e-non-oscilla → 22 k in serie; non-parte-proprio → verso 4,7 k. |
-| 10 | *(opz.)* **BD139** (TO-126) | ~2 € | negozio elettronica / AliExpress | Piano B documentato: se il TIP41C non parte dopo il tuning, il BD139 (fT 250 MHz) è l'upgrade più indolore. ⚠️ Pinout DIVERSO: BD139 = E-C-B (1=Emettitore, 2=Collettore, 3=Base) contro B-C-E del TIP41C → scambiare base ed emettitore al montaggio. |
+| 10 | *(opz.)* **BD139** (TO-126) | ~2 € | negozio elettronica / AliExpress | Piano B documentato: se il TIP41C non parte dopo il tuning, il BD139 (fT 190 MHz) è l'upgrade più indolore. ⚠️ Pinout DIVERSO: BD139 = E-C-B (1=Emettitore, 2=Collettore, 3=Base) contro B-C-E del TIP41C → scambiare base ed emettitore al montaggio. Datasheet: https://www.st.com/resource/en/datasheet/bd139.pdf · https://www.onsemi.com/pdf/datasheet/bd139-d.pdf |
 
 **Totale carrello indicativo: 20–30 €** (esclusa la batteria, se ce l'hai già).
 

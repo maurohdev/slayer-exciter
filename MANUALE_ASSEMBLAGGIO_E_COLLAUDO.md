@@ -110,7 +110,7 @@ Se puoi: alimentatore da banco a **6 V con limitazione a 1 A**, oppure 4 pile AA
 | LED1 del circuito | si accende debolmente (indica oscillazione) |
 | Radio AM a 30–50 cm, sintonizzata su frequenza libera | **ronzio/fruscio violento** se oscilla: il circuito trasmette a ~1,3 MHz, dentro la banda MW |
 
-**Il trucco della radio AM** (rivelatore di oscillazione low-cost): la frequenza di lavoro (~1,2–1,4 MHz) cade proprio nella banda delle radio in AM (MW). Sintonizza una qualsiasi radio a pile su uno spazio vuoto della banda, avvicinala: se il circuito oscilla senti un rumore netto comparire — un "segnaletore" gratis, senza oscilloscopio, che senti anche quando l'accensione del LED non è visibile.
+**Il trucco della radio AM** (rivelatore di oscillazione low-cost): la frequenza di lavoro (~1,2–1,45 MHz) cade proprio nella banda delle radio in AM (MW). Sintonizza una qualsiasi radio a pile su uno spazio vuoto della banda, avvicinala: se il circuito oscilla senti un rumore netto comparire — un "segnaletore" gratis, senza oscilloscopio, che senti anche quando l'accensione del LED non è visibile.
 
 ### F.3 — Non oscilla? (la successione dei fix, in ordine)
 
@@ -172,9 +172,9 @@ Fatto? Complimenti, hai un oscillatore RF auto-risonante funzionante 🎉 Ora re
 2. **La sferetta non si tocca in funzione**: qualche kV a RF, corrente minima ma **scottature RF** reali.
 3. **≥ 50 cm da telefoni, PC, radio, schede di rete**: l'EMI di questi circuiti è documentata fino ad accendere elettrodomestici nei paraggi.
 4. **Una mano sola** quando sperimenti vicino al circuito acceso.
-5. **Dissipatore + pasta termica obbligatori**: da nudo il TIP41C sfora la giunzione di oltre 100 °C a 3 W.
+5. **Dissipatore + pasta termica obbligatori**: da nudo il TIP41C sale di ~188 °C a 3 W (Tj ≈ 213 °C, ben oltre il limite di 150 °C).
 6. Ogni modifica da spento; il transistor si tocca solo dopo qualche secondo.
 
 ---
 
-Problemi persistenti dopo tutta la tabella? L'upgrade documentato è il **BD139** (fT 250 MHz): dettagli nella sezione 8 di [TEORIA_E_FUNZIONAMENTO.md](TEORIA_E_FUNZIONAMENTO.md) e nell'[analisi](ANALISI_INGEGNERISTICA.md). ⚠️ Attenzione: il BD139 ha **pinout diverso** (E-C-B: 1=Emettitore, 2=Collettore, 3=Base) rispetto al TIP41C (B-C-E) — al montaggio scambia base ed emettitore.
+Problemi persistenti dopo tutta la tabella? L'upgrade documentato è il **BD139** (fT 190 MHz): dettagli nella sezione 8 di [TEORIA_E_FUNZIONAMENTO.md](TEORIA_E_FUNZIONAMENTO.md) e nell'[analisi](ANALISI_INGEGNERISTICA.md). ⚠️ Attenzione: il BD139 ha **pinout diverso** (E-C-B: 1=Emettitore, 2=Collettore, 3=Base) rispetto al TIP41C (B-C-E) — al montaggio scambia base ed emettitore. Pinout e fT da datasheet: https://www.st.com/resource/en/datasheet/bd139.pdf e https://www.onsemi.com/pdf/datasheet/bd139-d.pdf

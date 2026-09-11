@@ -12,10 +12,10 @@
 La topologia Slayer Exciter è tra i circuiti HV più semplici che esistano (5 componenti, confermato da Hackaday [6]) e l'obiettivo — accendere un LED o una lampada al gas per avvicinamento — è esattamente ciò che queste build ottengono. PERÒ:
 
 1. **La descrizione del feedback nella bozza è SBAGLIATA** (dettaglio in §3): il feedback NON passa per la bobina primaria, ma arriva dal **fondo della secondaria** direttamente alla base. Da correggere prima di costruire, perché il cablaggio giusto è il cuore del circuito.
-2. **Il tubetto 3×7 cm è elettricamente corto**: risuona tra 1,6 e 3 MHz (§5.4), e lì il TIP41C — con frequenza di transizione fT min = 3 MHz (datasheet onsemi [2]) — ha guadagno β ≈ 1–2, cioè è al limite della capacità di oscillare. Le build documentate con transistor "lenti" di classe TIP41/MJE3055 girano a **100–500 kHz su bobine più grandi** (max 100 kHz misurati [5]). **Condizione: top load in stagnola GRANDE** (pallina accartocciata Ø 12–15 cm, non un ritaglio piccolo) per abbassare la risonanza a ~1,2–1,5 MHz dove il TIP41C ha ancora β ≈ 2–2,5, sufficiente perché il guadagno d'anello dello slayer è enorme (rapporto spire ≈ 100:1).
+2. **Il tubetto 3×7 cm è elettricamente corto**: risuona tra 1,6 e 3 MHz (§5.4), e lì il TIP41C — con frequenza di transizione fT min = 3 MHz (datasheet onsemi [2]) — ha guadagno β ≈ 1–2, cioè è al limite della capacità di oscillare. Le build documentate con transistor "lenti" di classe TIP41/MJE3055 girano a **100–500 kHz su bobine più grandi** (max 100 kHz misurati [5]). **Condizione: top load in stagnola GRANDE** (pallina accartocciata Ø 12–15 cm, non un ritaglio piccolo) per abbassare la risonanza a ~1,2–1,45 MHz dove il TIP41C ha ancora β ≈ 2–2,5, sufficiente perché il guadagno d'anello dello slayer è enorme (rapporto spire ≈ 100:1).
 3. **Serve procedura di tuning** (§9): la causa n°1 di insuccesso è la polarità della primaria invertita; seconda causa la resistenza di base non adeguata. È normale fare 2–3 tentativi.
 
-**Rischi accettati e dichiarati**: con il TIP41C su questa bobina piccola l'avvio dell'oscillazione è "ai limiti". Se non parte dopo il tuning, la nota comparativa §4.3 propone il BD139 (fT 250 MHz, stessa logica di cablaggio) come upgrade da pochi euro — ma il progetto resta su TIP41C come richiesto.
+**Rischi accettati e dichiarati**: con il TIP41C su questa bobina piccola l'avvio dell'oscillazione è "ai limiti". Se non parte dopo il tuning, la nota comparativa §4.3 propone il BD139 (fT 190 MHz min, stessa logica di cablaggio) come upgrade da pochi euro — ma il progetto resta su TIP41C come richiesto.
 
 **Distanze realistiche da aspettarsi** (da build simili a 12 V [5][6]): LED acceso 2–5 cm, lampadina al neon (indicatore) 5–10 cm, lampada fluorescente CFL/nel tubo 10–30 cm con bagliore, archetti 2–5 mm dalla sferetta [10].
 
@@ -39,7 +39,7 @@ La topologia Slayer Exciter è tra i circuiti HV più semplici che esistano (5 c
 ## 3. TOPOLOGIA CORRETTA (schema GBlaster / Slayer classico)
 
 ```
-  (+) batteria Li-ion ──[F fusibile T2A]──[SW]─── nodo +12 V ────┬────────────┐
+  (+) batteria Li-ion ──[F fusibile T2A]──[SW]─── +12 V ───┬────────────┐
                                                            │            │
                                                 [100nF + 470µF        [R 10k]
                                                  verso GND]             │
@@ -48,19 +48,20 @@ La topologia Slayer Exciter è tra i circuiti HV più semplici che esistano (5 c
                                              3–5 spire filo│            │
                                              isolato, base │            │
                                              del tubetto   │            │
-                                                           │            ● Base
-                                                           │           ┌┴┐
-                                                     Collettore        │ │ LED
-                                                           │           └┬┘ (catodo
-                                                     ┌─────┴─────┐      │  verso base)
-                                                     │  TIP41C   │      │
-                                                     └─────┬─────┘     GND
-                                                           │
-  (−) batteria ─────────────────── GND ────────────────────┤
-                                                           │
-                            FONDO secondaria L2 ●───────────┘
-                            (filo 0,15 mm, ~370-410 spire)
-                            
+                                                           │            ● Base ─────┐
+                                                           │           ┌┴┐          │
+                                                           │           │ │ LED      │
+                                                           │           └┬┘ (catodo  │
+                                                           │            │ verso     │
+                                                     ┌─────┴─────┐      │ base)     │
+                                                     │  TIP41C   │      │           │
+                                                     └─────┬─────┘      GND          │
+                                                           │            │           │
+  (−) batteria ─────────────────── GND ────────────────────┤────────────┘           │
+                                                                                    │
+                            FONDO secondaria L2 ●───────────────────────────────────┘ ← il FONDO di L2 sale al nodo BASE (feedback)
+                            (filo 0,15 mm, 360–411 spire)
+
                             SOMMITÀ L2 ──── sferetta stagnola Ø 12–15 cm
 ```
 
@@ -100,12 +101,12 @@ Nota cablaggio: R, LED e fondo-L2 si incontrano tutti sul nodo BASE.
   - max- (Instructables): con MJE3055 (stessa classe di lentezza del TIP41C) la sua bobina GRANDE gira a **~100 kHz misurati** [5].
   - maker.pro: sostituire il 2N2222A con un TIP41C in una build piccola «semplicemente non funziona» [9].
   - StackExchange: TIP41C usato con secondaria da 850 spire e 40 V — arco 5 mm, e NE HA BRUCIATO UNO senza dissipatore [10].
-- **Conclusione onesta**: con la bobina di questa bozza (§5.4 → 1,2–1,5 MHz solo con top load grande), il TIP41C è al limite ma dentro la finestra di possibilità; con top load piccolo (2–3 MHz) molto probabilmente NON oscilla. Da qui la condizione n°2 del verdetto.
+- **Conclusione onesta**: con la bobina di questa bozza (§5.4 → 1,2–1,45 MHz solo con top load grande), il TIP41C è al limite ma dentro la finestra di possibilità; con top load piccolo (2–3 MHz) molto probabilmente NON oscilla. Da qui la condizione n°2 del verdetto.
 
 ### 4.3 Nota comparativa (il progetto RESTA su TIP41C)
 | Alternativa | fT | Perché/Quando |
 |---|---|---|
-| BD139 (TO-126, 1,5 A, 80 V) | 250 MHz [13] | Miglior upgrade da ~2 €: fT molto più alta → oscilla con ampio margine. ⚠️ **PINOUT DIVERSO dal TIP41C**: BD139 = E-C-B (pin 1=Emettitore, 2=Collettore, 3=Base; datasheet onsemi/ST [1][13]), TIP41C = B-C-E → al montaggio vanno SCAMBIATI i collegamenti di base ed emettitore. Dissipatore compatibile. Se il TIP41C non parte dopo il tuning, è la sostituzione più indolore. |
+| BD139 (TO-126, 1,5 A, 80 V) | 190 MHz min [13] | Miglior upgrade da ~2 €: fT molto più alta → oscilla con ampio margine. ⚠️ **PINOUT DIVERSO dal TIP41C**: BD139 = E-C-B (pin 1=Emettitore, 2=Collettore, 3=Base; datasheet onsemi/ST [1][13]), TIP41C = B-C-E → al montaggio vanno SCAMBIATI i collegamenti di base ed emettitore. Dissipatore compatibile. Se il TIP41C non parte dopo il tuning, è la sostituzione più indolore. |
 | 2N2222A (TO-92, 0,8 A, 40 V) | ~300 MHz | È lo standard delle mini-build 9 V [3][4][7], ma qui a 12 V rischia di morire sui picchi (VCEO 40 V) — il TIP41C è più robusto. |
 | MPSA42 (TO-92, 300 V, 0,5 A) | decine di MHz | Buono per versioni piccole; limitato in corrente. |
 | MOSFET + gate driver (es. IRF510/2SK2542 + MIC4452) | — | Versione "boost" tipo ElectroBOOM [3]: altra categoria di progetto (più vicino a un SSTC). Fuori scope qui. |
@@ -126,7 +127,7 @@ Lunghezza filo necessaria (N × c):
 - 411 spire × 9,42 cm = **38,7 m** → rocchetto da 35 m NON basta per il tubo pieno; da 40 m sì (avanzi 1,3 m). Con 35 m: 35 / 0,0942 = **371 spire** (tubo riempito al 90%).
 - 304 spire × 9,42 cm = **28,7 m** → rocchetto da 35 m COMODO (avanzi 6,3 m; con 40 m avanzi 11,3 m).
 
-**Verifica del vincolo rocchetto (35–40 m)**: ✔ soddisfatto in entrambi i casi. **Scelta consigliata: filo 0,15 mm** — a parità di tubo dà più spire → più induttanza → frequenza più bassa → vita più facile al TIP41C (§4.2). Se il rocchetto è da 35 m, avvolgere 360–370 spire (lasciando 1–2 m per i collegamenti) è perfettamente adeguato: L cala del ~15% e f sale solo dell'8%.
+**Verifica del vincolo rocchetto (35–40 m)**: ✔ soddisfatto in entrambi i casi. **Scelta consigliata: filo 0,15 mm** — a parità di tubo dà più spire → più induttanza → frequenza più bassa → vita più facile al TIP41C (§4.2). Se il rocchetto è da 35 m, avvolgere 360–370 spire (lasciando 1–2 m per i collegamenti) è perfettamente adeguato: L cala del ~19% e f sale di ~11%, restando nella finestra utile.
 
 ### 5.2 Induttanza secondaria (formula di Wheeler)
 
@@ -138,7 +139,7 @@ L [µH] = r²·N² / (9r + 10l) con r e l in pollici (r = 0,59 in, l = 2,76 in p
 | 0,15 mm, rocchetto 35 m | 371 | 1 453 µH ≈ 1,45 mH |
 | 0,20 mm, tubo pieno | 304 | 977 µH ≈ 0,98 mH |
 
-(Validazione del metodo: Johnson misura induttanze in accordo con Wheeler entro l'1% [11]; il mio modello su 750 spire/2"/6" di ElectroBOOM dà 8 231 µH → con C = 3,1 pF f = 1,003 MHz contro gli «1 MHz» dichiarati da ElectroBOOM [3]: errore ~3%.)
+(Validazione del metodo: Johnson misura induttanze in accordo con Wheeler entro l'1% [11]; il mio modello su 750 spire/2"/6" di ElectroBOOM dà 8 231 µH → con C = 3,1 pF f = 1,003 MHz contro gli «1 MHz» dichiarati da ElectroBOOM [3]: errore ~0,3%.)
 
 ### 5.3 Capacità: propria della bobina (Medhurst) + top load
 
@@ -167,13 +168,13 @@ C_tot = C_med + C_top (il top load scherma parzialmente C_med: stima prudenziale
 | 0,15 mm, 371 spire | 1,45 mH | 4,4 pF | 8,3–10,0 pF | 1,98 MHz | 1,32–1,45 MHz | 1,5 / 2,1–2,3 |
 | 0,20 mm, 304 spire | 0,98 mH | 4,4 pF | 8,3–10,0 pF | 2,42 MHz | 1,61–1,77 MHz | 1,2 / 1,7–1,9 |
 
-**Lettura ingegneristica della tabella**: la configurazione consigliata (0,15 mm + pallona Ø 12–15 cm) porta la risonanza a **~1,2–1,4 MHz** dove il TIP41C ha ancora β ≈ 2–2,5. Senza pallona grande si va a 1,8–2,4 MHz (β ≈ 1,2–1,7): alto rischio che non parta. Le build reali "lente" girano a 100–500 kHz [5][10] proprio perché hanno bobine fisicamente più grandi: qui il tubetto è un vincolo dato, quindi il top load grande è l'unica leva per abbassare f.
+**Lettura ingegneristica della tabella**: la configurazione consigliata (0,15 mm + pallona Ø 12–15 cm) porta la risonanza a **~1,2–1,45 MHz** dove il TIP41C ha ancora β ≈ 2–2,5. Senza pallona grande si va a 1,8–2,4 MHz (β ≈ 1,2–1,7): alto rischio che non parta. Le build reali "lente" girano a 100–500 kHz [5][10] proprio perché hanno bobine fisicamente più grandi: qui il tubetto è un vincolo dato, quindi il top load grande è l'unica leva per abbassare f.
 
 ### 5.5 Primaria: 3–5 spire, accoppiamento, influenza
 
-- L1 (4 spire, Ø ~3,3 cm sull'esterno, filo isolato, altezza ~6 mm): Wheeler → **L1 ≈ 0,8 µH**. Reattanza a 1,2–1,5 MHz: X_L = 2πfL ≈ **6–7,5 Ω** → la primaria è "trasparente" alla corrente del collettore a queste frequenze (la corrente è limitata dal processo di oscillazione, non da X_L).
+- L1 (4 spire, Ø ~3,3 cm sull'esterno, filo isolato, altezza ~6 mm): Wheeler → **L1 ≈ 0,8 µH**. Reattanza a 1,2–1,5 MHz: X_L = 2πfL ≈ **6,2–7,7 Ω** → la primaria è "trasparente" alla corrente del collettore a queste frequenze (la corrente è limitata dal processo di oscillazione, non da X_L).
 - **Coefficiente di accoppiamento k ≈ 0,1–0,3** (stima tipica per primaria basale di 3–5 spire su secondaria lunga; valore coerente con le osservazioni dei forum sul forte accoppiamento posizionale [7][8]).
-- **Influenza sul punto di oscillazione**: la frequenza la decide SOLO L2·C_tot (è un risonatore serie alla risonanza); k e numero di spire primarie decidono QUANTO guadagno d'anello c'è (quanto "forte" è la spinta):
+- **Influenza sul punto di oscillazione**: la frequenza la decide in prima approssimazione L2·C_tot (risonatore serie; accoppiamento e capacità parassite la spostano di pochi punti percentuali), k e numero di spire primarie decidono QUANTO guadagno d'anello c'è (quanto "forte" è la spinta):
   - più spire primarie (5) → più tensione indotta, avvio più facile, ma più corrente e calore;
   - meno spire (3) → meno spinta, avvio più difficile.
   - La posizione della primaria (più su = più k) è una manopola di tuning fisica [8].
@@ -182,10 +183,10 @@ C_tot = C_med + C_top (il top load scherma parzialmente C_med: stima prudenziale
 ### 5.6 Resistore di base: corrente e dissipazione
 
 I_b = (V_bat − V_BE) / R = (12 − 0,7) / 10 000 = **1,13 mA**
-P_R = (12 − 0,7)² / 10 000 = **12,8 mW** → il resistor 0,25 W che ha Mauro è largamente sufficiente (margine ×20).
+P_R = (12 − 0,7)² / 10 000 = **12,8 mW** → il resistore 0,25 W che ha Mauro è largamente sufficiente (margine ×20).
 
 - Nelle build piccole 9 V si vedono 22k–47k (ElectroBOOM ≥ 22k [3], AAC «da 12k a 30k» [7]); **a 12 V con transistor di potenza a β basso, 10 k è ESATTAMENTE la scelta della build -max- (12 V, MJE3055, 10 k)** [5]. **Il 10 k che ha in casa va bene: si tiene.**
-- Perché serve più corrente di base qui: il TIP41C ha hFE min 15–30, quindi 1,13 mA di base sostiene fino a ~0,5–1 A di collettore in classe C con i picchi di β dinamico: coerente con l'assorbimento atteso.
+- Perché serve più corrente di base qui: il TIP41C ha hFE min 15–30, quindi i 1,13 mA di R servono ad innescare l'oscillazione: in regime la corrente di base dei picchi di collettore arriva dal feedback (fondo di L2), non da R — coerente con l'assorbimento atteso.
 - Manopola di tuning: se il transistor scotta e non oscilla → provare 22 k in serie (base "più piano"); se non parte proprio → accorciare verso 4,7 k (drive più duro). Farne menzione in §9.
 
 ### 5.7 Dissipazione del TIP41C e verifica dissipatore
@@ -194,7 +195,7 @@ Ipotesi prudenziali: f = 1,3 MHz, I_media collettore = 0,6 A, V_CE(sat) ≈ 1 V 
 
 - Perdite di conduzione: P_cond = V_CE(sat) × I_media = 1 × 0,6 = **0,6 W**
 - Perdite di commutazione: P_sw = V_bat × I_media × f × t_sw = 12 × 0,6 × 1,3e6 × 0,5e-6 × ½ ≈ **2,3 W** (fattore ½ per rampa lineare)
-- **P_tot ≈ 1–3 W** (range realistico: 1 W se oscilla "morbido", 3 W nel caso peggiverno con storage time che mangia metà periodo — il motivo per cui i BJT lenti scaldano in questi circuiti [10]).
+- **P_tot ≈ 1–3 W** (range realistico: 1 W se oscilla "morbido", 3 W nel caso peggiore con storage time che mangia metà periodo — il motivo per cui i BJT lenti scaldano in questi circuiti [10]).
 
 Verifica termica con il piccolo dissipatore + pasta termica (Rth totale reale stimata ~25 °C/W incluso strato pasta, TO-220):
 - ΔT = P × Rth = 3 W × 25 °C/W = **+75 °C** → Tj ≈ 100 °C a 25 °C ambiente: **OK, sotto i 150 °C** con margine, anche se al tatto sarà "molto caldo" (normale in queste build [5]).
@@ -293,16 +294,16 @@ Perché:
 | 5 | AAC "Problems with Slayer" | 2N2222A | 22 k (range 12–30 k) | — | — | 9 V | n.d. | n.d. | troubleshooting sistematico | [7] |
 | 6 | StackExchange "Larger Arcs" | **TIP41C** → MJE3055T | — | 850 spire | 4 spire | 40 V | n.d. | n.d. | arco 5 mm; TIP41C bruciato SENZA dissipatore | [10] |
 | 7 | maker.pro | **TIP41C** (swap da 2N2222A) | — | piccola | — | — | — | — | **NON oscilla** su build piccola | [9] |
-| — | **QUESTO PROGETTO (previsione)** | TIP41C | 10 k | 371–411 spire 0,15 mm, Ø3×7 cm | 4 spire | 12 V | **1,2–1,4 MHz** (top 12–15 cm) | **0,5–0,9 A** | LED 2–5 cm, neon 5–10 cm | §5 |
+| — | **QUESTO PROGETTO (previsione)** | TIP41C | 10 k | 360–411 spire 0,15 mm, Ø3×7 cm | 4 spire | 12 V | **1,2–1,45 MHz** (top 12–15 cm) | **0,5–0,9 A** | LED 2–5 cm, neon 5–10 cm | §5 |
 
-**Coerenza calcoli ↔ build**: il modello predice 1,003 MHz sulla bobina #1 (dichiarati ~1 MHz): scarto 3%. La build #3 (transistor lento, classe TIP41C) funziona a 100 kHz su bobina grande — coerente col nostro margine β: la differenza sta tutta nel rapporto fT/f. Nessuna divergenza sistematica dei calcoli: la correzione è passata alle CONDIZIONI DI PROGETTO (top load grande, filo 0,15, tuning).
+**Coerenza calcoli ↔ build**: il modello predice 1,003 MHz sulla bobina #1 (dichiarati ~1 MHz): scarto ~0,3%. La build #3 (transistor lento, classe TIP41C) funziona a 100 kHz su bobina grande — coerente col nostro margine β: la differenza sta tutta nel rapporto fT/f. Nessuna divergenza sistematica dei calcoli: la correzione è passata alle CONDIZIONI DI PROGETTO (top load grande, filo 0,15, tuning).
 
 ---
 
 ## 12. FONTI (tutti gli URL)
 
 1. Datasheet ST TIP41C/TIP42C (Rev 3, ott 2025): VCEO 100 V, IC 6 A, PTOT 65 W, RthJA 62,5 °C/W, RthJC 1,92 °C/W, VEBO 5 V, VCE(sat) 1,5 V, pin B-C-E — https://www.st.com/resource/en/datasheet/tip41c.pdf
-2. onsemi TIP41C: fT = 3,0 MHz (min) @ IC 500 mA — https://www.alldatasheet.com/html-pdf/12675/ONSEMI/TIP41C/180/1/TIP41C.html e conferma https://www.futureelectronics.com/p/8167300
+2. onsemi TIP41C (datasheet verificato): VCEO 100 V, VEBO 5 V, IC 6 A, hFE 30 min @ 0,3 A / 15–75 @ 3 A, fT 3,0 MHz (min) @ IC 500 mA, RthJA 62,5 °C/W, pin 1=Base 2=Collettore 3=Emettitore — https://www.onsemi.com/pdf/datasheet/tip41c-d.pdf (conferma ST: https://www.st.com/resource/en/datasheet/tip41c.pdf)
 3. ElectroBOOM, "Slayer Exciter Circuit with a Tesla Coil" (topologia, funzionamento passo-passo, diodo clamp −0,7 V, R ≥ 22k, 750 spire, risonanza ~1 MHz, assorbimento 0,2–0,8 A, versione MOSFET): https://www.electroboom.com/?p=521
 4. Instructables, "How to Build a Slayer Exciter" (22 k + 2N2222A, 250–325 spire 32 AWG, primaria 3–5 spire senso opposto, LED = diodo, sequenza cablaggio): https://www.instructables.com/How-to-Build-a-Slayer-Exciter/
 5. Instructables, "Building the Poor-mans Mini Tesla Coil (Slayer Exciter)" (12 V, MJE3055 + R 10 k, f misurata ~100 kHz, lista transistor equivalenti TIP3055/TIP31C/TIP41/2N3055, troubleshooting hot/cold, darlington): https://www.instructables.com/building-the-poor-mans-mini-tesla-coil-slayer-exc/
@@ -313,7 +314,7 @@ Perché:
 10. Electronics StackExchange, "Slayer Exciter: Aiming for Larger Arcs" (TIP41C, 850 spire, primaria 4 spire, 40 V, arco 5 mm, TIP bruciato senza dissipatore, MJE3055T migliore, inefficienza strutturale): https://electronics.stackexchange.com/questions/304763/slayer-exciter-aiming-for-larger-arcs
 11. Gary L. Johnson, "Solid State Tesla Coil" (2016, archive.org): formule di Wheeler (validazione ±1%) e Medhurst eq. 2.33–2.35 (C = H·D, H = 0,100976·(l/D)+0,30963 per l/D 2–8), taratura misure ±5%: https://archive.org/stream/solid-state-tesla-coil/TeslaBook_djvu.txt
 12. Tabella Medhurst (tabella H originale): https://waveguide.blog/history-tesla-coil-geometries/medhurst-coil-self-capacitance-table/
-13. BD139 onsemi: fT = 250 MHz, 1,5 A, TO-126: https://digiode.com/p/onsemi/bd139/1531626226
+13. BD139: fT = 190 MHz min @ IC 50 mA, VEBO 5 V, TO-126, pinout E-C-B — datasheet Philips/NXP: https://eandc.ru/pdf/import/bd135_137_139.pdf · onsemi: https://www.onsemi.com/pdf/datasheet/bd139-d.pdf · ST: https://www.st.com/resource/en/datasheet/bd139.pdf
 14. Esempio video build TIP41C (esistenza documentata, dimensioni bobina non dichiarate): https://www.youtube.com/watch?v=EPXVbkw9QwM
 15. Steemit, schema slayer con spiegazione C parassita/risonanza: https://steemit.com/technology/@elektr1ker/tesla-transformer-slayer-exciter-circuit
 16. Reddit r/AskElectronics, EMI da slayer exciter che fa suonare elettrodomestici (caso forno): https://www.reddit.com/r/AskElectronics/comments/mdz81q/whenever_i_turn_this_slayer_exciter_onoff_draw_an/

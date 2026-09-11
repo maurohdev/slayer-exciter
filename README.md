@@ -53,11 +53,11 @@ Maker principianti con basi di elettrotecnica: sai cos'è un transistor, un indu
 
 ## Stato del progetto
 
-**Prototipo documentato, non ancora costruito.** Questa repo nasce da un'analisi ingegneristica completa (calcoli verificati su build reali documentate, con fonti) ma **senza hardware ancora assemblato dalla repo stessa**. Le previsioni chiave: risonanza a ~1,2–1,4 MHz, assorbimento 0,5–0,9 A, dissipazione TIP41C 1–3 W.
+**Prototipo documentato, non ancora costruito.** Questa repo nasce da un'analisi ingegneristica completa (calcoli verificati su build reali documentate, con fonti) ma **senza hardware ancora assemblato dalla repo stessa**. Le previsioni chiave: risonanza a ~1,2–1,45 MHz, assorbimento 0,5–0,9 A, dissipazione TIP41C 1–3 W.
 
 **Chi lo costruisce è invitato ad aprire una issue** con le proprie misure: frequenza misurata, assorbimento, corrente di base, distanza di accensione, colpo d'occhio del setup. Ogni dato reale rende la documentazione migliore per il prossimo.
 
-> Nota onesta: con un transistor "lento" come il TIP41C su una bobina piccola (Ø 3 × 7 cm) l'avvio dell'oscillazione è **ai limiti della finestra di funzionamento** — per questo il progetto impone un top load grande (Ø 12–15 cm) e una procedura di tuning. Se non parte dopo il tuning, l'upgrade documentato è il BD139 (stesso cablaggio, fT 250 MHz). Tutti i dettagli nell'analisi.
+> Nota onesta: con un transistor "lento" come il TIP41C su una bobina piccola (Ø 3 × 7 cm) l'avvio dell'oscillazione è **ai limiti della finestra di funzionamento** — per questo il progetto impone un top load grande (Ø 12–15 cm) e una procedura di tuning. Se non parte dopo il tuning, l'upgrade documentato è il BD139 (stesso cablaggio, fT 190 MHz). Tutti i dettagli nell'analisi.
 
 ## Licenza
 
