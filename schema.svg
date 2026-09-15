@@ -9,8 +9,9 @@
   <path d="M260,80 H300" stroke="#24292e" stroke-width="2" fill="none"/>
   <!-- Binario +12V (rosso) -->
   <path d="M300,80 H840" stroke="#c0392b" stroke-width="2.5" fill="none"/>
-  <!-- Ramo condensatori di disaccoppio -->
-  <path d="M360,80 V132 M360,142 V172 M360,186 V540" stroke="#24292e" stroke-width="2" fill="none"/>
+  <!-- Rami condensatori di disaccoppio: C1 e C2 in PARALLELO tra +12V e GND -->
+  <path d="M330,80 V132 M330,142 V540" stroke="#24292e" stroke-width="2" fill="none"/>
+  <path d="M390,80 V172 M390,188 V540" stroke="#24292e" stroke-width="2" fill="none"/>
   <!-- R1 dal +12V alla base -->
   <path d="M660,80 V110" stroke="#24292e" stroke-width="2" fill="none"/>
   <path d="M660,210 V335" stroke="#24292e" stroke-width="2" fill="none"/>
@@ -51,14 +52,15 @@
   <text x="236" y="46" font-size="12" fill="#24292e" text-anchor="middle">SW1</text>
 
   <!-- C1 100 nF -->
-  <line x1="344" y1="132" x2="376" y2="132" stroke="#24292e" stroke-width="2.5"/>
-  <line x1="344" y1="142" x2="376" y2="142" stroke="#24292e" stroke-width="2.5"/>
-  <text x="338" y="140" font-size="12" fill="#24292e" text-anchor="end">C1 100 nF</text>
+  <line x1="314" y1="132" x2="346" y2="132" stroke="#24292e" stroke-width="2.5"/>
+  <line x1="314" y1="142" x2="346" y2="142" stroke="#24292e" stroke-width="2.5"/>
+  <text x="308" y="140" font-size="12" fill="#24292e" text-anchor="end">C1 100 nF</text>
   <!-- C2 470 uF elettrolitico -->
-  <line x1="348" y1="172" x2="372" y2="172" stroke="#24292e" stroke-width="2.5"/>
-  <path d="M348,188 Q360,178 372,188" stroke="#24292e" stroke-width="2.5" fill="none"/>
-  <text x="352" y="166" font-size="12" fill="#c0392b" font-weight="bold">+</text>
-  <text x="340" y="184" font-size="12" fill="#24292e" text-anchor="end">C2 470 µF 25 V</text>
+  <line x1="368" y1="172" x2="412" y2="172" stroke="#24292e" stroke-width="2.5"/>
+  <path d="M368,188 Q390,178 412,188" stroke="#24292e" stroke-width="2.5" fill="none"/>
+  <text x="372" y="166" font-size="12" fill="#c0392b" font-weight="bold">+</text>
+  <text x="308" y="184" font-size="12" fill="#24292e" text-anchor="end">C2 470 µF 25 V</text>
+  <text x="360" y="563" font-size="10" fill="#555" text-anchor="middle">C1/C2 saldati il più vicino possibile a C/E di Q1 (Fase E.4)</text>
 
   <!-- R1 10 kohm (zigzag verticale) -->
   <path d="M660,110 l12,10 l-24,20 l24,20 l-24,20 l24,20 l-12,10" stroke="#24292e" stroke-width="2" fill="none"/>
@@ -104,12 +106,14 @@
   <text x="772" y="476" font-size="10" fill="#555" text-anchor="middle">TIP41C = alternativa a bassa f (pinout B-C-E)</text>
 
   <!-- Nodi -->
-  <circle cx="360" cy="80" r="4" fill="#c0392b"/>
+  <circle cx="330" cy="80" r="4" fill="#c0392b"/>
+  <circle cx="390" cy="80" r="4" fill="#c0392b"/>
   <circle cx="660" cy="80" r="4" fill="#c0392b"/>
   <circle cx="840" cy="80" r="4" fill="#c0392b"/>
   <circle cx="660" cy="335" r="4" fill="#24292e"/>
   <circle cx="720" cy="335" r="4" fill="#24292e"/>
-  <circle cx="360" cy="540" r="4" fill="#24292e"/>
+  <circle cx="330" cy="540" r="4" fill="#24292e"/>
+  <circle cx="390" cy="540" r="4" fill="#24292e"/>
   <circle cx="720" cy="540" r="4" fill="#24292e"/>
 
   <!-- Etichette reti -->
