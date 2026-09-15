@@ -4,19 +4,25 @@ Guida pratica passo-passo, dalla bobina vuota al LED che si accende senza fili. 
 
 > Prima di iniziare leggi le avvertenze in fondo e la sezione sicurezza di [TEORIA_E_FUNZIONAMENTO.md](TEORIA_E_FUNZIONAMENTO.md). Tieni lo [schema](schema.svg) davanti: qui ci riferiamo a R1, Q1, L1, L2, LED1, C1/C2, F1 con quei nomi.
 
-**Tempo totale realistico: un pomeriggio (3–5 ore)**, di cui 1–2 solo per la bobinatura. Non avere fretta: la secondaria è il 50% del successo del progetto.
+**Tempo totale realistico: 5–8 ore** (v1.2), di cui **2–3 solo per la bobinatura** delle 500 spire. Non avere fretta: la secondaria è il 50% del successo del progetto.
 
 ---
 
 ## Fase A — La secondaria L2 (la parte che richiede pazienza)
 
-**Obiettivo**: **249 spire** di filo smaltato **0,25 mm** (scelta definitiva, decreto 11/09), adiacenti e tese, sul tubetto Ø 3 × 7 cm.
+**Obiettivo**: **500 spire nominali** di filo smaltato **0,25 mm** (v1.2, decreto 15/09 — tolleranza accettabile 480–500), adiacenti e tese, sul tubo **Ø 2,7 × 14 cm** (due tubi da 7 cm uniti).
 
-### A.1 Prepara il tubo
+### A.0 Prepara e unisci i due tubi (NOVITÀ v1.2 — punto critico n°1 del progetto)
 
-1. Rimuovi tappo ed etichetta. Il tubo deve essere asciutto e sgrassato (un passata di alcol).
-2. Pratica due forellini (~1 mm) ai lati del fondo del tubo: serviranno da ancoraggio per l'inizio del filo.
-3. Fai lo stesso in cima, appena sopra i 7 cm utili.
+1. Prendi **due tubi identici da 7 cm (Ø 2,7 cm)**. Rimuovi tappi ed etichette; devono essere asciutti e sgrassati (passata di alcol).
+2. **Giuntali con una stecca interna**: ritaglia una striscia di plastica robusta (o legnetta levigata) che entri a forza dentro i due tubi per ~2 cm per lato, al centro dell'assieme. La stecca deve essere LISCIA e portare i due tubi **perfettamente allineati**.
+3. Fascia la giunzione esterna con **nastro** (2–3 giri) portando la superficie a continuità: **nessun gradino, nessun avvallamento** dove appoggerà il filo.
+4. Perché è il punto critico n°1: il filo da 0,25 mm **si spezza sui gradini** durante la bobinatura a tensione costante. Fai scorrere un dito sulla giunzione: se senti lo scalino, rifinisci con altro nastro prima di iniziare.
+
+### A.1 Pratica gli ancoraggi
+
+1. Pratica due forellini (~1 mm) ai lati del fondo del tubo: serviranno da ancoraggio per l'inizio del filo.
+2. Fai lo stesso in cima, appena sopra i 14 cm utili.
 
 ### A.2 La tecnica per bobinare dritti senza impazzire
 
@@ -28,18 +34,18 @@ Il trucco è **non tenere il tubo in mano**: bloccalo.
 
 Regole d'oro:
 
-1. **Tensione costante, mai strappi**: il filo sottile si rompe se tiri. Se si spezza, non disperare: raschia lo smalto per ~1 cm su entrambi i capi, sovrapponili e salda con una goccia di stagno, isola con una goccia di smalto o di unghie, poi riprendi ad avvolgere.
-2. **Spire adiacenti, non sovrapposte**: ogni spira tocca la precedente. Se ne salti una, non tornare indietro: continua (una spira larga su 400 non cambia nulla).
-3. **Conta a blocchi**: segna ogni 50 spire con un pennarello sul tubo (o un post-it vicino). Le centinaia di spire contate una a una = errore garantito.
-4. **Lascia 10–15 cm di filo all'inizio** (lato fondo: andrà al nodo base) e **arriva a fine corsa in cima**: il tubo va riempito del tutto (**249 spire col 0,25 mm**). Un rocchetto da 50 g contiene ~114 m (rame; ~110 contando lo smalto): margine ~4,4× sul necessario, circa 4 riavvolgimenti completi per errori e riparazioni.
+1. **Tensione costante, mai strappi**: il filo sottile si rompe se tiri. Con 500 spire (v1.2) il rischio di rottura raddoppia rispetto alla v1.1: la tensione deve essere ancora più regolare, e occhio in particolare al passaggio sulla giunzione tra i due tubi (A.0). Se si spezza, non disperare: raschia lo smalto per ~1 cm su entrambi i capi, sovrapponili e salda con una goccia di stagno, isola con una goccia di smalto o di unghie, poi riprendi ad avvolgere.
+2. **Spire adiacenti, non sovrapposte**: ogni spira tocca la precedente. Se ne salti una, non tornare indietro: continua (una spira larga su 500 non cambia nulla).
+3. **Conta a blocchi da 50**: 500 spire = 10 blocchi; segna ogni blocco completato con un pennarello sul tubo (o un post-it vicino). Le centinaia di spire contate una a una = errore garantito.
+4. **Lascia 10–15 cm di filo all'inizio** (lato fondo: andrà al nodo base) e **arriva a fine corsa in cima**: il tubo va riempito del tutto. Target: **500 spire (tolleranza 480–500)** = 42,4 m di filo (+ ~2,6 m di terminazioni ≈ **45 m totali**). Il rotolo da 229 m ha margine ~5×: circa 5 riavvolgimenti completi per errori e riparazioni. **Conta le spire reali a fine lavoro: servono per ricalcolare la f** (tolleranza smalto 0,272–0,285 mm).
 5. **Fissaggio finale**: quando finisci, fissa le ultime spire con una striscia di nastro adesivo o una goccia di smalto/vernice/unghie su tutta la lunghezza (2–3 punti). La bobina non deve poter srotolarsi.
 
-> Verifica con il multimetro (fase F.1): la secondaria deve misurare **~8–9 Ω** in continua (R = ρ·l/A su 23,5–25,5 m di rame da 0,25 mm). Circuito aperto = filo rotto; ~0 Ω = spire in corto.
+> Verifica con il multimetro (fase F.1): la secondaria deve misurare **~15–16 Ω** in continua (R = ρ·l/A su 42,4–45 m di rame da 0,25 mm; calcolato 14,9 Ω — era 8–9 Ω nella v1.1). Circuito aperto = filo rotto (sospetta prima la giunzione tubi, vedi troubleshooting); ~0 Ω = spire in corto.
 
 ### A.3 Le due estremità
 
 - **Fondo (inizio filo)**: sarà collegato al **nodo base** (con R1 e LED1). Raschia lo smalto per 5 mm solo quando salderai.
-- **Cima (fine filo)**: sale dritta alla sferetta di stagnola. Non tagliarla corta: servirà per infilarla nel top load.
+- **Cima (fine filo)**: sale dritta alla sferetta di stagnola. Non tagliarla corta: servirà per infilarla nel top load. **Raschia lo smalto per 2–3 cm** in cima prima dell'installazione (serve per il contatto con la palla, Fase C).
 
 ---
 
@@ -54,21 +60,23 @@ Regole d'oro:
 
 ## Fase C — Il top load (la pallona)
 
-1. Stacca un foglio generoso di stagnola e **accartoccialo in una palla compatta da Ø 12–15 cm**. Non un ritaglio, non una pallina da 5 cm: una PALLONA. È la condizione di funzionamento del circuito (tiene la risonanza intorno a ~2 MHz, dove il BD139 titolare lavora con margine).
-2. Raschia lo smalto dell'estremità superiore della secondaria (5 mm), infilala dentro la palla e richiudi la stagnola attorno al filo.
-3. Il contatto stagnola–filo deve essere stretto (schiaccia bene). Appoggia poi la palla in cima al tubo: deve stare su da sola o con un collarino di nastro.
+1. Stacca un foglio generoso di stagnola e **accartoccialo in una palla compatta da Ø 12 cm**. Non un ritaglio, non una pallina da 5 cm: una PALLONA. È la condizione di funzionamento del circuito (tiene la risonanza intorno a ~1,7 MHz, dove il BD139 titolare lavora con margine ampio).
+2. La cima della secondaria dev'essere già raschiata per 2–3 cm (A.3): infilala dentro la palla, **schiaccia bene la stagnola attorno al filo** e richiudi.
+3. **TEST CONTINUITÀ (prima di fissare)**: col multimetro in Ω, misura tra il fondo della secondaria e la stagnola stessa (punta direttamente sulla palla): devi leggere **~15–16 Ω** (lo stesso valore della F.1 — stai misurando tutta la secondaria attraverso il contatto palla/filo). Se leggi un circuito aperto, il contatto stagnola–filo non tiene: riapri la palla, stringi di più o lava via residui di smalto, ritesta. SOLO quando la continuità è confermata fissa la palla in cima al tubo con nastro (deve stare su da sola o con un collarino).
+4. Il contatto stagnola–filo deve restare stretto: dopo il fissaggio, ripeti la misura di continuità una seconda volta.
 
 ---
 
 ## Fase D — Montaggio meccanico su base
 
 1. **Base**: un tagliere di legno o una tavoletta 15 × 20 cm circa. Tutto si monta SU una base: niente componenti penzolanti (l'HV non perdona i corti accidentali).
-2. **Posizioni** (con lo schema in mano):
-   - tubo con bobine in verticale al centro (fissalo con una fascetta a un angolare, o due sostegni di legno);
+2. **Zavorra al tappo (NOVITÀ v1.2)**: il tubo da 14 cm con la pallona in cima è alto e tende a rovesciarsi. Prima di fissare il tubo alla base, incolla a caldo **3–4 monete dentro il fondo del tubo** (o un dado grosso): il baricentro scende e l'assieme diventa stabile. La colla a caldo si rimuove se serve.
+3. **Posizioni** (con lo schema in mano):
+   - tubo con bobine in verticale al centro, **fissato alla basetta di legno con nastro spesso/nano** (fascetta + angolare, o due sostegni di legno — con la zavorra la tenuta laterale serve meno ma non farla mancare);
    - Q1 (BD139) con dissipatore + vite + velo di pasta termica, a 3–5 cm dalla base del tubo (i capi della primaria devono arrivarci senza tirare);
    - batteria sul retro della base, con fascette;
    - interruttore e portafusibile sul bordo anteriore, comodi da raggiungere.
-3. **Fusibile F1**: in serie sul polo **positivo** della batteria, **il più vicino possibile ai poli**, PRIMA dell'interruttore. T2A slow 5×20 mm.
+4. **Fusibile F1**: in serie sul polo **positivo** della batteria, **il più vicino possibile ai poli**, PRIMA dell'interruttore. T2A slow 5×20 mm.
 
 ---
 
@@ -94,8 +102,9 @@ Ordine consigliato (dal semplice al critico):
 
 | Check | Strumento | Valore atteso |
 |---|---|---|
-| Continuità secondaria (fondo–cima) | multimetro Ω | ~8–9 Ω (circuito aperto = filo rotto; ~0 Ω = spire in corto) |
-| Nessun corto +12 V ↔ GND | multimetro Ω | ≠ 0 (miglia di Ω o più) |
+| Continuità secondaria (fondo–cima) | multimetro Ω | **~15–16 Ω** (calcolato 14,9 Ω; era 8–9 Ω nella v1.1. Circuito aperto = filo rotto — sospetta la giunzione tubi; ~0 Ω = spire in corto) |
+| Continuità fondo–palla (top load) | multimetro Ω | **~15–16 Ω** (come sopra, attraverso il contatto stagnola–filo) |
+| Nessun corto +12 V ↔ GND | multimetro Ω | ≠ 0 (migliaia di Ω o più) |
 | Nodo base: LED1 nel verso giusto | diodo multimetro | conduce in un verso solo |
 | Fili primaria liberi e intercambiabili | occhio | sì (serviranno per il fix n°1) |
 
@@ -108,9 +117,9 @@ Se puoi: alimentatore da banco a **6 V con limitazione a 1 A**, oppure 4 pile AA
 | Assorbimento | **< 1 A** |
 | Transistor | **tiepido**, non bollente |
 | LED1 del circuito | si accende debolmente (indica oscillazione) |
-| Radio AM a 30–50 cm, sintonizzata su frequenza libera | **ronzio/fruscio violento** se oscilla: il circuito trasmette a ~2 MHz, dentro la banda MW |
+| Radio AM a 30–50 cm, sintonizzata su frequenza libera | **ronzio/fruscio** se oscilla (vedi sotto: a ridosso del limite MW) |
 
-**Il trucco della radio AM** (rivelatore di oscillazione low-cost): la frequenza di lavoro (~2 MHz) cade nella banda delle radio in AM (MW). Sintonizza una qualsiasi radio a pile su uno spazio vuoto della banda, avvicinala: se il circuito oscilla senti un rumore netto comparire — un "segnaletore" gratis, senza oscilloscopio, che senti anche quando l'accensione del LED non è visibile.
+**Il trucco della radio AM (rivelatore di oscillazione low-cost) — nota onesta v1.2**: la frequenza di lavoro attesa è **1,55–1,85 MHz**. La banda MW delle radio commerciali arriva tipicamente a 1700 kHz (estesa): quindi **solo la fascia 1,6–1,7 MHz è dentro banda**, mentre 1,7–1,85 MHz sta fuori. In pratica il trucco funziona comunque nella maggior parte dei casi (l'oscillatore in classe C emette un hash broadband + armoniche, e parte dell'energia cade sempre dentro la MW), ma **il ronzio è meno garantito che con un segnale centrale in banda**: avvicina bene la radio e prova più punti della scala alta (1,5–1,7 MHz). Alternativa se la radio resta muta ma sospetti che oscilli: guarda **LED1** (deve brillare debolmente), misura l'assorbimento (cambia quando l'oscillazione parte), o porta un LED/neon a 2–5 cm dalla palla.
 
 ### F.3 — Non oscilla? (la successione dei fix, in ordine)
 
@@ -126,9 +135,9 @@ Se puoi: alimentatore da banco a **6 V con limitazione a 1 A**, oppure 4 pile AA
 |---|---|
 | Assorbimento in regime | **0,5–0,9 A** (punte 2–3 A per pochi ms all'accensione: normali, il T2A slow le regge) |
 | Potenza | 6–11 W |
-| Transistor + dissipatore | **caldo** al tatto: normale (stima ~1–1,5 W su un dissipatore piccolo, da validare al collaudo) — se dopo ~1 minuto non riesci proprio a tenere il dito appoggiato, spegni e ricontrolla drive/oscillazione |
+| Transistor + dissipatore | **caldo** al tatto: normale (stima ~0,8–1,3 W su un dissipatore piccolo con la v1.2 a f più bassa, da validare al collaudo) — se dopo ~1 minuto non riesci proprio a tenere il dito appoggiato, spegni e ricontrolla drive/oscillazione |
 | Fusibile | NON deve saltare in regime |
-| Radio AM | ronzio netto |
+| Radio AM | ronzio presente ma meno garantito in banda (v. F.2: prova la scala alta 1,5–1,7 MHz) |
 
 ### F.5 — Test di distanza
 
@@ -141,7 +150,7 @@ Avvicina (tenendoli per la plastica, mai per i terminali):
 | CFL / tubo fluorescente | bagliore fino a **10–30 cm** |
 | Archetti da sferetta (cacciavite isolato) | **2–5 mm** |
 
-> Con la versione 0,25 mm/BD139 aspettarsi la **fascia bassa** degli intervalli finché non si misurano.
+> Con la v1.2 (500 spire, più avvolgimenti = più tensione in cima) aspettarsi la **fascia alta** degli intervalli finché non si misurano.
 
 ### F.6 — TEST FINALE ✅
 
@@ -156,10 +165,11 @@ Fatto? Complimenti, hai un oscillatore RF auto-risonante funzionante 🎉 Ora re
 | Sintomo | Causa probabile | Rimedio |
 |---|---|---|
 | Non oscilla nulla (radio muta, LED spento, assorbimento basso e costante) | Polarità primaria invertita | **Inverti i due fili della primaria** (fix n° 1) |
-| Ancora nulla dopo l'inversione | Guadagno d'anello insufficiente | +1–2 spire primarie (5–6), primaria più vicina al fondo, pallina più grande (Ø 12–15 cm) |
+| Circuit aperto alla verifica Ω (F.1), secondaria interrotta | **Filo rotto sulla giunzione tra i due tubi** (punto critico n°1 v1.2) | Individua il punto (spesso proprio sulla giunzione), raschia 1 cm per lato, salda con goccia di stagno, isola con smalto/unghie, riprendi |
+| Ancora nulla dopo l'inversione | Guadagno d'anello insufficiente | +1–2 spire primarie (5–6), primaria più vicina al fondo, pallina più grande (Ø 12+ cm) |
 | Transistor CALDO, nessun output, assorbimento alto | Drive base troppo duro O polarità sbagliata | 22 kΩ in serie a R1; ricontrolla polarità |
 | Transistor FREDDO, nessun output, assorbimento basso | Drive troppo timido o cablaggio feedback | Verso 4,7 kΩ; verifica FONDO L2 → nodo base |
-| Parte ma debole (distanze sotto le attese) | Batteria scarica, pallina piccola, primaria alta | Batteria carica (sempre), pallona Ø 12–15 cm, primaria più in basso |
+| Parte ma debole (distanze sotto le attese) | Batteria scarica, pallina piccola, primaria alta | Batteria carica (sempre), pallona Ø 12+ cm, primaria più in basso |
 | Fusibile che salta | Corto o transistor in corto C-E | Cerca corto cablaggio; sostituisci Q1 (prendine 2 in BOM per questo); NON sostituire con fusibile più grosso |
 | Oscilla poi si spegne | Batteria che cede sotto carico | Ricarica / battery pack sano; misura la tensione sotto carico |
 | LED1 sempre spento ma il circuito funziona | LED guasto o saldato al contrario | Sostituisci/gira (anodo verso GND, catodo verso base) |
@@ -174,7 +184,7 @@ Fatto? Complimenti, hai un oscillatore RF auto-risonante funzionante 🎉 Ora re
 2. **La sferetta non si tocca in funzione**: qualche kV a RF, corrente minima ma **scottature RF** reali.
 3. **≥ 50 cm da telefoni, PC, radio, schede di rete**: l'EMI di questi circuiti è documentata fino ad accendere elettrodomestici nei paraggi.
 4. **Una mano sola** quando sperimenti vicino al circuito acceso.
-5. **Dissipatore + pasta termica obbligatori**: da nudo il BD139 non regge nemmeno la dissipazione stimata (~1–1,5 W, stima da validare al collaudo).
+5. **Dissipatore + pasta termica obbligatori**: da nudo il BD139 non regge nemmeno la dissipazione stimata (~0,8–1,3 W, stima da validare al collaudo).
 6. Ogni modifica da spento; il transistor si tocca solo dopo qualche secondo.
 
 ---

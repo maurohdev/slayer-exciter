@@ -3,7 +3,7 @@
 > **Prezzi rilevati 11/09/2026, 17:20–18:30 CEST** (fonte: [`SHERLOCK_PREZZI.md`](SHERLOCK_PREZZI.md), che fa fede — link verificati con navigazione reale; filo 0,25 mm ri-verificato dal vivo alle 18:30). Nessun acquisto ancora fatto.
 > **Riverifica i prezzi al momento dell'ordine**: AliExpress applica coupon/monete variabili e i prezzi AE indicati sono "min-SKU" del listing (pagine prodotto protette da CAPTCHA).
 >
-> **Decreto (v1.1.0, 11/09):** filo secondaria = **Ø 0,25 mm, scelta DEFINITIVA** (249 spire, ~25,5 m; MAI comprare 0,15/0,20 mm). I link filo da 0,15 mm della prima rilevazione sono esclusi.
+> **Decreto (v1.2, 15/09):** filo secondaria = **Ø 0,25 mm, scelta DEFINITIVA** (500 spire su tubo Ø2,7×14, **~45 m**; MAI comprare 0,15/0,20 mm). I link filo da 0,15 mm della prima rilevazione sono esclusi. *(v1.1, 11/09: 249 spire, ~25,5 m.)*
 
 ---
 
@@ -36,7 +36,7 @@ Al checkout AE: controlla il prezzo degli SKU selezionati (TIP41C puro può cost
 
 | # | Componente | Prezzo | Link diretto |
 |---|-----------|-------:|--------------|
-| 1 | **⚠️ CRITICO — Rame smaltato Ø 0,25 mm, 229,15 m / 100 g** (serve ~25,5 m → margine ~9×) | € 12,20 | [dp/B07Q23LQBF](https://www.amazon.it/dp/B07Q23LQBF) |
+| 1 | **⚠️ CRITICO — Rame smaltato Ø 0,25 mm, 229,15 m / 100 g** (servono ~45 m v1.2 → margine ~5×) | € 12,20 | [dp/B07Q23LQBF](https://www.amazon.it/dp/B07Q23LQBF) |
 
 ### Ordine 2 — AliExpress · € 11,22 · 6 articoli (spedizione gratis ≥€10 ✅)
 
@@ -55,7 +55,7 @@ Al checkout AE: controlla il prezzo degli SKU selezionati (TIP41C puro può cost
 | Scenario | Totale | Note |
 |----------|-------:|------|
 | **✅ CONSIGLIATO — mix AE + AM** | **€ 23,42** | Filo certificato 0,25 mm in titolo (229 m) + lotti AE economici; zero spedizioni |
-| Tutto AliExpress (filo da selettore Ø) | € 13,25* | *Il diametro 0,25 dello SKU AE NON è verificabile lato prodotto (CAPTCHA): da verificare alla ricezione (multimetro ~8-9 Ω / calibro)* |
+| Tutto AliExpress (filo da selettore Ø) | € 13,25* | *Il diametro 0,25 dello SKU AE NON è verificabile lato prodotto (CAPTCHA): da verificare alla ricezione (multimetro ~15–16 Ω su 500 spire / calibro)* |
 | Tutto Amazon | € 49,87 | FBA gratis solo ≥€35 + spedizioni marketplace; costa **€ 26,45 in più** del mix |
 
 Il mix costa €10,17 più del "tutto AE" ma elimina il rischio di ritrovarsi in casa un rocchetto col diametro sbagliato (l'unico componente senza il quale il progetto non parte). Ha senso rischiare per €10 su 23? No.
@@ -66,18 +66,18 @@ Il mix costa €10,17 più del "tutto AE" ma elimina il rischio di ritrovarsi in
 
 ### 1. ⚠️ Rame smaltato Ø 0,25 mm · **BLOCCANTE, VOCE CRITICA — ORDINALO PER PRIMO**
 
-L'unica metratura critica del progetto: servono **~25,5 m** (249 spire + terminazioni). Il calendario parte da qui.
-All'arrivo: **annota la metratura reale** del rocchetto PRIMA di bobinare; a bobinatura finita il multimetro deve leggere **~8-9 Ω** (fase F.1 del manuale).
+L'unica metratura critica del progetto: servono **~45 m** (500 spire + terminazioni, v1.2). Il calendario parte da qui.
+All'arrivo: **annota la metratura reale** del rocchetto PRIMA di bobinare; a bobinatura finita il multimetro deve leggere **~15–16 Ω** (500 spire, fase F.1 del manuale).
 
 **SCELTA CONSIGLIATA** — [Amazon dp/B07Q23LQBF](https://www.amazon.it/dp/B07Q23LQBF)
 € 12,20 · **0,25 mm — 229,15 m / 100 g**, smalto semplice 155 °C (Cod. 10704000) · FREE delivery (primo ordine) · ETA ~1 settimana.
-Diametro e metratura **nel titolo del prodotto** (verificato dal vivo l'11/09 sera): zero ambiguità. 229 m = ~9× il necessario → margine per ~8 riavvolgimenti completi.
+Diametro e metratura **nel titolo del prodotto** (verificato dal vivo l'11/09 sera): zero ambiguità. 229 m = ~5× il necessario v1.2 (45 m) → margine per ~5 riavvolgimenti completi.
 
 **ALTERNATIVA** (spesa minima reale) — [Amazon dp/B0CSCLLTDV](https://www.amazon.it/dp/B0CSCLLTDV)
-€ 12,49 · 0,25 mm / **50 g** esatti (confermato in pagina), smalto poliureano+poliammide · FREE (primo ordine) · ETA ~1 settimana. Costa 29 centesimi in più per **metà filo** (~114 m, margine ~4,4× comunque abbondante): sensata solo se il 100 g finisse.
+€ 12,49 · 0,25 mm / **50 g** esatti (confermato in pagina), smalto poliureano+poliammide · FREE (primo ordine) · ETA ~1 settimana. Costa 29 centesimi in più per **metà filo** (~114 m, margine ~2,5× sui 45 m v1.2 — sufficiente ma senza scorta abbondante): sensata solo se il 100 g finisse.
 Terza via AM: [dp/B0FVFQPJ3S](https://www.amazon.it/dp/B0FVFQPJ3S) QUARKZMAN 114 m/50 g €12,99 (FREE solo ≥€35) — dominata dalle altre due.
 
-**Fallback economico AE** (~€4-5, non verificato lato prodotto) — [item/1005006345160960](https://it.aliexpress.com/item/1005006345160960.html): rotoli 50 g con selettore diametro 0,1-1,5 mm → seleziona 0,25 e **verifica alla ricezione** col multimetro (~8-9 Ω su tutta la bobina) e/o calibro. Comodo solo se ordini comunque da AE e accetti il rischio diametro. **MAI ripiegare su 0,15/0,20 mm** — decreto definitivo.
+**Fallback economico AE** (~€4-5, non verificato lato prodotto) — [item/1005006345160960](https://it.aliexpress.com/item/1005006345160960.html): rotoli 50 g con selettore diametro 0,1-1,5 mm → seleziona 0,25 e **verifica alla ricezione** col multimetro (**~15–16 Ω su tutta la bobina da 500 spire**, v1.2) e/o calibro. Comodo solo se ordini comunque da AE e accetti il rischio diametro. **MAI ripiegare su 0,15/0,20 mm** — decreto definitivo.
 
 ### 2. BD139 — TO-126 NPN 80 V 1,5 A, fT 190 MHz · **BLOCCANTE, transistor titolare**
 
