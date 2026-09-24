@@ -4,14 +4,14 @@ Tutti i numeri di questo progetto, con le formule che li generano. Ogni valore �
 
 > **Base scientifica**: ogni formula di questa pagina cita la fonte primaria accanto al titolo della sezione; l'elenco completo (datasheet, testi, build reali) è in [ANALISI_INGEGNERISTICA.md §12](ANALISI_INGEGNERISTICA.md#12-fonti-tutti-gli-url).
 
-Convenzioni: il tubo della secondaria è **Ø 2,7 cm × 14 cm di lunghezza utile (v1.2 — due tubi da 7 cm uniti)**, l'alimentazione è **12 V** (batteria Li-ion 3S), il transistor titolare è il **BD139** (fT 190 MHz); il TIP41C resta come alternativa documentata per l'uso a bassa frequenza. *(Storico v1.1: tubo Ø 3 × 7 cm, 249 spire.)*
+Convenzioni: il tubo della secondaria è **Ø reale 2,9 cm × 14 cm di lunghezza utile (v1.2.1 — due tubi da 7 cm uniti; 2,7 = nominale)**, l'alimentazione è **12 V** (batteria Li-ion 3S), il transistor titolare è il **BD139** (fT 190 MHz); il TIP41C resta come alternativa documentata per l'uso a bassa frequenza. *(Storico v1.1: tubo Ø 3 × 7 cm, 249 spire.)*
 
 ## 1. Spire e filo della secondaria
 
-**Circonferenza per spira (v1.2 — tubo Ø 2,7 cm, 2 tubi da 7 cm uniti = 14 cm utili)**:
+**Circonferenza per spira (v1.2.1 — tubo Ø reale 2,9 cm, 2 tubi da 7 cm uniti = 14 cm utili)**:
 
 ```
-c = π · D = π × 2,7 cm = 8,48 cm = 0,0848 m
+c = π · D = π × 2,9 cm = 9,11 cm = 0,0911 m
 ```
 
 **Spire massime** con avvolgimento adiacente (una spira accanto all'altra, passo = diametro del filo con smalto):
@@ -20,28 +20,28 @@ c = π · D = π × 2,7 cm = 8,48 cm = 0,0848 m
 N_max = lunghezza utile / passo = 140 mm / 0,28 mm = 500 → si tiene 500 spire nominali
 ```
 
-| Filo (rame smaltato) | Ø con smalto | N_max su 14 cm (v1.2) | N_max su 7 cm *(confronto storico)* |
+| Filo (rame smaltato) | Ø con smalto | N_max su 14 cm (v1.2.1) | N_max su 7 cm *(confronto storico)* |
 |---|---|---|---|
-| **0,25 mm — scelta definitiva (v1.2)** | ≈ 0,28 mm (range reale 0,272–0,285) | 140 / 0,28 = 500 → **500 spire nominali, tolleranza 480–500** | 70 / 0,28 = 250 → 249 spire *(v1.1 storica)* |
+| **0,25 mm — scelta definitiva (v1.2.1)** | ≈ 0,28 mm (range reale 0,272–0,285) | 140 / 0,28 = 500 → **500 spire nominali, tolleranza 480–500** | 70 / 0,28 = 250 → 249 spire *(v1.1 storica)* |
 | 0,20 mm *(confronto storico)* | ≈ 0,23 mm | 609 | 304 |
 | 0,15 mm *(confronto storico)* | ≈ 0,17 mm | 823 | 411 |
 
 **Lunghezza filo necessaria** (N × c):
 
-- **0,25 mm, 500 spire su 14 cm (v1.2 — SCELTA): 500 × 8,48 cm = 42,4 m** → + ~2,6 m di terminazioni (fondo→base, cima→sferetta) ≈ **45 m totali**. Rotolo acquistato 229 m: **margine ~5×**, circa 5 riavvolgimenti completi.
-- 0,20 mm su 14 cm (confronto): 609 × 8,48 cm = 51,6 m.
-- 0,15 mm su 14 cm (confronto): 823 × 8,48 cm = 69,7 m.
+- **0,25 mm, 500 spire su 14 cm (v1.2.1 — SCELTA): 500 × 9,11 cm = 45,6 m** → + ~2,6 m di terminazioni (fondo→base, cima→sferetta) ≈ **48 m totali**. Rotolo acquistato 229 m: **margine ~4,7×**, circa 4 riavvolgimenti completi.
+- 0,20 mm su 14 cm (confronto): 609 × 9,11 cm = 55,5 m.
+- 0,15 mm su 14 cm (confronto): 823 × 9,11 cm = 75,0 m.
 - *(storico v1.1, tubo 3×7)*: 0,25 mm → 249 spire / 23,5 m; 0,20 mm → 304 / 28,7 m; 0,15 mm → 411 / 38,7 m.
 
 **Resistenza elettrica della secondaria** (verifica al multimetro, collaudo F.1):
 
 ```
-R_DC = ρ · l / A = 1,724×10⁻⁸ Ωm × 42,4 m / (π/4 × 0,25² mm²) = 14,9 Ω
+R_DC = ρ · l / A = 1,724×10⁻⁸ Ωm × 45,6 m / (π/4 × 0,25² mm²) = 16,0 Ω
 ```
 
-Con le terminazioni (45 m totali) e la tolleranza del Ø: **valore atteso 15–16 Ω** (era 8–9 Ω nella v1.1). Circuito aperto = filo rotto; ~0 Ω = spire in corto.
+Con le terminazioni (48 m totali) e la tolleranza del Ø: **valore atteso 17–18 Ω** (era 15–16 Ω nella v1.2, 8–9 Ω nella v1.1). Circuito aperto = filo rotto; ~0 Ω = spire in corto.
 
-**Scelta (decreto Mauro 15/09 — v1.2): tubo Ø 2,7 × 14 cm, filo 0,25 mm, 500 spire nominali, 42,4 m + terminazioni ≈ 45 m totali.** Tolleranza dichiarata: **480–500 spire** (il Ø con smalto reale varia 0,272–0,285 mm; 500 è il nominale con passo 0,28). Il rotolo acquistato (229 m) dà margine ~5×: circa 5 riavvolgimenti completi — errori ed esperimenti non sono un problema. Ricalcolare sempre f con le spire REALI contate post-bobinatura. Conseguenze fisiche: L2 = 1,18 mH (Wheeler) → f = **1,55–1,85 MHz** con top load stagnola reale (centro ~1,69; range dichiarabile 1,6–1,85) → il TIP41C lì ha β ≈ 1,6–1,8 🔴 e resta escluso → **BD139 titolare** (fT 190 MHz: β ≈ 102–113). Verifica multimetro post-bobinatura: **~15–16 Ω**. Le righe 0,15/0,20 mm e il tubo 3×7 sopravvivono in questa pagina come puro confronto storico: mai voce d'acquisto o target di bobinatura.
+**Scelta (decreto Mauro 24/09 — v1.2.1): tubo Ø reale 2,9 × 14 cm (2,7 = nominale), filo 0,25 mm, 500 spire nominali, 45,6 m + terminazioni ≈ 48 m totali.** Tolleranza dichiarata: **480–500 spire** (il Ø con smalto reale varia 0,272–0,285 mm; 500 è il nominale con passo 0,28). Il rotolo acquistato (229 m) dà margine ~4,7×: circa 4 riavvolgimenti completi — errori ed esperimenti non sono un problema. Ricalcolare sempre f con le spire REALI contate post-bobinatura. Conseguenze fisiche: L2 = 1,35 mH (Wheeler; l/D 4,83 ora DENTRO il range 0,4–5) → f = **1,57–1,72 MHz** con top load stagnola reale (centro ~1,65; range dichiarabile 1,6–1,7) → il TIP41C lì ha β ≈ 1,7–1,9 🔴 e resta escluso → **BD139 titolare** (fT 190 MHz: β ≈ 110–121). Verifica multimetro post-bobinatura: **~17–18 Ω**. Le righe 0,15/0,20 mm e il tubo 3×7 sopravvivono in questa pagina come puro confronto storico: mai voce d'acquisto o target di bobinatura.
 
 > ⚠️ In pratica: contare le spire a blocchi da 50 (500 spire = 10 blocchi segnalati sul tubo a pennarello), non una a una — e verificare la metratura reale del rotolo prima di iniziare.
 
@@ -53,13 +53,14 @@ Per una bobina cilindrica a strato singolo, con r = raggio e l = lunghezza **in 
 L [µH] = r² · N² / (9r + 10l)
 ```
 
-Il nostro tubo (v1.2): r = 1,35 cm = 0,531 in; l = 14 cm = 5,512 in.
+Il nostro tubo (v1.2.1): r = 1,45 cm = 0,571 in; l = 14 cm = 5,512 in.
 
-> ⚠️ **Nota onesta (Wheeler fuori range)**: il nostro rapporto l/D = 14/2,7 = **5,19** esce di poco dal range di validità dichiarato di Wheeler (0,4–5): l'errore atteso resta contenuto (1–5%), coerente con la taratura ±5% di Johnson sulle misure sperimentali. Dichiarato qui per onestà scientifica; per la build il valore va comunque confermato dalla f misurata al collaudo.
+> ⚠️ **Nota onesta (Wheeler fuori range)**: col Ø nominale 2,7 il rapporto l/D = 14/2,7 = 5,19 usciva di poco dal range di validità dichiarato di Wheeler (0,4–5, errore atteso 1–5%); con il Ø reale 2,9 il rapporto scende a 14/2,9 = **4,83** → **dentro il range 0,4–5** ✓ (la geometria reale rende la stima più accurata). Per la build il valore va comunque confermato dalla f misurata al collaudo.
 
 | Configurazione | N | L (Wheeler) |
 |---|---|---|
-| **0,25 mm, 500 spire su Ø2,7×14 — SCELTA v1.2** | **500** | **1179 µH ≈ 1,18 mH** |
+| **0,25 mm, 500 spire su Ø2,9×14 — SCELTA v1.2.1** | **500** | **1352 µH ≈ 1,35 mH** |
+| 0,25 mm, 500 spire su Ø2,7×14 *(v1.2, Ø nominale)* | 500 | 1179 µH ≈ 1,18 mH |
 | 0,25 mm, 249 spire su Ø3×7 *(v1.1 storica)* | 249 | 660 µH ≈ 0,66 mH |
 | 0,20 mm, tubo 3×7 pieno *(confronto)* | 304 | 977 µH ≈ 0,98 mH |
 | 0,15 mm, tubo 3×7 pieno *(confronto)* | 411 | **1786 µH ≈ 1,8 mH** |
@@ -69,13 +70,13 @@ Il nostro tubo (v1.2): r = 1,35 cm = 0,531 in; l = 14 cm = 5,512 in.
 
 ## 3. Capacità: della bobina (Medhurst) + top load
 
-**Capacità propria della bobina** (formula di Medhurst, valida per l/D tra 2 e 8; nostro l/D = 14/2,7 = **5,19** — dentro il range Medhurst; tabella H originale in G. L. Johnson, op. cit., eq. 2.33–2.35, e https://waveguide.blog/history-tesla-coil-geometries/medhurst-coil-self-capacitance-table/):
+**Capacità propria della bobina** (formula di Medhurst, valida per l/D tra 2 e 8; nostro l/D = 14/2,9 = **4,83** — dentro il range Medhurst; tabella H originale in G. L. Johnson, op. cit., eq. 2.33–2.35, e https://waveguide.blog/history-tesla-coil-geometries/medhurst-coil-self-capacitance-table/):
 
 ```
 C_med [pF] = H · D[cm]      con H = 0,100976 · (l/D) + 0,30963
 
-H = 0,100976 × 5,19 + 0,30963 = 0,833
-C_med = 0,833 × 2,7 = 2,25 pF
+H = 0,100976 × 4,83 + 0,30963 = 0,797
+C_med = 0,797 × 2,9 = 2,31 pF
 ```
 
 **Capacità del top load** (sfera isolata: C [pF] = 1,1128 · r[cm], dall'elettrostatica classica C = 4πε₀·r — NEETS Module 9: https://tpub.com/neets/book9/35d.htm; una pallina di stagnola accartocciata vale ~60–80% di una sfera liscia equivalente):
@@ -88,7 +89,7 @@ C_med = 0,833 × 2,7 = 2,25 pF
 | Pallona Ø 15 cm (r = 7,5) | 8,3 pF | ~5,0–6,7 pF | se c'è pazienza |
 | Pallona Ø 20 cm (r = 10) | 11,1 pF | ~6,7–8,9 pF | opzionale |
 
-**C_tot (v1.2) = C_med 2,25 + C_top reale 4,0–5,3 pF = 6,2–7,5 pF.**
+**C_tot (v1.2.1) = C_med 2,31 + C_top reale 4,0–5,3 pF = 6,3–7,6 pF.**
 
 ## 4. Frequenza di risonanza
 
@@ -100,19 +101,20 @@ C_tot = C_med + C_top (stima prudenziale: somma piena, senza scontare la scherma
 
 | Configurazione | L | C_tot (stagnola reale) | f risultante | β TIP41C (≈ fT/f, fT = 3 MHz) | β BD139 (≈ fT/f, fT = 190 MHz) |
 |---|---|---|---|---|---|
-| **0,25 mm, 500 spire su Ø2,7×14 — SCELTA v1.2** | 1,18 mH | 6,2–7,5 pF | **1,55–1,85 MHz** (centro ~1,69) | 1,6–1,8 🔴 non affidabile | **≈ 102–113 ✅** |
+| **0,25 mm, 500 spire su Ø2,9×14 — SCELTA v1.2.1** | 1,35 mH | 6,3–7,6 pF | **1,57–1,72 MHz** (centro ~1,65) | 1,7–1,9 🔴 non affidabile | **≈ 110–121 ✅** |
+| *(v1.2, Ø nominale 2,7)* 500 spire su Ø2,7×14 | 1,18 mH | 6,2–7,5 pF | 1,55–1,85 MHz (centro ~1,69) | 1,6–1,8 🔴 | ≈ 102–113 ✅ |
 | (confronto) 0,25 mm, 249 spire su Ø3×7 *(v1.1)* | 0,66 mH | 8,3–10,0 pF | 1,96–2,15 MHz | 1,4–1,5 🔴 | ≈ 88–97 ✅ |
 | (confronto) 0,20 mm, 304 spire su 3×7 | 0,98 mH | 8,3–10,0 pF | 1,61–1,77 MHz | 1,7–1,9 ⚠ | ≈ 107–118 ✅ |
 | (confronto) 0,15 mm, 411 spire su 3×7 | 1,79 mH | 8,3–10,0 pF | **1,19–1,31 MHz** | **2,3–2,5** ✔ | ≈ 145–160 ✅ |
 | (confronto) 0,15 mm, 371 spire su 3×7 | 1,45 mH | 8,3–10,0 pF | 1,32–1,45 MHz | 2,1–2,3 ✔ | ≈ 131–144 ✅ |
-| (confronto) v1.2 con top 15 cm | 1,18 mH | 7,3–9,0 pF | 1,53–1,80 MHz | 1,7–2,0 ⚠ | ≈ 105–124 ✅ |
+| (confronto) v1.2.1 con top 15 cm | 1,35 mH | 7,3–9,0 pF | 1,44–1,60 MHz | 1,9–2,1 ⚠ | ≈ 119–132 ✅ |
 
-**Lettura**: con la scelta v1.2 (500 spire + pallona Ø 12 cm reale) la risonanza scende a **1,55–1,85 MHz**: lì il TIP41C ha β ≈ 1,6–1,8 🔴 e NON è affidabile — per questo **il transistor titolare è il BD139** (fT 190 MHz: β ≈ 102–113 nella stessa banda). Il TIP41C resta praticabile solo riabbassando ulteriormente la f (filo più fine sullo stesso tubo, oppure top load enorme): le righe 0,15/0,20 mm della tabella sono esattamente quel confronto. **Nota onesta**: i valori usano la stagnola accartocciata reale (60–80% della sfera liscia); con una sfera liscia equivalente la f scenderebbe a ~1,55 MHz al limite basso. La f finale dipende dalle spire REALI post-bobinatura (tolleranza 480–500): ricalcolare dopo il conteggio. Il top load resta l'unica leva per abbassare f su un tubo dato.
+**Lettura**: con la scelta v1.2.1 (500 spire + pallona Ø 12 cm reale) la risonanza scende a **1,57–1,72 MHz**: lì il TIP41C ha β ≈ 1,7–1,9 🔴 e NON è affidabile — per questo **il transistor titolare è il BD139** (fT 190 MHz: β ≈ 110–121 nella stessa banda). Il TIP41C resta praticabile solo riabbassando ulteriormente la f (filo più fine sullo stesso tubo, oppure top load enorme): le righe 0,15/0,20 mm della tabella sono esattamente quel confronto. **Nota onesta**: i valori usano la stagnola accartocciata reale (60–80% della sfera liscia); con una sfera liscia equivalente la f scenderebbe a ~1,44 MHz al limite basso. La f finale dipende dalle spire REALI post-bobinatura (tolleranza 480–500): ricalcolare dopo il conteggio. Il top load resta l'unica leva per abbassare f su un tubo dato.
 
 ## 5. La primaria
 
-- **4 spire** (range 3–5), filo isolato, avvolta alla base del tubo (Ø ~3,1 cm sull'esterno, altezza ~6 mm): Wheeler → **L1 ≈ 0,76 µH**.
-- Reattanza a 1,55–1,85 MHz: X_L = 2π·f·L1 ≈ **7,4–8,8 Ω** → resta "trasparente" per la corrente di collettore (che è limitata dal processo di oscillazione, non da X_L).
+- **4 spire** (range 3–5), filo isolato, avvolta alla base del tubo (Ø ~3,3 cm sull'esterno, altezza ~6 mm): Wheeler → **L1 ≈ 0,82 µH**.
+- Reattanza a 1,57–1,72 MHz: X_L = 2π·f·L1 ≈ **8,1–8,9 Ω** → resta "trasparente" per la corrente di collettore (che è limitata dal processo di oscillazione, non da X_L).
 - Accoppiamento **k ≈ 0,08–0,2** (v1.2: la primaria copre solo lo 0,8% delle 500 spire — accoppiamento più lento rispetto al tubo corto v1.1, dove k ≈ 0,1–0,3).
 - Rapporto spire **500/4 = 125:1** (v1.1: 62:1). La frequenza la decide in prima approssimazione L2·C_tot (k e le parassite la spostano di pochi punti percentuali); k e numero di spire primarie decidono quanto guadagno d'anello c'è: più spire (5) = spinta più forte ma più calore; meno (3) = avvio più difficile. La posizione della primaria (più su = più k) è una manopola di tuning fisica.
 - **Senso di avvolgimento opposto alla secondaria** — che in pratica si traduce in: "se non oscilla, inverti i due fili della primaria" (fix n°1 del tuning).
@@ -131,17 +133,17 @@ Il resistore da 0,25 W che avevamo in casa ha margine ×20: perfetto.
 
 ## 7. Dissipazione: BD139 titolare (~0,8–1,3 W stimati), TIP41C riferimento storico
 
-**BD139 — transistor titolare (decreto 11/09).** Con fT 190 MHz la commutazione è pulita e il tempo di transizione stimato resta t_sw ≈ 0,1 µs; la v1.2 lavora a f più bassa (1,55–1,85 MHz) → meno cicli di commutazione al secondo → meno P_sw:
+**BD139 — transistor titolare (decreto 11/09).** Con fT 190 MHz la commutazione è pulita e il tempo di transizione stimato resta t_sw ≈ 0,1 µs; la v1.2.1 lavora a f più bassa (1,57–1,72 MHz) → meno cicli di commutazione al secondo → meno P_sw:
 
 ```
-Ipotesi: f = 1,55–1,85 MHz (centro 1,7), I_media collettore = 0,6 A, V_CE(sat) ≈ 1 V, t_sw ≈ 0,1 µs
+Ipotesi: f = 1,57–1,72 MHz (centro 1,65), I_media collettore = 0,6 A, V_CE(sat) ≈ 1 V, t_sw ≈ 0,1 µs
 
 Perdite di conduzione:
   P_cond = V_CE(sat) × I_media = 1 × 0,6 = 0,6 W
 
 Perdite di commutazione:
   P_sw = V_bat × I_media × f × t_sw × ½
-       = 12 × 0,6 × 1,7×10⁶ × 0,1×10⁻⁶ × ½ ≈ 0,6 W       (½ = rampa lineare)
+       = 12 × 0,6 × 1,65×10⁶ × 0,1×10⁻⁶ × ½ ≈ 0,6 W       (½ = rampa lineare)
 
 Totale stimato: P_tot ≈ 0,8–1,3 W
 ```
@@ -162,7 +164,7 @@ P_sw   = 12 × 0,6 × 1,3×10⁶ × 0,5×10⁻⁶ × ½ ≈ 2,3 W
 Totale: P_tot ≈ 1–3 W
 ```
 
-A 1,55–1,85 MHz il TIP41C è escluso per **doppio motivo**: β ≈ 1,6–1,8 (guadagno insufficiente) e t_sw ~0,5 µs che supera il mezzo periodo (~0,27–0,32 µs) — non completrebbe nemmeno la transizione. Nota termica storica: da nudo (RthJA = 62,5 °C/W) i 3 W del caso peggiore davano +188 °C, fuori specifica di oltre 100 °C (build documentate con TIP41C senza dissipatore = transistor bruciato).
+A 1,57–1,72 MHz il TIP41C è escluso per **doppio motivo**: β ≈ 1,7–1,9 (guadagno insufficiente) e t_sw ~0,5 µs che supera il mezzo periodo (~0,29–0,32 µs) — non completrebbe nemmeno la transizione. Nota termica storica: da nudo (RthJA = 62,5 °C/W) i 3 W del caso peggiore davano +188 °C, fuori specifica di oltre 100 °C (build documentate con TIP41C senza dissipatore = transistor bruciato).
 
 ## 8. Assorbimento totale e autonomia
 

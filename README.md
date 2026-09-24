@@ -1,6 +1,6 @@
 # ⚡ Slayer Exciter 12 V — mini bobina di Tesla da tavolo
 
-Mini bobina di Tesla a stato solido (topologia *Slayer Exciter*) che accende **LED e lampade al gas (neon, CFL) semplicemente avvicinandole**, senza cavi né contatti. Alimenta tutto una batteria Li-ion da 12 V, il circuito sono ~9 componenti, e il cuore è un **BD139** (fT 190 MHz). **Versione attuale v1.2: secondaria in filo 0,25 mm, 500 spire su tubo Ø 2,7 × 14 cm (2 tubi uniti) + transistor titolare BD139.**
+Mini bobina di Tesla a stato solido (topologia *Slayer Exciter*) che accende **LED e lampade al gas (neon, CFL) semplicemente avvicinandole**, senza cavi né contatti. Alimenta tutto una batteria Li-ion da 12 V, il circuito sono ~9 componenti, e il cuore è un **BD139** (fT 190 MHz). **Versione attuale v1.2.1: secondaria in filo 0,25 mm, 500 spire su tubo Ø reale 2,9 × 14 cm (2 tubi uniti; 2,7 = nominale) + transistor titolare BD139.**
 
 Se hai basi di elettrotecnica e un saldatore, questo è uno dei progetti HV (alta tensione) più soddisfacenti col miglior rapporto semplicità/effetto che esista.
 
@@ -53,11 +53,11 @@ Maker principianti con basi di elettrotecnica: sai cos'è un transistor, un indu
 
 ## Stato del progetto
 
-**Prototipo documentato, non ancora costruito.** Questa repo nasce da un'analisi ingegneristica completa (calcoli verificati su build reali documentate, con fonti) ma **senza hardware ancora assemblato dalla repo stessa**. Le previsioni chiave (v1.2): risonanza a 1,55–1,85 MHz (centro ~1,69; range dichiarabile 1,6–1,85), assorbimento 0,5–0,9 A (stima), dissipazione BD139 ~0,8–1,3 W (stima da validare al collaudo), R DC secondaria attesa 15–16 Ω.
+**Prototipo documentato, non ancora costruito.** Questa repo nasce da un'analisi ingegneristica completa (calcoli verificati su build reali documentate, con fonti) ma **senza hardware ancora assemblato dalla repo stessa**. Le previsioni chiave (v1.2.1): risonanza a 1,57–1,72 MHz (centro ~1,65; range dichiarabile 1,6–1,7), assorbimento 0,5–0,9 A (stima), dissipazione BD139 ~0,8–1,3 W (stima da validare al collaudo), R DC secondaria attesa 17–18 Ω.
 
 **Chi lo costruisce è invitato ad aprire una issue** con le proprie misure: frequenza misurata, assorbimento, corrente di base, distanza di accensione, colpo d'occhio del setup. Ogni dato reale rende la documentazione migliore per il prossimo.
 
-> Nota onesta: la secondaria v1.2 (0,25 mm, 500 spire su Ø 2,7 × 14 cm) porta la risonanza a ~1,7 MHz — fuori dalla portata del TIP41C (β ≈ 1,6–1,8), per questo il transistor titolare è il BD139 (fT 190 MHz, β ≈ 102–113 a 1,55–1,85 MHz, margine d'avvio ~34–38×). Il TIP41C resta come alternativa documentata per build a bassa frequenza. La formula di Wheeler esce di poco dal suo range di validità sulla nostra geometria (l/D 5,19 vs 0,4–5: errore atteso 1–5%) — dichiarato per onestà, conferma dalla f misurata. Tutti i dettagli nell'analisi.
+> Nota onesta: la secondaria v1.2.1 (0,25 mm, 500 spire su Ø reale 2,9 × 14 cm) porta la risonanza a ~1,65 MHz — fuori dalla portata del TIP41C (β ≈ 1,7–1,9), per questo il transistor titolare è il BD139 (fT 190 MHz, β ≈ 110–121 a 1,57–1,72 MHz, margine d'avvio ~37–40×). Il TIP41C resta come alternativa documentata per build a bassa frequenza. Col diametro reale 2,9 la formula di Wheeler rientra nel suo range di validità (l/D 4,83 dentro 0,4–5; col nominale 2,7 era 5,19, fuori di poco). Tutti i dettagli nell'analisi.
 
 ## Licenza
 

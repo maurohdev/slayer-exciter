@@ -60,19 +60,19 @@ Schema completo con valori: [schema.svg](schema.svg).
 
 ## 4. La risonanza: secondaria + top load
 
-La secondaria è un induttore con una sua capacità parassita (capacità distribuita tra spire e verso l'ambiente, ~2,25 pF per la nostra geometria). Il top load aggiunge capacità concentrata in cima. Insieme formano un circuito risonante:
+La secondaria è un induttore con una sua capacità parassita (capacità distribuita tra spire e verso l'ambiente, ~2,31 pF per la nostra geometria). Il top load aggiunge capacità concentrata in cima. Insieme formano un circuito risonante:
 
 ```
 f = 1 / (2π·√(L·C_tot))     con C_tot = C_bobina + C_topload
 ```
 
-Nel nostro progetto (dettagli in [CALCOLI_E_FORMULE.md](CALCOLI_E_FORMULE.md)): L = 1,18 mH (500 spire, filo 0,25 mm su tubo Ø 2,7 × 14 cm), C_tot ≈ 6,2–7,5 pF con stagnola reale → **f ≈ 1,55–1,85 MHz** (centro ~1,69; con sfera liscia ideale scenderebbe a ~1,55). Range dichiarabile: **1,6–1,85 MHz**.
+Nel nostro progetto (dettagli in [CALCOLI_E_FORMULE.md](CALCOLI_E_FORMULE.md)): L = 1,35 mH (500 spire, filo 0,25 mm su tubo Ø reale 2,9 × 14 cm — nominale 2,7), C_tot ≈ 6,3–7,6 pF con stagnola reale → **f ≈ 1,57–1,72 MHz** (centro ~1,65; con sfera liscia ideale scenderebbe a ~1,44). Range dichiarabile: **1,6–1,7 MHz**.
 
-**Perché il top load DEVE essere grande (Ø 12 cm)**: più capacità → frequenza più bassa → più tempo per ogni ciclo, e meno richiesto al transistor. Col filo 0,25 mm a 500 spire nominali (tolleranza 480–500, v. CALCOLI §1) la risonanza sta a ~1,7 MHz: lì il titolare **BD139** (fT 190 MHz) ha ancora β ≈ 102–113 e commuta pulito; il TIP41C (fT 3 MHz minimo: a 3 MHz il guadagno β è sceso a 1) a 1,7 MHz ha β ≈ 1,6–1,8 e quasi certamente **non parte** — per questo è declassato ad alternativa a bassa f. Il top load grande non è estetica: tiene la frequenza nella finestra giusta.
+**Perché il top load DEVE essere grande (Ø 12 cm)**: più capacità → frequenza più bassa → più tempo per ogni ciclo, e meno richiesto al transistor. Col filo 0,25 mm a 500 spire nominali (tolleranza 480–500, v. CALCOLI §1) la risonanza sta a ~1,65 MHz: lì il titolare **BD139** (fT 190 MHz) ha ancora β ≈ 110–121 e commuta pulito; il TIP41C (fT 3 MHz minimo: a 3 MHz il guadagno β è sceso a 1) a 1,65 MHz ha β ≈ 1,7–1,9 e quasi certamente **non parte** — per questo è declassato ad alternativa a bassa f. Il top load grande non è estetica: tiene la frequenza nella finestra giusta.
 
 ```
         RISONANZA L2 + top load           BD139 (fT 190 MHz)        TIP41C (fT 3 MHz)
-  top Ø 12 cm:     1,55–1,85 MHz  →   β ≈ 102–113 → oscilla   β ≈ 1,6–1,8 → non parte
+  top Ø 12 cm:     1,57–1,72 MHz  →   β ≈ 110–121 → oscilla   β ≈ 1,7–1,9 → non parte
   f alta (top piccolo):  ~2 MHz+  →   β ≈ 95     → oscilla    β ≈ 1,5    → non parte
 ```
 
@@ -88,9 +88,9 @@ Distanze indicative a 12 V: LED 2–5 cm, neon 5–10 cm, CFL/tubo 10–30 cm (b
 
 | Componente | Ruolo |
 |---|---|
-| **Q1 BD139** | L'interruttore elettronico **titolare** (decreto 11/09): 80 V / 1,5 A di targa, fT 190 MHz → a 1,55–1,85 MHz β ≈ 102–113 e commutazione pulita (dissipazione stimata ~0,8–1,3 W, da validare al collaudo). Va in dissipatore + pasta comunque. ⚠️ Pinout E-C-B (1=Emettitore, 2=Collettore, 3=Base), diverso dal B-C-E del TIP41C. |
+| **Q1 BD139** | L'interruttore elettronico **titolare** (decreto 11/09): 80 V / 1,5 A di targa, fT 190 MHz → a 1,57–1,72 MHz β ≈ 110–121 e commutazione pulita (dissipazione stimata ~0,8–1,3 W, da validare al collaudo). Va in dissipatore + pasta comunque. ⚠️ Pinout E-C-B (1=Emettitore, 2=Collettore, 3=Base), diverso dal B-C-E del TIP41C. |
 | **L1 primaria (4 spire, filo isolato)** | Il ramo di POTENZA: trasferisce l'energia dal collettore alla secondaria per accoppiamento magnetico. 3–5 spire, avvolta alla base del tubo, **senso di avvolgimento opposto alla secondaria** (equivalente pratico: prova a invertire i due fili se non oscilla). |
-| **L2 secondaria (500 spire, 0,25 mm)** | Il risonatore: l'induttanza alta + capacità parassita/top load fanno la frequenza (L 1,18 mH → ~1,7 MHz col top load). Il filo FINE inizia alla base e finisce in cima sulla sferetta. |
+| **L2 secondaria (500 spire, 0,25 mm)** | Il risonatore: l'induttanza alta + capacità parassita/top load fanno la frequenza (L 1,35 mH → ~1,65 MHz col top load). Il filo FINE inizia alla base e finisce in cima sulla sferetta. |
 | **Top load stagnola Ø 12 cm** | Capacità terminale: tiene la risonanza intorno a ~1,7 MHz, finestra in cui il BD139 titolare lavora con margine ampio. È una condizione di funzionamento, non un dettaglio. |
 | **R 10 kΩ** | **Resistore di avvio**: fornisce la prima corrente di base (1,13 mA) che innesca l'oscillazione; poi il feedback prende il sopravvento e lo "bypassa". A 12 V con transistor di potenza è il valore esatto della build di riferimento. Non (solo) un limitatore protettivo. |
 | **LED (catodo alla base)** | Doppio uso: **diodo di clamp** che limita le escursioni negative della base a −0,7 V (protegge la giunzione B-E, VEBO max 5 V) **e** indicatore di accensione. In alternativa un 1N4148 (4 ns, più veloce). |

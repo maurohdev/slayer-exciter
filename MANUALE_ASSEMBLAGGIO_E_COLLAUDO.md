@@ -10,11 +10,11 @@ Guida pratica passo-passo, dalla bobina vuota al LED che si accende senza fili. 
 
 ## Fase A — La secondaria L2 (la parte che richiede pazienza)
 
-**Obiettivo**: **500 spire nominali** di filo smaltato **0,25 mm** (v1.2, decreto 15/09 — tolleranza accettabile 480–500), adiacenti e tese, sul tubo **Ø 2,7 × 14 cm** (due tubi da 7 cm uniti).
+**Obiettivo**: **500 spire nominali** di filo smaltato **0,25 mm** (v1.2, decreto 15/09 — tolleranza accettabile 480–500), adiacenti e tese, sul tubo **Ø reale 2,9 × 14 cm** (due tubi da 7 cm uniti; 2,7 = nominale).
 
 ### A.0 Prepara e unisci i due tubi (NOVITÀ v1.2 — punto critico n°1 del progetto)
 
-1. Prendi **due tubi identici da 7 cm (Ø 2,7 cm)**. Rimuovi tappi ed etichette; devono essere asciutti e sgrassati (passata di alcol).
+1. Prendi **due tubi identici da 7 cm (Ø nominale 2,7 cm, reale ~2,9)**. Rimuovi tappi ed etichette; devono essere asciutti e sgrassati (passata di alcol).
 2. **Giuntali con una stecca interna**: ritaglia una striscia di plastica robusta (o legnetta levigata) che entri a forza dentro i due tubi per ~2 cm per lato, al centro dell'assieme. La stecca deve essere LISCIA e portare i due tubi **perfettamente allineati**.
 3. Fascia la giunzione esterna con **nastro** (2–3 giri) portando la superficie a continuità: **nessun gradino, nessun avvallamento** dove appoggerà il filo.
 4. Perché è il punto critico n°1: il filo da 0,25 mm **si spezza sui gradini** durante la bobinatura a tensione costante. Fai scorrere un dito sulla giunzione: se senti lo scalino, rifinisci con altro nastro prima di iniziare.
@@ -37,10 +37,10 @@ Regole d'oro:
 1. **Tensione costante, mai strappi**: il filo sottile si rompe se tiri. Con 500 spire (v1.2) il rischio di rottura raddoppia rispetto alla v1.1: la tensione deve essere ancora più regolare, e occhio in particolare al passaggio sulla giunzione tra i due tubi (A.0). Se si spezza, non disperare: raschia lo smalto per ~1 cm su entrambi i capi, sovrapponili e salda con una goccia di stagno, isola con una goccia di smalto o di unghie, poi riprendi ad avvolgere.
 2. **Spire adiacenti, non sovrapposte**: ogni spira tocca la precedente. Se ne salti una, non tornare indietro: continua (una spira larga su 500 non cambia nulla).
 3. **Conta a blocchi da 50**: 500 spire = 10 blocchi; segna ogni blocco completato con un pennarello sul tubo (o un post-it vicino). Le centinaia di spire contate una a una = errore garantito.
-4. **Lascia 10–15 cm di filo all'inizio** (lato fondo: andrà al nodo base) e **arriva a fine corsa in cima**: il tubo va riempito del tutto. Target: **500 spire (tolleranza 480–500)** = 42,4 m di filo (+ ~2,6 m di terminazioni ≈ **45 m totali**). Il rotolo da 229 m ha margine ~5×: circa 5 riavvolgimenti completi per errori e riparazioni. **Conta le spire reali a fine lavoro: servono per ricalcolare la f** (tolleranza smalto 0,272–0,285 mm).
+4. **Lascia 10–15 cm di filo all'inizio** (lato fondo: andrà al nodo base) e **arriva a fine corsa in cima**: il tubo va riempito del tutto. Target: **500 spire (tolleranza 480–500)** = 45,6 m di filo (+ ~2,6 m di terminazioni ≈ **48 m totali**). Il rotolo da 229 m ha margine ~4,7×: circa 4 riavvolgimenti completi per errori e riparazioni. **Conta le spire reali a fine lavoro: servono per ricalcolare la f** (tolleranza smalto 0,272–0,285 mm).
 5. **Fissaggio finale**: quando finisci, fissa le ultime spire con una striscia di nastro adesivo o una goccia di smalto/vernice/unghie su tutta la lunghezza (2–3 punti). La bobina non deve poter srotolarsi.
 
-> Verifica con il multimetro (fase F.1): la secondaria deve misurare **~15–16 Ω** in continua (R = ρ·l/A su 42,4–45 m di rame da 0,25 mm; calcolato 14,9 Ω — era 8–9 Ω nella v1.1). Circuito aperto = filo rotto (sospetta prima la giunzione tubi, vedi troubleshooting); ~0 Ω = spire in corto.
+> Verifica con il multimetro (fase F.1): la secondaria deve misurare **~17–18 Ω** in continua (R = ρ·l/A su 45,6–48 m di rame da 0,25 mm; calcolato 16,0 Ω — era 15–16 Ω nella v1.2, 8–9 Ω nella v1.1). Circuito aperto = filo rotto (sospetta prima la giunzione tubi, vedi troubleshooting); ~0 Ω = spire in corto.
 
 ### A.3 Le due estremità
 
@@ -62,7 +62,7 @@ Regole d'oro:
 
 1. Stacca un foglio generoso di stagnola e **accartoccialo in una palla compatta da Ø 12 cm**. Non un ritaglio, non una pallina da 5 cm: una PALLONA. È la condizione di funzionamento del circuito (tiene la risonanza intorno a ~1,7 MHz, dove il BD139 titolare lavora con margine ampio).
 2. La cima della secondaria dev'essere già raschiata per 2–3 cm (A.3): infilala dentro la palla, **schiaccia bene la stagnola attorno al filo** e richiudi.
-3. **TEST CONTINUITÀ (prima di fissare)**: col multimetro in Ω, misura tra il fondo della secondaria e la stagnola stessa (punta direttamente sulla palla): devi leggere **~15–16 Ω** (lo stesso valore della F.1 — stai misurando tutta la secondaria attraverso il contatto palla/filo). Se leggi un circuito aperto, il contatto stagnola–filo non tiene: riapri la palla, stringi di più o lava via residui di smalto, ritesta. SOLO quando la continuità è confermata fissa la palla in cima al tubo con nastro (deve stare su da sola o con un collarino).
+3. **TEST CONTINUITÀ (prima di fissare)**: col multimetro in Ω, misura tra il fondo della secondaria e la stagnola stessa (punta direttamente sulla palla): devi leggere **~17–18 Ω** (lo stesso valore della F.1 — stai misurando tutta la secondaria attraverso il contatto palla/filo). Se leggi un circuito aperto, il contatto stagnola–filo non tiene: riapri la palla, stringi di più o lava via residui di smalto, ritesta. SOLO quando la continuità è confermata fissa la palla in cima al tubo con nastro (deve stare su da sola o con un collarino).
 4. Il contatto stagnola–filo deve restare stretto: dopo il fissaggio, ripeti la misura di continuità una seconda volta.
 
 ---
@@ -102,8 +102,8 @@ Ordine consigliato (dal semplice al critico):
 
 | Check | Strumento | Valore atteso |
 |---|---|---|
-| Continuità secondaria (fondo–cima) | multimetro Ω | **~15–16 Ω** (calcolato 14,9 Ω; era 8–9 Ω nella v1.1. Circuito aperto = filo rotto — sospetta la giunzione tubi; ~0 Ω = spire in corto) |
-| Continuità fondo–palla (top load) | multimetro Ω | **~15–16 Ω** (come sopra, attraverso il contatto stagnola–filo) |
+| Continuità secondaria (fondo–cima) | multimetro Ω | **~17–18 Ω** (calcolato 16,0 Ω; era 15–16 Ω nella v1.2, 8–9 Ω nella v1.1. Circuito aperto = filo rotto — sospetta la giunzione tubi; ~0 Ω = spire in corto) |
+| Continuità fondo–palla (top load) | multimetro Ω | **~17–18 Ω** (come sopra, attraverso il contatto stagnola–filo) |
 | Nessun corto +12 V ↔ GND | multimetro Ω | ≠ 0 (migliaia di Ω o più) |
 | Nodo base: LED1 nel verso giusto | diodo multimetro | conduce in un verso solo |
 | Fili primaria liberi e intercambiabili | occhio | sì (serviranno per il fix n°1) |
@@ -119,7 +119,7 @@ Se puoi: alimentatore da banco a **6 V con limitazione a 1 A**, oppure 4 pile AA
 | LED1 del circuito | si accende debolmente (indica oscillazione) |
 | Radio AM a 30–50 cm, sintonizzata su frequenza libera | **ronzio/fruscio** se oscilla (vedi sotto: a ridosso del limite MW) |
 
-**Il trucco della radio AM (rivelatore di oscillazione low-cost) — nota onesta v1.2**: la frequenza di lavoro attesa è **1,55–1,85 MHz**. La banda MW delle radio commerciali arriva tipicamente a 1700 kHz (estesa): quindi **solo la fascia 1,6–1,7 MHz è dentro banda**, mentre 1,7–1,85 MHz sta fuori. In pratica il trucco funziona comunque nella maggior parte dei casi (l'oscillatore in classe C emette un hash broadband + armoniche, e parte dell'energia cade sempre dentro la MW), ma **il ronzio è meno garantito che con un segnale centrale in banda**: avvicina bene la radio e prova più punti della scala alta (1,5–1,7 MHz). Alternativa se la radio resta muta ma sospetti che oscilli: guarda **LED1** (deve brillare debolmente), misura l'assorbimento (cambia quando l'oscillazione parte), o porta un LED/neon a 2–5 cm dalla palla.
+**Il trucco della radio AM (rivelatore di oscillazione low-cost) — nota onesta v1.2.1**: la frequenza di lavoro attesa è **1,57–1,72 MHz**. La banda MW delle radio commerciali copre 526–1606 kHz standard (estesa fino a 1700): quindi **quasi tutta la fascia prevista è dentro banda** — 1,57–1,6 MHz nella MW standard, 1,6–1,7 nella estesa — e solo 1,7–1,72 MHz resta fuori. Rispetto alla v1.2 (centro ~1,7 al limite) il trucco diventa più affidabile (l'oscillatore in classe C emette comunque un hash broadband + armoniche che cade dentro la MW): avvicina bene la radio e prova più punti della scala alta (1,5–1,7 MHz). Alternativa se la radio resta muta ma sospetti che oscilli: guarda **LED1** (deve brillare debolmente), misura l'assorbimento (cambia quando l'oscillazione parte), o porta un LED/neon a 2–5 cm dalla palla.
 
 ### F.3 — Non oscilla? (la successione dei fix, in ordine)
 

@@ -15,14 +15,14 @@
 | 1 | Batteria Li-ion 12 V | 3S 2–3 Ah | ✅ Pacco 3S2P 18650 (12 V) | ✅ | **USA** |
 | 2 | LED (clamp B-E) | qualsiasi, catodo alla base | ✅ 15 pz assortiti (5 gialli, 5 blu, 5 verdi) | ✅ | **USA** — consigliato giallo (Vf ~2,0 V: clamp più stretto del blu ~3,1 V; entrambi < VEBO 5 V) |
 | 3 | Resistore 10 kΩ ¼ W | 1,13 mA drive di base | ✅ kit ELEGOO (10 kΩ presente; confezione 120 resistori) | ✅ | **USA** |
-| 4 | Tubetti vitamina C Ø 2,7×7 cm (×2, uniti = 14 cm) | supporto secondaria v1.2 | ✅ confermato da Mauro (ne servono 2) | ✅ | **USA** |
+| 4 | Tubetti vitamina C Ø 2,7×7 cm (nominale; reale ~2,9) (×2, uniti = 14 cm) | supporto secondaria v1.2.1 | ✅ confermato da Mauro (ne servono 2) | ✅ | **USA** |
 | 5 | Stagnola (pallona Ø 12 cm) | top load 4,0–5,3 pF reali | ✅ rotolo in cucina (verifica metratura: serve foglio grande) | ✅ | **USA** — condizione ingegneristica n°2: pallina accartocciata GRANDE, non ritaglio |
 | 6 | Fusibile T2A slow 5×20 | protezione batteria | ✅ ×10 (ceramici slow blow 2 A 5×20 mm) | ✅ | **USA** |
 | 6b | Portafusibile 5×20 mm | alloggiamento fusibile | ❌ assente dall'inventario | ❌ | **COMPRA** |
 | 7 | **BD139** (TO-126, NPN 80 V 1,5 A) | interruttore RF — **transistor titolare** (fT 190 MHz) | ❌ assente (nessun TO-126 in inventario) | ❌ | **COMPRA ×2–3** («è il componente che può morire») |
 | 8 | Dissipatore piccolo (+vite, **compatibile TO-126 e TO-220**) | smaltire ~1–1,5 W (stima BD139) | ❌ in inventario solo dissipatori blu adesivi per TMC2209 (driver stepper, formato incompatibile) | ❌ | **COMPRA** |
 | 9 | Pasta termica | velo transistor→dissipatore | ✅ tubetto uso CPU (aggiunto all'inventario 11/09) | ✅ | **USA** |
-| 10 | Rame smaltato **Ø 0,25 mm** | secondaria: **500 spire = 42,4 m + terminazioni ≈ 45 m** (v1.2 — decreto 15/09) | ⚠️ in casa solo Ø 0,45 mm ~3 m (= 31 spire: inutilizzabile per la secondaria) | ⚠️ | **ORDINATO** — rotolo 229 m (€12,20 AM, v. §3) |
+| 10 | Rame smaltato **Ø 0,25 mm** | secondaria: **500 spire = 45,6 m + terminazioni ≈ 48 m** (v1.2.1 — decreto 24/09) | ⚠️ in casa solo Ø 0,45 mm ~3 m (= 31 spire: inutilizzabile per la secondaria) | ⚠️ | **ORDINATO** — rotolo 229 m (€12,20 AM, v. §3) |
 | 11 | Filo isolato 0,5–1 mm² (primaria, 4 spire) | alcune decine di cm | ✅ UL1007 20AWG ×20 m (0,52 mm², nera + rossa) | ✅ | **USA** |
 | 12 | Interruttore ON/OFF | leva di sicurezza | ✅ interruttore a scatto (confermato 11/09) | ✅ | **USA** |
 | 13 | 1N4148 (lotto 5+) | clamp B-E veloce (4 ns) | ✅ ×100 (DO-35) | ✅ | **USA** — in parallelo al LED, stesso verso (ZERO spesa) |
@@ -49,17 +49,17 @@
 
 ## 3. Caso filo secondaria — calcolo esplicito
 
-**Richiesta (v1.2 — decreto Mauro 15/09, sovrascrive la v1.1 dell'11/09):** filo smaltato **Ø 0,25 mm** (Ø con smalto ~0,28, range reale 0,272–0,285); MAI 0,15 o 0,20 mm come acquisto. Tubo **Ø 2,7 × 14 cm** (2 tubi uniti) pieno = 140 mm / 0,28 = **500 spire nominali (tolleranza 480–500)**; lunghezza filo = 500 × 8,48 cm = **42,4 m**; + ~2,6 m di terminazioni = **~45 m totali**.
+**Richiesta (v1.2 — decreto Mauro 15/09, sovrascrive la v1.1 dell'11/09):** filo smaltato **Ø 0,25 mm** (Ø con smalto ~0,28, range reale 0,272–0,285); MAI 0,15 o 0,20 mm come acquisto. Tubo **Ø reale 2,9 × 14 cm** (2 tubi uniti; nominale 2,7) pieno = 140 mm / 0,28 = **500 spire nominali (tolleranza 480–500)**; lunghezza filo = 500 × 9,11 cm = **45,6 m**; + ~2,6 m di terminazioni = **~48 m totali**.
 
 **Metri nel rotolo acquistato (0,25 mm, ~50 g = 229 m dichiarati):**
 
 - Ø 0,25 mm (scelta): sezione rame π/4 × (0,025 cm)² = 0,000491 cm² → **0,440 g/m** (+ smalto ~0,015) → 50 g ≈ **~114 m teorici**; il rotolo effettivamente ordinato dichiara **229 m** → margine sul necessario: 229 / 45 ≈ **~5×**
 - Ø 0,20 mm *(confronto storico)*: π/4 × (0,020 cm)² = 0,000314 cm² → 0,281 g/m → 50 g ≈ ~178 m
 
-**Confronto:** 229 m disponibili vs 45 m necessari → **margine ~5×**. Consentono ~5 riavvolgimenti completi: errori ed esperimenti non sono un problema (con 500 spire servono più che con le 249 della v1.1).
+**Confronto:** 229 m disponibili vs 48 m necessari → **margine ~4,7×**. Consentono ~4 riavvolgimenti completi: errori ed esperimenti non sono un problema (con 500 spire servono più che con le 249 della v1.1).
 
 **Conseguenze fisiche (v1.2):**
-- **0,25 mm, 500 spire su Ø2,7×14 (SCELTA)**: f ≈ 1,55–1,85 MHz (centro 1,69; stagnola Ø 12 cm reale) → TIP41C β 1,6–1,8 🔴 non affidabile → **BD139 titolare** (fT 190 MHz: β ≈ 102–113). Verifica multimetro post-bobinatura: **~15–16 Ω** (calcolato 14,9 Ω su 42,4 m).
+- **0,25 mm, 500 spire su Ø2,9×14 (SCELTA v1.2.1)**: f ≈ 1,57–1,72 MHz (centro 1,65; stagnola Ø 12 cm reale) → TIP41C β 1,7–1,9 🔴 non affidabile → **BD139 titolare** (fT 190 MHz: β ≈ 110–121). Verifica multimetro post-bobinatura: **~17–18 Ω** (calcolato 16,0 Ω su 45,6 m).
 
 **Filo Ø 0,45 mm in casa (~3 m):** non sostituibile in nessun ruolo della secondaria (31 spire totali al massimo). Resta per eventuali collegamenti di potenza.
 
@@ -72,7 +72,7 @@
 | # | Componente | Perché verificato assente | Qty | Nota |
 |---|-----------|---------------------------|-----|------|
 | 1 | **BD139** (TO-126 NPN 80 V 1,5 A, fT 190 MHz) | Assente dall'inventario (nessun TO-126) | **2–3** | Transistor TITOLARE (decreto 11/09): «è il componente che può morire durante le prove» |
-| 2 | **Rame smaltato Ø 0,25 mm, rotolo ~50 g** | Inventario: solo Ø 0,45 mm ~3 m (inutilizzabile) | **1** | V. §3: 50 g ≈ ~114 m, margine ~4,4× sul necessario |
+| 2 | **Rame smaltato Ø 0,25 mm, rotolo ~50 g** | Inventario: solo Ø 0,45 mm ~3 m (inutilizzabile) | **1** | V. §3: 50 g ≈ ~114 m, margine ~2,4× sul necessario |
 | 3 | **Dissipatore alluminio piccolo** (con vite/clip, **compatibile TO-126 e TO-220**) | Inventario: solo dissipatori blu adesivi per TMC2209 (formato driver stepper, incompatibili) | **1–2** | Obbligatorio: da nudo il BD139 non regge nemmeno la dissipazione stimata (~1–1,5 W, da validare al collaudo) |
 | 4 | **Portafusibile 5×20 mm** (panel/da cavo) | Fusibili ×10 presenti ma NESSUN portafusibile nell'inventario né nella lista desideri | **1–2** | I fusibili in casa restano validi |
 | 5 | **Condensatori ceramici** (100 nF + assortito) | Lista desideri 03/09 Tier B: «mancano TOTALLY» | **1 kit** | Kit assortito (~100-600 pz, 100nF/10nF/22pF…): serve anche per LM358/NE555 di altri progetti → doppia utilità |

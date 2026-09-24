@@ -78,7 +78,8 @@
   <text x="452" y="230" font-size="12" fill="#1f6feb">L2 · secondaria</text>
   <text x="452" y="248" font-size="12" fill="#1f6feb">500 spire, filo</text>
   <text x="452" y="266" font-size="12" fill="#1f6feb">smaltato 0,25 mm</text>
-  <text x="452" y="284" font-size="12" fill="#555">(tubo Ø 2,7 × 14 cm — L2 ≈ 1,18 mH)</text>
+  <text x="452" y="284" font-size="12" fill="#555">(tubo reale Ø 2,9 × 14 cm — L2 ≈ 1,35 mH)</text>
+  <text x="452" y="302" font-size="10" fill="#999">(Ø nominale 2,7)</text>
 
   <!-- Top load (sotto il binario +12V, collegato alla cima di L2) -->
   <circle cx="420" cy="106" r="20" fill="#fff" stroke="#24292e" stroke-width="2" stroke-dasharray="6 4"/>
@@ -126,5 +127,5 @@
 
   <!-- Titolo e note -->
   <text x="970" y="24" font-size="15" fill="#24292e" text-anchor="end" font-weight="bold">Slayer Exciter 12 V — BD139</text>
-  <text x="495" y="640" font-size="12" fill="#555" text-anchor="middle">f ≈ 1,55–1,85 MHz (centro ~1,7, top Ø 12 cm stagnola reale) · I ≈ 0,5–0,9 A · tensione in cima ≈ qualche kV (RF, bassa corrente)</text>
+  <text x="495" y="640" font-size="12" fill="#555" text-anchor="middle">f ≈ 1,57–1,72 MHz (centro ~1,65, top Ø 12 cm stagnola reale) · I ≈ 0,5–0,9 A · tensione in cima ≈ qualche kV (RF, bassa corrente)</text>
 </svg>

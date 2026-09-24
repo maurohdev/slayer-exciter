@@ -41,8 +41,8 @@
 | AM ✅ | [dp/B0FVFQPJ3S](https://www.amazon.it/dp/B0FVFQPJ3S) | € 12,99 | QUARKZMAN 0,25 mm — 114 m / 50 g, 155 °C | FREE ≥€35 | ~1 sett. |
 | AE ⚠️ | (ricerca [0.25mm enameled copper wire 50g](https://it.aliexpress.com/w/wholesale-0.25mm-enameled-copper-wire-50g.html)) | ~€ 3–6 stimato | SKUs con selettore diametro 0,1–1,0 mm: **il diametro esatto NON è verificabile lato prodotto (challenge anti-bot; stessa conclusione di Sherlock per lo 0,15)** | gratis ≥€10 | 2-4 sett. |
 
-**Vincitore: AM dp/B07Q23LQBF — € 12,20 per 229 m** (5 centesimi/metro). Voce critica → vince la certezza della specifica: diametro 0,25 mm e metratura nel TITOLO del prodotto (229,15 m = 100 g, coerente col calcolo teorico 50 g ≈ 114 m). Copre ~5× i **45 m necessari (v1.2)**: margine per ~5 riavvolgimenti. La versione da 50 g (B0CSCLLTDV, €12,49) è la scelta se si vuole spendere il minimo reale. Gli SKU AE restano più economici (~€4-5) ma il diametro esatto non è garantito lato pagina prodotto: chi ordina da AE deve selezionare 0,25 mm nel selettore e verificare alla ricezione col multimetro (**~15–16 Ω su tutta la bobina da 500 spire**, v1.2) e/o calibro.
-**Nota fisica**: v1.2 — 0,25 mm = **500 spire** su tubo Ø2,7×14 = f ~1,55–1,85 MHz → transistor titolare **BD139** (già in lista come BLOCCANTE). *(Storico v1.1: 249 spire, f 1,96–2,15 MHz.)*
+**Vincitore: AM dp/B07Q23LQBF — € 12,20 per 229 m** (5 centesimi/metro). Voce critica → vince la certezza della specifica: diametro 0,25 mm e metratura nel TITOLO del prodotto (229,15 m = 100 g, coerente col calcolo teorico 50 g ≈ 114 m). Copre ~4,7× i **48 m necessari (v1.2.1)**: margine per ~4 riavvolgimenti. La versione da 50 g (B0CSCLLTDV, €12,49) è la scelta se si vuole spendere il minimo reale. Gli SKU AE restano più economici (~€4-5) ma il diametro esatto non è garantito lato pagina prodotto: chi ordina da AE deve selezionare 0,25 mm nel selettore e verificare alla ricezione col multimetro (**~17–18 Ω su tutta la bobina da 500 spire**, v1.2.1) e/o calibro.
+**Nota fisica**: v1.2.1 — 0,25 mm = **500 spire** su tubo Ø reale 2,9×14 (nominale 2,7) = f ~1,57–1,72 MHz → transistor titolare **BD139** (già in lista come BLOCCANTE). *(Storico v1.1: 249 spire, f 1,96–2,15 MHz.)*
 
 ---
 
@@ -111,7 +111,7 @@
 1. **Oggi — ordine AE €11,22**: TIP41C 10pz (SKU TIP41C!) + dissipatori 10pz + portafusibili 10+2pz + ceramici 300pz + BD139/BD140 20pz. Free shipping. ETA 2-4 settimane.
 2. **Oggi — ordine AM €12,20**: filo **0,25 mm** 229 m/100 g (dp/B07Q23LQBF, FREE delivery primo ordine). ETA ~1 settimana. (Alternativa 50 g: B0CSCLLTDV €12,49.)
 
-Nel medio termine il filo resta l'unico vincolo di calendario: col nuovo link AM (B07Q23LQBF) l'ETA è ~1 settimana, quindi il vincolo si è molto alleggerito. L'alternativa AE (~€4-5) esiste ma richiede verifica del diametro alla ricezione (multimetro ~15–16 Ω su 500 spire / calibro).
+Nel medio termine il filo resta l'unico vincolo di calendario: col nuovo link AM (B07Q23LQBF) l'ETA è ~1 settimana, quindi il vincolo si è molto alleggerito. L'alternativa AE (~€4-5) esiste ma richiede verifica del diametro alla ricezione (multimetro ~17–18 Ω su 500 spire / calibro).
 
 ---
 
