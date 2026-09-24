@@ -69,17 +69,18 @@
 
   <!-- L1 primaria (4 spire) -->
   <path d="M840,100 a20,20 0 0 1 0,40 a20,20 0 0 1 0,40 a20,20 0 0 1 0,40 a20,20 0 0 1 0,40" stroke="#1f6feb" stroke-width="2" fill="none"/>
-  <text x="872" y="120" font-size="12" fill="#1f6feb">L1 · primaria</text>
-  <text x="872" y="138" font-size="12" fill="#1f6feb">4 spire, filo isolato</text>
-  <text x="872" y="156" font-size="12" fill="#555">(senso opposto a L2)</text>
+  <text x="868" y="120" font-size="12" fill="#1f6feb">L1 · primaria</text>
+  <text x="868" y="138" font-size="12" fill="#1f6feb">4 spire, filo isolato</text>
+  <text x="868" y="156" font-size="11" fill="#555">(senso opposto a L2)</text>
 
   <!-- L2 secondaria (molte spire) -->
   <path d="M420,150 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30 a20,20 0 0 1 0,30" stroke="#1f6feb" stroke-width="2" fill="none"/>
   <text x="452" y="230" font-size="12" fill="#1f6feb">L2 · secondaria</text>
   <text x="452" y="248" font-size="12" fill="#1f6feb">500 spire, filo</text>
   <text x="452" y="266" font-size="12" fill="#1f6feb">smaltato 0,25 mm</text>
-  <text x="452" y="284" font-size="12" fill="#555">(tubo reale Ø 2,9 × 14 cm — L2 ≈ 1,35 mH)</text>
-  <text x="452" y="302" font-size="10" fill="#999">(Ø nominale 2,7)</text>
+  <text x="452" y="284" font-size="12" fill="#555">(tubo reale Ø 2,9 × 14 cm —</text>
+  <text x="452" y="302" font-size="12" fill="#555">L2 ≈ 1,35 mH)</text>
+  <text x="452" y="318" font-size="10" fill="#999">(Ø nominale 2,7)</text>
 
   <!-- Top load (sotto il binario +12V, collegato alla cima di L2) -->
   <circle cx="420" cy="106" r="20" fill="#fff" stroke="#24292e" stroke-width="2" stroke-dasharray="6 4"/>
@@ -102,9 +103,9 @@
   <text x="768" y="326" font-size="11" fill="#555">B</text>
   <text x="824" y="284" font-size="11" fill="#555">C</text>
   <text x="848" y="374" font-size="11" fill="#555">E</text>
-  <text x="772" y="440" font-size="13" fill="#24292e" text-anchor="middle" font-weight="bold">Q1 — BD139</text>
-  <text x="772" y="458" font-size="11" fill="#555" text-anchor="middle">(TO-126 · dissipatore + pasta)</text>
-  <text x="772" y="476" font-size="10" fill="#555" text-anchor="middle">TIP41C = alternativa a bassa f (pinout B-C-E)</text>
+  <text x="784" y="440" font-size="13" fill="#24292e" text-anchor="middle" font-weight="bold">Q1 — BD139</text>
+  <text x="784" y="566" font-size="11" fill="#555" text-anchor="middle">(TO-126 · dissipatore + pasta)</text>
+  <text x="784" y="582" font-size="10" fill="#555" text-anchor="middle">TIP41C = alternativa a bassa f (pinout B-C-E)</text>
 
   <!-- Nodi -->
   <circle cx="330" cy="80" r="4" fill="#c0392b"/>
