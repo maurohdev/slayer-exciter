@@ -20,7 +20,7 @@
 | Tensione collettore picco | ~15 V (12 + 3) | VCEO 80 V | ✅ margine 5× |
 | Corrente collettore picco | 0,6–0,8 A | IC 1,5 A | ✅ margine ~2× |
 | Giunzione base-emettitore | clamp a −0,7 V (LED/1N4148) | VEBO 5 V | ✅ protetta |
-| Dissipazione BD139 | ~0,8–1,3 W (invariata: il centro f scende solo da 1,70 a 1,65 MHz → P_sw ~uguale) | dissipatore piccolo: ΔT +33 °C → Tj ≈ 58 °C | ✅ tiepido |
+| Dissipazione BD139 | ~0,8–1,3 W (invariata: il centro f scende solo da 1,70 a 1,65 MHz → P_sw ~uguale) | dissipatore estruso TO-220 15×10×40 (decreto 28/09): ΔT ~10–23 °C → Tj ≈ 35–48 °C (col 16 mm: ~58 °C) | ✅ tiepido |
 | Filo necessario vs rotolo 229 m | 45,6 m + 2,6 m terminazioni ≈ **48 m** | copertura + scorta riparazioni | ✅ margine ~4,7× (~4 riavvolgimenti) |
 | R DC secondaria (test multimetro) | 16,0 Ω calcolati | atteso **17–18 Ω** (era 15–16 nella v1.2, 8–9 nella v1.1) | ✅ (collaudo F.1) |
 | Rapporto spire | 500/4 = **125:1** (primaria copre 0,8%, k ≈ 0,08–0,2) | guadagno d'anello | ✅ netto ~×1,7 vs v1.1 (invariato) |

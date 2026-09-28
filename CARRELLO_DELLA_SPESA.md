@@ -43,7 +43,7 @@ Al checkout AE: controlla il prezzo degli SKU selezionati (TIP41C puro può cost
 | # | Componente | Prezzo | Link diretto |
 |---|-----------|-------:|--------------|
 | 2 | **BD139 ×2-3** (transistor TITOLARE) — lotto 20 pz (10 BD139 + 10 BD140) | € 1,85 | [item/1005006303350057](https://it.aliexpress.com/item/1005006303350057.html) |
-| 3 | Dissipatore alluminio 10 pz 15×10×16 mm (TO-126/TO-220) | € 1,83 | [item/1005004106510428](https://it.aliexpress.com/item/1005004106510428.html) |
+| 3 | Dissipatore alluminio 10 pz **15×10×40 mm** (TO-126/TO-220, decreto 28/09) | € 1,83 | [item/1005004106510428](https://it.aliexpress.com/item/1005004106510428.html) |
 | 4 | Portafusibile 5×20 mm BLX-A, 10 pz | € 1,52 | [item/4000648795427](https://it.aliexpress.com/item/4000648795427.html) |
 | 5 | Kit ceramici 300 pz, 30 valori (100 nF incluso) | € 1,91 | [item/1005001910209320](https://it.aliexpress.com/item/1005001910209320.html) |
 | 6 | *(opz.)* TIP41C 10 pz — alternativa a bassa f | da € 2,09 | [item/1005007170026500](https://it.aliexpress.com/item/1005007170026500.html) |
@@ -92,10 +92,10 @@ Con la secondaria 0,25 mm la risonanza sta a ~2 MHz: il BD139 lì ha β ≈ 76-9
 
 ### 3. Dissipatore alluminio piccolo, compatibile TO-126 e TO-220 · **BLOCCANTE**
 
-Da nudo il BD139 non regge la dissipazione stimata (~1-1,5 W). Ne servono 1-2; il lotto da 10 copre anche l'eventuale TIP41C e i progetti futuri (LM358/NE555).
+Da nudo il BD139 non regge la dissipazione stimata (~1-1,5 W). Ne servono 1-2; il lotto da 10 copre anche l'eventuale TIP41C e i progetti futuri (LM358/NE555). **Scelta definitiva (decreto Mauro 28/09): variante 15×10×40 mm** — stesso listing, si seleziona la lunghezza; più alto del 16 mm per più superficie dissipante.
 
 **SCELTA CONSIGLIATA** — [AliExpress item/1005004106510428](https://it.aliexpress.com/item/1005004106510428.html)
-€ 1,83 · 10 pz 15×10×16 mm alluminio · gratis ≥€10 · ETA 2-4 settimane. (0,18 €/pz vs 0,45-0,90 €/pz di Amazon.)
+€ 1,83 · 10 pz **15×10×40 mm** alluminio — stesso listing con selettore lunghezza (16/20/25/30/40/50): **decreto Mauro 28/09 = 40 mm**, più alto per più dissipazione (Rth ~12-18 K/W → Tj stimata 35-48 °C a 0,8-1,3 W, vs ~58 °C del 16 mm). Il BD139 (TO-126) ci monta a vite M3 nel foro standard e copre solo parte delle alette (normale). · gratis ≥€10 · ETA 2-4 settimane. (0,18 €/pz vs 0,45-0,90 €/pz di Amazon.)
 
 **ALTERNATIVA** — [Amazon dp/B081GS15N6](https://www.amazon.it/dp/B081GS15N6) (WayinTop 10 set + isolanti, €8,99, ~16 set) oppure [dp/B0CSJY83QW](https://www.amazon.it/dp/B0CSJY83QW) (VooGenzek 20 pz + isolanti, €8,99, 14-16 set) · FBA FREE ≥€35.
 Nota: gli isolanti/mica dei kit AM qui non servono (collettore da isolare solo su chassis conduttivo — circuito volante su supporto plastico).

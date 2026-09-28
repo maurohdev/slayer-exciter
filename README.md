@@ -31,7 +31,7 @@ Se hai basi di elettrotecnica e un saldatore, questo è uno dei progetti HV (alt
 1. **Fusibile T2A lento sempre montato** sul polo positivo della batteria, vicino ai poli: una Li-ion in corto eroga oltre 100 A e va a fuoco. Non è opzionale.
 2. La sferetta in funzione dà **scottature RF**: non si tocca, ci si avvicina con carichi tenuti per la plastica.
 3. Tieni il circuito **ad almeno 50 cm da telefoni, PC e radio**: l'EMI è reale, documentata, e fastidiosa.
-4. Il transistor scalda (stima ~0,8–1,3 W, da validare al collaudo): **dissipatore + pasta termica obbligatori**, e si tocca solo da spento.
+4. Il transistor scalda (stima ~0,8–1,3 W, da validare al collaudo): **dissipatore + pasta termica obbligatori** (dissipatore scelto: estruso TO-220 15×10×40 mm, compatibile TO-126), e si tocca solo da spento.
 
 Dettagli completi nella sezione sicurezza di [TEORIA_E_FUNZIONAMENTO.md](TEORIA_E_FUNZIONAMENTO.md) e nel [manuale](MANUALE_ASSEMBLAGGIO_E_COLLAUDO.md).
 

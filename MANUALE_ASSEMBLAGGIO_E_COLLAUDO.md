@@ -73,7 +73,7 @@ Regole d'oro:
 2. **Zavorra al tappo (NOVITÀ v1.2)**: il tubo da 14 cm con la pallona in cima è alto e tende a rovesciarsi. Prima di fissare il tubo alla base, incolla a caldo **3–4 monete dentro il fondo del tubo** (o un dado grosso): il baricentro scende e l'assieme diventa stabile. La colla a caldo si rimuove se serve.
 3. **Posizioni** (con lo schema in mano):
    - tubo con bobine in verticale al centro, **fissato alla basetta di legno con nastro spesso/nano** (fascetta + angolare, o due sostegni di legno — con la zavorra la tenuta laterale serve meno ma non farla mancare);
-   - Q1 (BD139) con dissipatore + vite + velo di pasta termica, a 3–5 cm dalla base del tubo (i capi della primaria devono arrivarci senza tirare);
+   - Q1 (BD139) con dissipatore **TO-220 estruso 15×10×40 mm** (decreto 28/09 — compatibile col package TO-126: vite M3 nel foro standard, il transistor copre solo parte delle alette, normale) + vite + velo di pasta termica, a 3–5 cm dalla base del tubo (i capi della primaria devono arrivarci senza tirare);
    - batteria sul retro della base, con fascette;
    - interruttore e portafusibile sul bordo anteriore, comodi da raggiungere.
 4. **Fusibile F1**: in serie sul polo **positivo** della batteria, **il più vicino possibile ai poli**, PRIMA dell'interruttore. T2A slow 5×20 mm.
@@ -135,7 +135,7 @@ Se puoi: alimentatore da banco a **6 V con limitazione a 1 A**, oppure 4 pile AA
 |---|---|
 | Assorbimento in regime | **0,5–0,9 A** (punte 2–3 A per pochi ms all'accensione: normali, il T2A slow le regge) |
 | Potenza | 6–11 W |
-| Transistor + dissipatore | **caldo** al tatto: normale (stima ~0,8–1,3 W su un dissipatore piccolo con la v1.2 a f più bassa, da validare al collaudo) — se dopo ~1 minuto non riesci proprio a tenere il dito appoggiato, spegni e ricontrolla drive/oscillazione |
+| Transistor + dissipatore | **caldo** al tatto: normale (stima ~0,8–1,3 W da validare al collaudo; col dissipatore estruso 15×10×40 la Tj stimata è ~35–48 °C, tiepido) — se dopo ~1 minuto non riesci proprio a tenere il dito appoggiato, spegni e ricontrolla drive/oscillazione |
 | Fusibile | NON deve saltare in regime |
 | Radio AM | ronzio presente ma meno garantito in banda (v. F.2: prova la scala alta 1,5–1,7 MHz) |
 

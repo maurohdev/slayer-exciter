@@ -50,13 +50,13 @@
 
 | Fonte | Link diretto | Prezzo | Contenuto | Sped. | ETA |
 |---|---|---|---|---|---|
-| **AE ✅** | [item/1005004106510428](https://it.aliexpress.com/item/1005004106510428.html) | **€ 1,83** | 10 pz 15×10×16 mm alluminio | gratis ≥€10 | 2-4 sett. |
+| **AE ✅** | [item/1005004106510428](https://it.aliexpress.com/item/1005004106510428.html) | **€ 1,83** | 10 pz estruso TO-220, lunghezza selettabile 16-50 mm → **variante scelta 15×10×40 mm** (decreto Mauro 28/09; la rilevazione 11/09 era la 16 mm) | gratis ≥€10 | 2-4 sett. |
 | AE ✅ | [item/32676554655](https://it.aliexpress.com/item/32676554655.html) | € 2,82 | 10 pz nero 20×15×11 mm | gratis ≥€10 | 2-4 sett. |
 | AE ✅ | [item/1005013005405949](https://it.aliexpress.com/item/1005013005405949.html) | € 1,30 | 1 pz bianco 15×10×16 (SKU singolo) | gratis ≥€10 | 2-4 sett. |
 | AM ✅ | [dp/B0CSJY83QW](https://www.amazon.it/dp/B0CSJY83QW) | € 8,99 | VooGenzek 20 pz + isolanti | FREE ≥€35 FBA | 14-16 set |
 | AM ✅ | [dp/B081GS15N6](https://www.amazon.it/dp/B081GS15N6) | € 8,99 | WayinTop 10 set + isolanti | FREE ≥€35 FBA | 16 set |
 
-**Vincitore: AE item/1005004106510428 — €1,83/10 pz** (0,18 €/pz vs 0,45-0,90 €/pz AM). Serve 1-2 pz per il TIP41C; il lotto copre anche BD139 (piano B) e progetti futuri (LM358/NE555 della lista desideri). Nota: i kit AM includono isolanti+mica non richiesti (collettore del TIP41C va isolato solo se fissato a chassis conduttivo — nel circuito volante su supporto plastico non serve).
+**Vincitore: AE item/1005004106510428 — €1,83/10 pz** (0,18 €/pz vs 0,45-0,90 €/pz AM). Variante definitiva 15×10×40 mm (decreto 28/09). Serve 1-2 pz per il **BD139** (titolare dal decreto 11/09); il lotto copre anche l'eventuale TIP41C e progetti futuri (LM358/NE555 della lista desideri). Nota: i kit AM includono isolanti+mica non richiesti (il collettore va isolato solo su chassis conduttivo — nel circuito volante su supporto plastico non serve).
 
 ---
 
@@ -108,7 +108,7 @@
 | **MIX consigliato** | Ordine AE unico: TIP41C 2,09 + dissip. 1,83 + portafus. 1,52 + ceramici 1,91 + BD139 1,85 = € 9,20 → sotto €10! aggiungere 2° portafusibile (1005007910707716 €2,02) → **€ 11,22** free ship ✅ + AM filo 0,25 mm **€12,20** (dp/B07Q23LQBF) | **€ 23,42** | Filo certificato AM (229 m!) + lotti AE economici |
 
 **Piano d'ordine (2 ordini, ~€23,42):**
-1. **Oggi — ordine AE €11,22**: TIP41C 10pz (SKU TIP41C!) + dissipatori 10pz + portafusibili 10+2pz + ceramici 300pz + BD139/BD140 20pz. Free shipping. ETA 2-4 settimane.
+1. **Oggi — ordine AE €11,22**: TIP41C 10pz (SKU TIP41C!) + dissipatori 10pz (variante 15×10×40, decreto 28/09) + portafusibili 10+2pz + ceramici 300pz + BD139/BD140 20pz. Free shipping. ETA 2-4 settimane.
 2. **Oggi — ordine AM €12,20**: filo **0,25 mm** 229 m/100 g (dp/B07Q23LQBF, FREE delivery primo ordine). ETA ~1 settimana. (Alternativa 50 g: B0CSCLLTDV €12,49.)
 
 Nel medio termine il filo resta l'unico vincolo di calendario: col nuovo link AM (B07Q23LQBF) l'ETA è ~1 settimana, quindi il vincolo si è molto alleggerito. L'alternativa AE (~€4-5) esiste ma richiede verifica del diametro alla ricezione (multimetro ~17–18 Ω su 500 spire / calibro).
@@ -133,7 +133,7 @@ Nel medio termine il filo resta l'unico vincolo di calendario: col nuovo link AM
 - https://it.aliexpress.com/item/1005006345160960.html — 1-3 rotoli filo rame 50 g (0,1-1,5 mm)
 - https://it.aliexpress.com/item/1005012206435281.html — rotoli 50 g poliuretano (0,1-1,0 mm)
 - https://it.aliexpress.com/item/1005005471751088.html — filo smaltato 0,06-0,65 mm (0,15 in elenco, a metri)
-- https://it.aliexpress.com/item/1005004106510428.html — 10 pz dissipatore alluminio 15×10×16
+- https://it.aliexpress.com/item/1005004106510428.html — 10 pz dissipatore alluminio estruso TO-220, variante selettabile 15×10×**40** (decreto Mauro 28/09; la rilevazione originale era la 16 mm)
 - https://it.aliexpress.com/item/1005013005405949.html — dissipatore bianco 15×10×16 (1 pz)
 - https://it.aliexpress.com/item/32676554655.html — 10 pz dissipatore nero 20×15×11
 - https://it.aliexpress.com/item/4000648795427.html — 10 PZ portafusibile BLX-A 5×20 nero
