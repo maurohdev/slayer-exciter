@@ -22,7 +22,7 @@
 | 7 | **BD139** (TO-126, NPN 80 V 1,5 A) | interruttore RF — **transistor titolare** (fT 190 MHz) | ❌ assente (nessun TO-126 in inventario) | ❌ | **COMPRA ×2–3** («è il componente che può morire») |
 | 8 | Dissipatore piccolo (+vite, **compatibile TO-126 e TO-220**) | smaltire ~1–1,5 W (stima BD139) | ❌ in inventario solo dissipatori blu adesivi per TMC2209 (driver stepper, formato incompatibile) | ❌ | **COMPRA** → variante decisa **15×10×40 mm** (decreto 28/09, listing AE 1005004106510428) |
 | 9 | Pasta termica | velo transistor→dissipatore | ✅ tubetto uso CPU (aggiunto all'inventario 11/09) | ✅ | **USA** |
-| 10 | Rame smaltato **Ø 0,25 mm** | secondaria: **500 spire = 45,6 m + terminazioni ≈ 48 m** (v1.2.1 — decreto 24/09) | ⚠️ in casa solo Ø 0,45 mm ~3 m (= 31 spire: inutilizzabile per la secondaria) | ⚠️ | **ORDINATO** — rotolo 229 m (€12,20 AM, v. §3) |
+| 10 | Rame smaltato **Ø 0,25 mm** | secondaria: **500 spire = 45,6 m + terminazioni ≈ 48 m** (v1.2.1 — decreto 24/09) | ⚠️ in casa solo Ø 0,45 mm ~3 m (= 31 spire: inutilizzabile per la secondaria) | ⚠️ | **DA ORDINARE** — correzione 28/09: il rotolo 229 m AM (€12,20) non è mai stato ordinato; opzioni: AE 105 m €4,69 (carrello 28/09, margine 2,2×) o AM 229 m €12,20 (margine ~4,7×) |
 | 11 | Filo isolato 0,5–1 mm² (primaria, 4 spire) | alcune decine di cm | ✅ UL1007 20AWG ×20 m (0,52 mm², nera + rossa) | ✅ | **USA** |
 | 12 | Interruttore ON/OFF | leva di sicurezza | ✅ interruttore a scatto (confermato 11/09) | ✅ | **USA** |
 | 13 | 1N4148 (lotto 5+) | clamp B-E veloce (4 ns) | ✅ ×100 (DO-35) | ✅ | **USA** — in parallelo al LED, stesso verso (ZERO spesa) |
@@ -63,7 +63,7 @@
 
 **Filo Ø 0,45 mm in casa (~3 m):** non sostituibile in nessun ruolo della secondaria (31 spire totali al massimo). Resta per eventuali collegamenti di potenza.
 
-**Raccomandazione d'acquisto:** rotolo Ø **0,25 mm** già ordinato (229 m dichiarati in etichetta — annotare la metratura reale misurata all'arrivo).
+**Raccomandazione d'acquisto:** rotolo Ø **0,25 mm** — ⚠️ correzione 28/09: NON ancora ordinato (il «già ordinato» era erroneo); opzioni: AE 105 m €4,69 (margine ~2,2×, carrello 28/09) o AM 229 m €12,20 (margine ~4,7×). All'arrivo annotare la metratura reale misurata.
 
 ---
 
