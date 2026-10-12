@@ -2,7 +2,7 @@
 
 > **Scopo di questo file:** registro ufficiale e append-only di ciò che Mauro ha **realizzato fisicamente**, step by step. È il punto di contatto tra la documentazione teorica della repo (BOM, manuale, calcoli — che restano intatti come riferimento) e la realtà del banco di lavoro.
 > **Regola:** ogni sessione di lavoro reale = una nuova sezione datata. Niente viene riscritto: si aggiunge. Le deviazioni dal manuale sono documentate onestamente, con il giudizio tecnico su ognuna.
-> **Stato progetto (aggiornato a ogni sezione):** Fase A ✅ · Fase B 🔶 (primaria avvolta ma da riposizionare alla base) · Fase C ✅ · Fase D ⬜ · Fase E ⬜ · Fase F 🔶 (avvii a coccodrillo 12/10)
+> **Stato progetto (aggiornato a ogni sezione):** Fase A ✅ (secondaria ~450 spire, **laccata 12/10 ~23:00** — primo fuoco ≥24 h dopo) · Fase B 🔶 (primaria avvolta ma da riposizionare alla base) · Fase C ✅ · Fase D ⬜ · Fase E ⬜ · Fase F 🔶 (avvii a coccodrillo 12/10: oscilla)
 
 ---
 
@@ -143,6 +143,40 @@ Deviazioni dal manuale: 3 (giunzione nastro invece di stecca; niente forellini, 
 - [ ] Registrare qui: f, assorbimento, distanza LED, temperatura dissipatore a 30/60/120 s
 
 **Esito test a coccodrillo (compilato):** ✅ **OSCILLA** (fix n°1: spire ravvicinate) · LED solo a contatto · dissipatore bollente a ~110 s → cause: primaria non alla base + parassitiche coccodrilli. Da rifare su perfoboard.
+
+---
+
+## 📅 12→13 Ottobre 2026 (~23:00) — LACCATURA secondaria + acquisti banco volante
+
+> Fonte: messaggi Mauro + chat Qwen n°2 (https://chat.qwen.ai/s/bc5a1385-2701-43b9-98bf-e45a60648134, analizzata 13/10).
+
+### Laccatura protettiva della secondaria ✅
+
+**Applicato da Mauro un velo sottile di top coat acrilico trasparente** (smalto lucido senza glitter) su tutta la secondaria, ~23:00 del 12/10/2026.
+
+**Verifica chimica del prodotto (da chat Qwen, INCI analizzato):** filmogeno **Acrylates Copolymer** (εr ≈ 3–4, tan δ ≈ 0,02–0,04 a 1–2 MHz, rigidità dielettrica decine di kV/mm) + solventi buthyl/isobutyl acetate (evaporano del tutto). **Assenze rassicuranti:** niente nitrocellulosa, niente plastificanti, niente glitter/lamelle metalliche (l'unica variante davvero pericolosa come dielettrico). Verdetto: **chimicamente corretto come vernice isolante per la bobina**, non un ripiego.
+
+**Effetti attesi sulla bobina:**
+| Effetto | Giudizio |
+|---|---|
+| Blocco meccanico spire → frequenza stabile nel tempo | ✅ utile (niente derive da micro-movimenti) |
+| Protezione da umidità/abrasione/corona | ✅ utile (superficie uniforme a kV) |
+| εr 3–4 al posto dell'aria tra le spire → **piccolo shift in basso della risonanza** | ⚠️ atteso e innocuo: il circuito è auto-accordante |
+| Q leggermente ridotto dal dielettrico | impercettibile col margine d'anello ~34–38× |
+
+**Finestra di cura (con velo sottile, applicato ~23:00 del 12/10):**
+- Tocco asciutto: già dopo poche ore
+- **Primo fuoco (anche 6 V): dopo ≥24 h → non prima di ~23:00 del 13/10** (48 h ideali → ~23:00 del 14/10)
+- Test olfattivo pratico: se la bobina sente ancora di solvente, sta ancora essiccando → non accendere
+- **Saldature su perfoboard e test a freddo (continuità, diodo): NESSUN vincolo** — la piastra non scalda la bobina e i test non applicano tensione
+
+**Verifica da fare al prossimo banco:** continuità fondo↔palla ancora **~20 Ω** — le due zone di contatto (capo in basso + punto di crimpaggio in stagnola) NON devono essere coperte dal film; se lo sono, carta vetrata leggera e rimisura.
+
+### Acquisti banco volante (aggiunti all'inventario da Mauro)
+
+- **Connettori a leva ExtraStar DF-42** ×2 (4 poli da 3 porte = esattamente i 4 nodi del progetto: BASE, +12 V, GND, COLLETTORE) — il fix n°1 (inversione primaria) diventa un gesto da 3 secondi a leva aperta
+- **KDE 24A** come giunzioni di complemento (pigtail condensatori, patch bay per R1 di tuning)
+- Numeri del banco volante: contatto a leva ben stretto = 1–5 mΩ (invisibili a 0,9 A); spezzone 10 cm ≈ 100 nH ≈ 1 Ω a 1,7 MHz contro i 7,4–8,8 Ω della primaria → il circuito se ne accorge pochissimo. Il 90% dei «non oscilla» senza saldatura resta lo smalto non raschiato, non la resistenza di contatto
 
 ---
 
