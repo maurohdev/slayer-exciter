@@ -1,6 +1,6 @@
 # ⚡ Slayer Exciter 12 V — mini bobina di Tesla da tavolo
 
-Mini bobina di Tesla a stato solido (topologia *Slayer Exciter*) che accende **LED e lampade al gas (neon, CFL) semplicemente avvicinandole**, senza cavi né contatti. Alimenta tutto una batteria Li-ion da 12 V, il circuito sono ~9 componenti, e il cuore è un **BD139** (fT 190 MHz). **Versione attuale v1.2.1: secondaria in filo 0,25 mm, 500 spire su tubo Ø reale 2,9 × 14 cm (2 tubi uniti; 2,7 = nominale) + transistor titolare BD139.**
+Mini bobina di Tesla a stato solido (topologia *Slayer Exciter*) che accende **LED e lampade al gas (neon, CFL) semplicemente avvicinandole**, senza cavi né contatti. Alimenta tutto una batteria Li-ion da 12 V, il circuito sono ~9 componenti, e il cuore è un **BD139** (fT 190 MHz). **Versione attuale v1.2.1: secondaria in filo 0,25 mm, 500 spire su tubo Ø reale 2,9 × 14 cm (2 tubi uniti; 2,7 = nominale) + transistor titolare BD139.** 🛠️ **In costruzione:** la build reale è partita — primo avvio riuscito il 12/10/2026, diario in [ESECUZIONE_REALE.md](ESECUZIONE_REALE.md).
 
 Se hai basi di elettrotecnica e un saldatore, questo è uno dei progetti HV (alta tensione) più soddisfacenti col miglior rapporto semplicità/effetto che esista.
 
@@ -39,6 +39,7 @@ Dettagli completi nella sezione sicurezza di [TEORIA_E_FUNZIONAMENTO.md](TEORIA_
 
 | File | Contenuto |
 |---|---|
+| [ESECUZIONE_REALE.md](ESECUZIONE_REALE.md) | 🛠️ **Diario della build reale** (append-only): bobinatura, test a coccodrillo, avvii, misure vere man mano |
 | [TEORIA_E_FUNZIONAMENTO.md](TEORIA_E_FUNZIONAMENTO.md) | Come funziona davvero: oscillatore auto-risonante, feedback, risonanza, schema |
 | [CALCOLI_E_FORMULE.md](CALCOLI_E_FORMULE.md) | Tutti i calcoli con i numeri di questo progetto: spire, induttanza, frequenza, dissipazione, fusibile |
 | [BOM.md](BOM.md) | Lista materiali in due sezioni: cosa c'è già in casa e cosa comprare, con prezzi e scopo |
@@ -53,9 +54,9 @@ Maker principianti con basi di elettrotecnica: sai cos'è un transistor, un indu
 
 ## Stato del progetto
 
-**Prototipo documentato, non ancora costruito.** Questa repo nasce da un'analisi ingegneristica completa (calcoli verificati su build reali documentate, con fonti) ma **senza hardware ancora assemblato dalla repo stessa**. Le previsioni chiave (v1.2.1): risonanza a 1,57–1,72 MHz (centro ~1,65; range dichiarabile 1,6–1,7), assorbimento 0,5–0,9 A (stima), dissipazione BD139 ~0,8–1,3 W (stima da validare al collaudo), R DC secondaria attesa 17–18 Ω.
+**🛠️ BUILD REALE IN CORSO (aggiornato 13/10/2026).** Stato fasi: **A ✅** secondaria ~450 spire bobinata a mano (R ≈ 20 Ω, f attesa ~1,74–1,91 MHz) · **C ✅** pallona stagnola collegata (continuità fondo↔palla 20 Ω) · **B 🔶** primaria avvolta ma da riposizionare alla base · **F 🔶** primo avvio riuscito il 12/10/2026 a coccodrillo: **il circuito OSCILLA** (fix n°1 — spire primaria ravvicinate — confermato sul banco), con campo debole (LED solo a contatto) e dissipatore bollente, entrambi coerenti con i collegamenti volanti a coccodrillo e la primaria non alla base. **Prossimo step: montaggio su perfoboard** (condensatori ≤2 cm dal BD139, nodo base compatto) con test incrementali F.1→F.6. Tutti i dettagli e le misure vere nel [diario della build](ESECUZIONE_REALE.md).
 
-**Chi lo costruisce è invitato ad aprire una issue** con le proprie misure: frequenza misurata, assorbimento, corrente di base, distanza di accensione, colpo d'occhio del setup. Ogni dato reale rende la documentazione migliore per il prossimo.
+**Chi lo costruisce è invitato ad aprire una issue** con le proprie misure: frequenza misurata, assorbimento, corrente di base, distanza di accensione, colpo d'occhio del setup. Ogni dato reale rende la documentazione migliore per il prossimo (anche il nostro: appena la perfoboard gira, qui finiscono f, assorbimento e distanze misurate).
 
 > Nota onesta: la secondaria v1.2.1 (0,25 mm, 500 spire su Ø reale 2,9 × 14 cm) porta la risonanza a ~1,65 MHz — fuori dalla portata del TIP41C (β ≈ 1,7–1,9), per questo il transistor titolare è il BD139 (fT 190 MHz, β ≈ 110–121 a 1,57–1,72 MHz, margine d'avvio ~37–40×). Il TIP41C resta come alternativa documentata per build a bassa frequenza. Col diametro reale 2,9 la formula di Wheeler rientra nel suo range di validità (l/D 4,83 dentro 0,4–5; col nominale 2,7 era 5,19, fuori di poco). Tutti i dettagli nell'analisi.
 

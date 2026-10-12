@@ -3,6 +3,8 @@
 > Generato da Einstein — card kanban t_cd0b1d2e, 11/09/2026
 > Fonti: `BOM.md` + `ANALISI_INGEGNERISTICA.md` (fa fede per le specifiche) vs `lab-autodidata/componenti/inventario.md` (aggiornato 11/09/2026, scorte confermate da Mauro).
 > Input diretto per la card prezzi (card D della catena spesa).
+>
+> **UPDATE 09/10/2026 — ORDINE ESEGUITO ✅** (prima spesa componenti reale, conferma esplicita Mauro): ordine AliExpress con **filo 0,25 mm ~105 m**, **dissipatori 15×10×40 ×10**, **BD139 ×10 + BD140 ×10**, **LM358P ×10**, **kit MLCC 300 pz**, **portafusibili 5×20 ×5 (+5 fusibili vetro 5A)**. Tutte e 5 le voci **BLOCCANTI** della §6 sono coperte — stato **IN ARRIVO** (in scorta all'arrivo fisico). Non ordinato: TIP41C (opzionale), MAX485 (altro progetto). ⚠️ Da verificare all'arrivo: se il kit MLCC include il **104 = 100 nF** (voce BOM n°14 — nessun taglio 100 nF citato).
 
 **Sintesi:** 13 voci BOM **presenti o sostituibili** in inventario, **5 da comprare** (tutte bloccanti) + 1 opzionale (TIP41C). Attrezzatura completa. Totale carrello stimato **14–25 €** (16–28 € con TIP41C opzionale).
 
@@ -63,7 +65,7 @@
 
 **Filo Ø 0,45 mm in casa (~3 m):** non sostituibile in nessun ruolo della secondaria (31 spire totali al massimo). Resta per eventuali collegamenti di potenza.
 
-**Raccomandazione d'acquisto:** rotolo Ø **0,25 mm** — ⚠️ correzione 28/09: NON ancora ordinato (il «già ordinato» era erroneo); opzioni: AE 105 m €4,69 (margine ~2,2×, carrello 28/09) o AM 229 m €12,20 (margine ~4,7×). All'arrivo annotare la metratura reale misurata.
+**Raccomandazione d'acquisto:** rotolo Ø **0,25 mm** — ✅ **ORDINATO 09/10/2026** (AliExpress, variante ~105 m → margine ~2,3×; prima spesa componenti reale, conferma Mauro). All'arrivo annotare la metratura reale misurata in `lab-autodidata/componenti/inventario.md` §Ordine 09/10.
 
 ---
 
@@ -100,5 +102,7 @@ Saldatore (stazione Silverflo 960-I), multimetro, pinza diagonale, flusso saldan
 | 6 | TIP41C ×2 | TO-220 NPN 100 V 6 A, fT 3 MHz — alternativa a bassa f | 2–3 € | OPZIONALE |
 
 **Totale stimato: 14–25 € senza TIP41C (opzionale), 16–28 € con.** Voci già coperte da sostituzioni/sotock: elettrolitico, 1N4148, fusibili, resistenze tuning (kit ELEGOO), LED, resistore 10k, batteria, tubetto, stagnola, filo primaria, interruttore, pasta termica, attrezzatura — ZERO €.
+
+> **✅ ESITO 09/10/2026 — ORDINE ESEGUITO** (conferma Mauro): voci 1–5 TUTTE incluse nell'ordine AliExpress (BD139 ×10 + BD140 ×10, filo 0,25 mm ~105 m, dissipatori 15×10×40 ×10, portafusibili 5×20 ×5 + 5 fusibili vetro 5A, kit MLCC 300 pz) + LM358P ×10. TIP41C non ordinato (resta opzionale). Stato: IN ARRIVO → **la BOM Slayer diventa completa all'arrivo fisico**. ⚠️ Verificare all'arrivo che il kit MLCC includa il 104 = 100 nF (voce BOM n°14, non citata nell'elenco dei tagli).
 
 *Ordine consigliato: il filo di rame PRIMA di tutto (unica metratura critica, 2-4 settimane da AliExpress); il resto anche da negozio/Amazon in un giorno.*
