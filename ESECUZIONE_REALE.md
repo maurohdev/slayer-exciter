@@ -467,6 +467,32 @@ Foto del banco analizzata con 4 passate (full + 3 crop con zoom). Risultati:
 
 ---
 
+
+### CORREZIONE + nuova evidenza chiave (14/10, Mauro): **C1 ESISTE** (foto «104» in arrivo) · output kV COLLAPSATO vs 12/10
+
+- **C1 100 nF: PRESENTE** — Mauro conferma, foto con «104» leggibile in arrivo (la domanda diventa: DOVE, ≤2 cm dai pin C-E?)
+- **Evidenza differenziale (paragonabile, stessa secondaria):**
+  - **12/10, coccodrilli+fili volanti, pack:** LED acceso AVVICINANDOLO al top load + **scintille tipiche sul top load** (~kV presenti) — dissipatore bollente ma ENERGIA IN CAMPO
+  - **14/10, perfoboard saldato, JX-12050:** oscillazione (LED1 fisso ~1 min fino alla morte) ma **ZERO reazione del LED al top load, nemmeno a contatto** (continuità topload→fondo L2 verificata ✓) — dissipatore solo caldo → **energia NESSUNA (né campo né calore eccessivo)**
+
+### Lettura: l'ampiezza sul risonatore è crollata, non solo «un po'». Ipotesi in ordine
+
+1. **f fuori finestra** — il top load rifatto (dimensione/C diversa) e/o il loop primario ora via Wago+fili (L diversa) possono aver spostato la frequenza fuori dalla zona dove il sistema costruisce kV (1,74–1,91 MHz attesi). Oscilla comunque (le parassitiche bastano) MA a f sbagliata → ampiezza bassa → niente kV. **Discriminatore istantaneo: radio AM** (posizione del ronzio sulla banda)
+2. **Sovra-accoppiamento** — primaria ora all'estrema base, accoppiamento massimo: il primario può «scaricare» la risonanza della secondaria (energia che va e viene L1↔transistor invece di pompare L2). Fix testabile a costo zero: scorrere la primaria SU di 5–10 mm e osservare il LED vicino al top load
+3. **C1 nel posto sbagliato** (in attesa foto: tra C-E pin addosso, o tra +12V-GND lontano? il ruolo RF cambia radicalmente)
+4. **Alimentazione stiff** (JX-12050 12,0 V fissi vs pack che cedeva): drive più duro → morte più rapida (coerente con l'avalanche del n°2) e punto di lavoro diverso — considerazione secondaria
+5. Lotto AE debole: resta in piedi come co-fattore (3 morti stesso lotto)
+
+### Protocollo riaccensione n°3 (aggiornato — la misura in più è la RADIO)
+
+1. Verifica foto-posizione C1 (in attesa) + 100–330 Ω in serie al feedback
+2. n°3 diodo-testato → montaggio → **6 V (4×AA) con DMM in serie**
+3. **RADIO AM vicina: TROVARE il ronzio e annotare la posizione sulla banda** — prima lettura di f reale; se fuori zona MW alta → hipotesi 1 confermata → sistemare C top load (palla giusta) / loop primario
+4. **Slide di accoppiamento:** primaria su/giù a passi di 5 mm guardando il LED vicino al top load — trovare il punto di massima kV (non di massima corrente!)
+5. Solo dopo: 12 V, assorbimento, tempi, distanza LED
+
+---
+
 ---
 
 <!-- Le prossime sezioni si aggiungono sotto, una per sessione di lavoro reale:
