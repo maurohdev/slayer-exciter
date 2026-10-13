@@ -393,12 +393,52 @@ Il diario del 12/10 riporta «LED si accende solo a contatto». Il video mostra 
 2. Pinout E-C-B (faccia stampata: 1=E, 2=C, 3=B) · dissipatore + pasta
 3. Verifica fisica 100 nF ≤2 cm da C-E (punto critico sopra) — stessa sessione di saldatura
 4. LED1 resta com'è (clamp + spia — dimostrato funzionante)
-5. Accensione attesa: LED clamp debolmente acceso FISSO · 0,4–0,9 A · ronzio radio AM · dissipatore tiepido
+5. Accensione eseguita: ✅ **IL CIRCUITO RIOSCILLA** — LED clamp rosso acceso fisso (v. sezione successiva per i sintomi residui)
 6. Se anche il fresco muore in fretta → STOP, si indaga su C1/posizionamento prima di montarne un terzo
 
 ### Validazione del ricambio (notte 13→14/10) — SANO ✓
 
 Diodo-test su BD139 fresco dal lotto, prima del montaggio: **Base→E = 0,55 V · Base→C = 0,55 V · inverso = OL su entrambe** = firma perfetta di NPN sano (specchio esatto del morto: B-E era OL in ENTRAMBI i versi). 0,55 V invece di 0,6–0,7 è normale: il DMM inietta ~1 mA, lettura 0,55–0,65 tipica. Restante da confermare prima di montare: **C-E = OL in entrambi i versi**. Poi montaggio (E-C-B, dissipatore+pasta) e verifica 100 nF ≤2 cm.
+
+---
+
+## 📅 Notte 13→14 Ottobre 2026 — FIX COMPLETATO: BD139 sostituito (taglio + risaldatura) → **IL CIRCUITO RIOSCILLA su perfoboard ✅**
+
+> Chiusura della diagnosi della notte. Il progetto torna a oscillare: è il primo run stabile su perfoboard (Fase D/E con oscillazione confermata).
+
+### Fix eseguito da Mauro
+
+1. **Estrazione del morto col metodo distruttivo:** transistor vecchio **TAGLIATO VIA** (non serve salvarlo: B-E aperta = carta cesta) — anche più rapido della gamba-alla-volta
+2. **BD139 fresco dal lotto ×10**, validato PRIMA con diodo-test: B→E 0,55 V · B→C 0,55 V · inverso OL su entrambe (firma NPN sano)
+3. Risaldatura in scheda + dissipatore
+
+### Risultato della riaccensione
+
+| Osservazione | Stato |
+|---|---|
+| Oscillazione | ✅ **SI** — LED clamp rosso acceso FISSO (= escursioni negative continue sul nodo base = feedback che si sostiene) |
+| Alimentazione | JX-12050 (12 V da rete), stabile |
+| Dissipatore | 🔶 **scalda** — da quantificare (v. sotto) |
+| LED esterno a contatto col top load | ❌ NON si accende più (il 12/10 a coccodrillo sì) |
+
+### Lettura dei due sintomi residui (sono LO STESSO sintomo)
+
+- **Dissipatore caldo:** tiepido-caldo è FISIOLOGICO (0,8–1,3 W attesi su Rth 12–18 K/W = +10–23 °C sopra ambiente). È anomalo solo se scottante in <60 s (firma di commutazione sporca, come il 12/10). **Senza il numero dell'assorbimento non si discrimina** — prima misura al prossimo banco: DMM in serie 10 A.
+- **LED esterno muto a contatto:** il 12/10 il kV sul top load bastava per il LED a contatto. Oggi no → **l'ampiezza sul top load è crollata**. Coerente con il quadro «oscilla ma spende l'energia in calore sul transistor» invece che in campo.
+
+**Sospetti in ordine (chi spiega TUTTO insieme è il preferito):**
+1. **100 nF (104) non ancora VERIFICATO ≤2 cm dai pin C-E** — richiesto a più riprese, mai confermato. Senza disaccoppio locale: commutazione sporca → caldo + kV basso. SOSPETTO N°1
+2. **Palla a strati** (fogli sovrapposti non equipotenziali): C ridotta e Q giù — contribuisce al LED muto, non al caldo. Da rifare **accartocciata** (foglio strappato/manipolato, superficie irregolare, un solo blocco elettrico) MA dopo le misure
+3. **Drive R1 10k troppo duro** con l'attuale accoppiamento → se assorbimento >1,2 A: provare 22 k
+
+### Prossimo banco (in ordine)
+
+- [ ] **Assorbimento** (DMM 10 A in serie): 0,4–0,9 A = sano · >1,2 A = commutazione sporca
+- [ ] **Verifica FISICA 100 nF ≤2 cm dai pin C-E** (l'ultimo fantasma del progetto)
+- [ ] Radio AM vicina: prima lettura di f reale (previsione 1,74–1,91 MHz) + registrare
+- [ ] Tempi di run brevi finché il caldo non è quantificato (buona pratica comunque)
+- [ ] Rifare la palla **accartocciata** (non a strati), ricontrollare il giunto filo-stagnola (~20 Ω atteso) e riprovare il LED a contatto
+- [ ] Riportare qui: assorbimento, f, temperatura dissipatore a 30/60/120 s, distanza LED
 
 ---
 
