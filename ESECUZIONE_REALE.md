@@ -357,11 +357,43 @@ Il diario del 12/10 riporta «LED si accende solo a contatto». Il video mostra 
 
 ### Checklist diagnosi (prossimo banco, 5 min, spento)
 
-- [ ] V emettitore↔GND a potenza on: atteso **~0 V** (se ~12 V → ritorno emettitore aperto)
+- [x] V emettitore↔GND: **0 V** ✓ · +alim↔emettitore 12,4 V ✓
 - [ ] V base↔GND a potenza on: atteso **~0,6–0,7 V** (12,4 V = floating — confermato da Mauro)
-- [ ] Test diodo BD139 sui pin: B-E e B-C ~0,6–0,7 V in un verso (aperto = giunzione morta)
-- [ ] Ω pad nodo base ↔ top load: atteso **~20 Ω** (via secondaria) — aperto = giunto feedback rotto
+- [x] Test diodo BD139: **B-E APERTA in entrambi i versi = transistor MORTO** · B-C 0,87 V viva → cambio BD139 (v. sezione notte)
+- [x] Ω pad base ↔ top load: **18 Ω** ✓ percorso integro — giunto feedback NON era il problema
 - [ ] **Rifusione nodo base con raschiatura+ stagnatura del filo smaltato** (non «a tocco»), poi riaccensione
+
+---
+
+## 📅 13 Ottobre 2026 (notte) — VERDETTO: **BD139 GIUNZIONE B-E APERTA (morto)** — diagnose completata da misure Mauro, cambio transistor
+
+### Misure di Mauro (14/10 passata mezzanotte, potenza OFF)
+
+| # | Misura | Lettura | Verdetto |
+|---|---|---|---|
+| 1 | Diodo-test **B-E** | **«1» = OL in ENTRAMBI i versi** | ❌ **giunzione B-E APERTA = transistor morto** |
+| 1 | Diodo-test **B-C** | **0,87 V** in un verso | ✓ giunzione B-C viva (0,87 normale su power BJT al DMM) |
+| 1 | + puntale su E verso B | **LED rosso di clamp SI ACCENDE** | ✓ LED1 montato nel verso giusto e funzionante (prova eccellente: E→B è la direzione di clamp) |
+| 2 | Ω top load → piedino base (attraverso saldature) | **18 Ω** | ✓ percorso feedback integro (17 bobina + giunti/punte) |
+| 3 | V emettitore ↔ massa | **0 V** | ✓ ritorno di massa OK |
+| 3 | V +alimentazione ↔ emettitore | **12,4 V** | ✓ alimentazione presente |
+| 4 | giunto filo L2 → pad base | ~0 Ω (beep) | ✓ **giunto feedback SALDATO bene** — il sospetto n°1 di ieri è SVENTATO |
+
+### Diagnosi finale
+
+- **La base a 12,4 V di ieri sera si spiega senza misteri:** giunzione B-E aperta = nessuna corrente di base → nessuna caduta su R1 → il nodo base sale a piena tensione attraverso R1. Non era il giunto (integro, 18 Ω fino al pad): era DENTRO il transistor.
+- Quadro coerente al 100%: B-E aperta → niente I_B → niente I_C → niente oscillazione, dissipatore freddo, alimentatore stabile, collettore (e dissipatore) a 12,4 V.
+- **Causa della morte (onesta):** la B-E è la giunzione più fragile del BD139 (VEBO 5 V). Stress cumulativo probabile: i 110 s «bollente» del 12/10 con accoppiamento scarso + transitori di switching (spegnere il circuito sotto oscillazione è il transitorio più violento per B-E). Non determinabile il colpo esatto che l'ha ufficialmente chiusa tra run 1 e run 2 di stasera.
+- **Verifica rimasta CRITICA prima del nuovo transistor:** confermare che il **100 nF (104) sia DAVVERO saldato ≤2 cm dai pin C-E** sulla perfoboard — mai verificato. Senza disaccoppio locale i picchi flyback stressano B-E: è il sospetto n°1 per «perché è morto».
+
+### Procedura cambio transistor
+
+1. BD139 FRESCO dal lotto ×10 → diodo-test DA SPENTO sul banco PRIMA di montarlo: B-E ~0,6–0,7 V, B-C ~0,6–0,7 V (un verso), OL nell'altro, C-E OL entrambi
+2. Pinout E-C-B (faccia stampata: 1=E, 2=C, 3=B) · dissipatore + pasta
+3. Verifica fisica 100 nF ≤2 cm da C-E (punto critico sopra)
+4. LED1 resta com'è (clamp + spia — dimostrato funzionante)
+5. Accensione attesa: LED clamp debolmente acceso FISSO · 0,4–0,9 A · ronzio radio AM · dissipatore tiepido
+6. Se anche il fresco muore in fretta → STOP, si indaga su C1/posizionamento prima di montarne un terzo
 
 ---
 
