@@ -335,8 +335,33 @@ Il diario del 12/10 riporta «LED si accende solo a contatto». Il video mostra 
 - [ ] Verifica fusibile T2A nel percorso (gate A2) — prima di ogni accensione
 - [ ] Test diodo BD139 (baratto: 30 s, zero rischi — S4 escluso solo per logica, non da misura)
 - [ ] Verifica posizionamento 100 nF sulla perfoboard (≤2 cm dai pin C-E)
-- [ ] **Test discriminatorio A/B/C su JX-12050** (prossima accensione)
+- [x] **Test discriminatorio A/B/C su JX-12050** — ESEGUITO tarda sera: **esito A ✅** (LED acceso, ~1 min di oscillazione) → pack colpevole, caso chiuso. Subito dopo: nuovo guasto base floating → v. sezione successiva
 - [ ] Comprare: caricabatterie 3S 12,6 V CC/CV (con balance se il pack ha JST-XH)
+
+---
+
+## 📅 13 Ottobre 2026 (tarda sera) — TEST DISCRIMINATORIO ESEGUITO: **ESITO A ✅** (circuito sano, pack colpevole CHIUSO) + nuovo guasto: base floating a 12,4 V
+
+### Cronaca
+
+1. **Collegato il JX-12050 al posto del pack** (via adattatore femmina DC): **primo run ✅ — LED acceso, circuito oscillante, lasciato girare ~1 minuto.** → **Esito A del protocollo confermato: il circuito è SANO, il colpevole del «flash-e-muore» era il pack.** Caso pack chiuso: da ricaricare (caricabatterie 3S 12,6 V CC/CV da comprare) e ritestato; se ricollassa → pensione.
+2. **Al secondo tentativo: LED non lampeggia NEANCHE**, alimentatore stabile (nessun foldback), dissipatore completamente FREDDO anche dopo minuti → il transistor non conduce e non oscilla (assorbimento ~0).
+3. **Misure di Mauro (potenza on):** **12,4 V sul nodo base** rispetto alla massa · **12,4 V sul dissipatore** rispetto alla massa · scintilla toccando per sbaglio emettitore+dissipatore.
+
+### Lettura diagnostica (13/10, Jeff)
+
+- **Base a 12,4 V = base FLOATING (circuito aperto), NON «sta conducendo».** Con base pilotata e giunzione B-E sana il nodo base si clamp a **~0,6–0,7 V**. Leggere tensione piena su base = nessuna corrente attraversa R1 → il percorso R1→base (o il giunto feedback sul nodo base) è APERTO, oppure la giunzione B-E è aperta. Un transistor OFF spiega tutto il resto: niente oscillazione, dissipatore freddo, alimentatore stabile.
+- **Dissipatore a 12,4 V = NORMALE per costruzione:** il tab metallico del BD139 (TO-126) **è elettricamente il COLLETTORE**; con il transistor interdetto il collettore (via primaria, quasi-corto DC) si porta al potenziale di alimentazione. Il dissipatore avvitato al tab è quindi **SEMPRE al potenziale del collettore**: da considerare VIVO, non appoggiare a fili/parti metalliche. (Opzioni future: kit mica/silpad + rondelle isolanti per montaggio isolato.)
+- **Scintilla emettitore(≈0 V)↔dissipatore(+12 V):** corto franco dell'alimentazione tramite contatto accidentale — innocua a 12 V SELV ma conferma il potenziale del dissipatore.
+- Perché ha funzionato 1 min e poi niente: **giunto marginale apertosi** — sospetto n°1 il giunto feedback fondo-L2→nodo base (filo smaltato: contatto «a tocco» che regge un run e cede al primo movimento), n°2 filo base/emettitore mosso durante la manipolazione tra i due run.
+
+### Checklist diagnosi (prossimo banco, 5 min, spento)
+
+- [ ] V emettitore↔GND a potenza on: atteso **~0 V** (se ~12 V → ritorno emettitore aperto)
+- [ ] V base↔GND a potenza on: atteso **~0,6–0,7 V** (12,4 V = floating — confermato da Mauro)
+- [ ] Test diodo BD139 sui pin: B-E e B-C ~0,6–0,7 V in un verso (aperto = giunzione morta)
+- [ ] Ω pad nodo base ↔ top load: atteso **~20 Ω** (via secondaria) — aperto = giunto feedback rotto
+- [ ] **Rifusione nodo base con raschiatura+ stagnatura del filo smaltato** (non «a tocco»), poi riaccensione
 
 ---
 
