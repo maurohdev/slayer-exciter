@@ -521,6 +521,16 @@ Bilancio della giornata (enorme, per essere una sessione sola):
 
 **Domani (15/10):** eseguire il piano — Fase 0 verifiche statiche (R1! C1 zampe! elettrolitico!) → Fase 1 modifiche (220 Ω feedback) → Fase 2 accensione 6 V → Fase 3 tuning (radio AM + slide primaria = recupero kV) → Fase 4 salita 12 V → Fase 5 ordini UE. Criteri di stop inclusi nel piano.
 
+---
+
+## 📅 15 Ottobre 2026 — VERIFICA R1 (Fase 0.1): **CONFERMATA 10 kΩ** ✓
+
+> Fonte: Mauro in chat (15/10), verifica bande/misura. Chiude il sospetto aperto nella sezione 14/10 («R1 forse 1 kΩ»).
+
+- **R1 base = 10 kΩ CONFERMATA** → ipotesi «drive 10× troppo duro» **SCARTATA** come causa delle morti dei transistor e del calore.
+- Il peso delle ipotesi residue si sposta su: **zampe di C1** (dove atterrano davvero, lato saldature), **elettrolitico** (100 µF vs 1000 µF da confermare), **lotto AE dei BD139** (2 morti stesso lotto — la variabile contraffatto resta aperta finché un genuino UE non sopravvive), transitori di switching con accoppiamento massimo.
+- Le caselle Fase 0.1 del piano (`PIANO_RISOLUZIONE_2026-10-14.md`) si considerano **esaurite in esito ✓** (10 kΩ → nessuna sostituzione necessaria). Il protocollo resta esemplare: sospetto formulato → verifica → chiusura documentata.
+
 <!-- Le prossime sezioni si aggiungono sotto, una per sessione di lavoro reale:
 ## 📅 <data> — <FASE X>: <titolo>
 -->
