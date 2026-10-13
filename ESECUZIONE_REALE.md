@@ -396,6 +396,10 @@ Il diario del 12/10 riporta «LED si accende solo a contatto». Il video mostra 
 5. Accensione attesa: LED clamp debolmente acceso FISSO · 0,4–0,9 A · ronzio radio AM · dissipatore tiepido
 6. Se anche il fresco muore in fretta → STOP, si indaga su C1/posizionamento prima di montarne un terzo
 
+### Validazione del ricambio (notte 13→14/10) — SANO ✓
+
+Diodo-test su BD139 fresco dal lotto, prima del montaggio: **Base→E = 0,55 V · Base→C = 0,55 V · inverso = OL su entrambe** = firma perfetta di NPN sano (specchio esatto del morto: B-E era OL in ENTRAMBI i versi). 0,55 V invece di 0,6–0,7 è normale: il DMM inietta ~1 mA, lettura 0,55–0,65 tipica. Restante da confermare prima di montare: **C-E = OL in entrambi i versi**. Poi montaggio (E-C-B, dissipatore+pasta) e verifica 100 nF ≤2 cm.
+
 ---
 
 <!-- Le prossime sezioni si aggiungono sotto, una per sessione di lavoro reale:
