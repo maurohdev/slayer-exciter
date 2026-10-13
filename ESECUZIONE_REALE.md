@@ -2,7 +2,7 @@
 
 > **Scopo di questo file:** registro ufficiale e append-only di ciò che Mauro ha **realizzato fisicamente**, step by step. È il punto di contatto tra la documentazione teorica della repo (BOM, manuale, calcoli — che restano intatti come riferimento) e la realtà del banco di lavoro.
 > **Regola:** ogni sessione di lavoro reale = una nuova sezione datata. Niente viene riscritto: si aggiunge. Le deviazioni dal manuale sono documentate onestamente, con il giudizio tecnico su ognuna.
-> **Stato progetto (aggiornato a ogni sezione):** Fase A ✅ (secondaria ~450 spire, **laccata 12/10 ~23:00** — primo fuoco ≥24 h dopo) · Fase B 🔶 (primaria avvolta ma da riposizionare alla base) · Fase C ✅ · Fase D ⬜ · Fase E ⬜ · Fase F 🔶 (avvii a coccodrillo 12/10: oscilla)
+> **Stato progetto (aggiornato a ogni sezione):** Fase A ✅ (secondaria ~450 spire, **laccata 12/10 ~23:00** — primo fuoco ≥24 h dopo) · Fase B ✅ (4 spire ravvicinate alla BASE — conferma visiva foto/video 12/10, vedi sezione 13/10) · Fase C ✅ · Fase D ⬜ · Fase E ⬜ · Fase F 🔶 (run 12/10 documentato su video: oscilla ≥96 s, LED esterno acceso anche senza contatto) · ⚠️ pre-riaccensione: verificare fusibile T2A (non visibile nei media), tensione pack (etichetta «3,7 V» incoerente), test diodo BD139
 
 ---
 
@@ -177,6 +177,93 @@ Deviazioni dal manuale: 3 (giunzione nastro invece di stecca; niente forellini, 
 - **Connettori a leva ExtraStar DF-42** ×2 (4 poli da 3 porte = esattamente i 4 nodi del progetto: BASE, +12 V, GND, COLLETTORE) — il fix n°1 (inversione primaria) diventa un gesto da 3 secondi a leva aperta
 - **KDE 24A** come giunzioni di complemento (pigtail condensatori, patch bay per R1 di tuning)
 - Numeri del banco volante: contatto a leva ben stretto = 1–5 mΩ (invisibili a 0,9 A); spezzone 10 cm ≈ 100 nH ≈ 1 Ω a 1,7 MHz contro i 7,4–8,8 Ω della primaria → il circuito se ne accorge pochissimo. Il 90% dei «non oscilla» senza saldatura resta lo smalto non raschiato, non la resistenza di contatto
+
+---
+
+## 📅 13 Ottobre 2026 — DOCUMENTAZIONE MEDIA: banco volante ibrido + test al buio su video (sessione del 12/10 pomeriggio)
+
+> Fonte: 6 foto + 1 video (119,5 s, 1080p HEVC) scattati/ripresi il 12/10 tra le 14:21 e le 16:07, ricevuti via Nextcloud («slayer-exciter 13-10», zip 396 MB) e analizzati con vision model il 13/10. Analisi completa (foto per foto, timeline video, audio): **`media/2026-10-13/MEDIA_ANALISI_2026-10-13.md`**. Qui entra nel diario solo ciò che i media mostrano: ciò che non è visibile è dichiarato tale, niente è dedotto.
+
+**Premessa onesta sul contenuto reale dei media:** NESSUNA saldatura su perfoboard e NESSUN top load v2 risultano dalle immagini → **Fase D/E ⬜ (non iniziata)**, Fase C resta quella già documentata. Le uniche 2 saldature di tutto il set sono sull'interruttore (qualità scarna, vedi A1). Ciò che i media documentano davvero è la sessione del 12/10 pomeriggio: **assemblaggio del banco volante ibrido (connettori DF-42 + coccodrilli) e il test al buio del run post-fix, ripreso per intero**.
+
+### Cronaca della sessione (dai timestamp EXIF, verificati)
+
+| Ora 12/10 | Medium | Cosa documenta |
+|---|---|---|
+| 14:21:53 | F1 | Componenti pronti sul tappetino silicone: interruttore rocker KCD1, 2 connettori a leva DF-42, elettrolitico Tonax VEHT 105 °C, disco ceramico arancione, cavo rosso AWM 300 V → gli acquisti «banco volante» del 12/10 già sul tavolo |
+| 14:22:00 | F2 | Dettaglio delle 2 saldature interruttore: giunti globulari opachi, flux non pulito, un satellite di stagno → **da rifare** (A1) |
+| 15:37:34 | F3 | **Circuito completo**: bobina verticale + pallona + banco volante. Primaria rossa a 3-5 spire ravvicinate ALLA BASE su fascia bianca (legatura filo) → **fix 12/10 visivamente confermato ✓**. Filo di cima che fuoriesce dal nastro e penetra nella palla ✓ |
+| 16:01:16 | V1 | **Video 119,5 s: il test al buio** (timeline sotto; luci accese solo da 104 s) |
+| 16:07:11 | F4 | Post-run (~3,9 min dopo la fine del video): BD139 su dissipatore estruso avvitato, 3 pin su connettore Dupont 3-vie (A3), LED rosso di clamp, 6 coccodrilli |
+| 16:07:14 | F5 | Condensatori (elettrolitico + ceramico) + resistenza + interruttore sulla morsettiera: caps a distanza >>2 cm da Q1 (A5, già diagnosticato) |
+| 16:07:29 | F6 | Banco dall'alto: batteria blu con etichetta «3.7V 7800mAH» (A4), connettori a leva, punte DMM senza strumento in campo, **NESSUN fusibile visibile** (A2) |
+
+### Timeline del video (test al buio)
+
+| t | Evento |
+|---|---|
+| ~14 s | **Primo punto rosso saturo acceso** (LED1 driver) → **il circuito OSCILLA** |
+| 14→110 s | LED1 acceso in continuo → **≥96 s di oscillazione documentata** |
+| 24-25 s | Bagliore giallo-arancio a CONTATTO col bordo della palla (natura non determinabile al 100%: lampadina neon vs LED vs scarica) |
+| 31-37 s | Indice che tocca la palla: punto brillante al contatto (micro-scarica probabile; il manuale vieta di toccare in funzione — A6) |
+| **40-50 s** | **LED giallo 5 mm tenuto in mano ACCESO a pochi cm dalla palla, SENZA contatto** |
+| 62-76 s | Replica del test LED esterno: bagliore giallo stabile |
+| 104 s | Luci accese: banco completo (primaria ravvicinata alla base visibile, stazione saldante, scatola ELEGOO, rocchetto filo smaltato) |
+| 110 s | **Mano che regge/tocca il dissipatore** = verifica temperatura DOPO lo spegnimento, coerente col protocollo |
+| 113-118 s | Close-up modulo con LED arancio (probabile DC-DC, serigrafia illeggibile) e batteria con guaina aperta (A4); nessuno strumento con display leggibile |
+
+### Checklist tecnica (esiti dai media)
+
+| Punto checklist | Esito | Nota |
+|---|---|---|
+| Primaria ravvicinata alla base (fix 12/10) | ✓ VERIFICATO | F3 + F5 + frame full 106 s: 3-5 spire close-wound all'estrema base |
+| Contatto filo cima ↔ palla | ✓ VERIFICATO | F3: filo che entra nella stagnola sotto il nastro |
+| Interruttore in serie presente e usato | ✓ VERIFICATO | rocker in linea sul rosso; dito sull'interruttore a t=113 s |
+| Oscillazione sostenuta | ✓ VERIFICATO | LED1 acceso ≥96 s consecutivi (14→110 s) |
+| Trasferimento energia senza fili | ✓ (breve distanza) | LED esterno acceso a pochi cm (40-76 s); fascia 2-5 cm NON misurabile dai media |
+| Test lampada fluorescente | 🔶 parziale | nessun tubo riconoscibile; solo LED esterno + bagliore a contatto |
+| Secondaria laccata / zone di contatto libere | — non applicabile | media delle 14-16 vs laccatura ~23:00 (ultimo scatto 6h52m prima) |
+| Fusibile T2A in serie | ⚠️ **NON visibile in nessun media** | da verificare a banco PRIMA di ogni nuova accensione (A2) |
+| Caps C1/C2 a ≤2 cm da Q1 | ⚠️ non rispettato | atteso su banco volante; fix = perfoboard D/E (già pianificato) |
+| Saldature (cold joint, ponti) | ⚠️ 2 scarse | solo interruttore (A1); resto = connessioni meccaniche |
+| Pinout BD139 (1=E 2=C 3=B) | — non verificabile | serigrafia illeggibile, pin inghiottiti dal connettore → test diodo |
+| Nodo base compatto (R1+LED1+fondo L2) | — non verificabile | sepolto nel groviglio → si verifica su perfoboard |
+
+### Anomalie catalogate (gravità → fix)
+
+| # | Anomalia | Gravità | Fix |
+|---|---|---|---|
+| A1 | 2 saldature interruttore globulari/opache, flux residuo, niente termorestringente (F2) | da correggere | ristagnare entrambi i giunti (fillet concavo lucido), alcol isopropilico, termorestringente |
+| A2 | **Fusibile T2A non visibile in NESSUN medium** | **BLOCCANTE per la prossima accensione** | verificare/reinserire in serie sul + PRIMA di ogni run (protocollo 10/10: SEMPRE, anche per secondi) |
+| A3 | Pin BD139 su connettore Dupont 3-vie invece che saldati (F4, t=110 s) | da correggere in D/E | saldare corto e diretto su perfoboard; attenzione ai falsi contatti sull'emettitore (corrente piena) |
+| A4 | Batteria: etichetta «3.7V 7800mAH» incoerente col dichiarato 3S 12 V + guaina aperta con fili che escono (F6, t=118 s) | da correggere | misurare V a riposo (atteso ~11-12,6 V se 3S; ~3,7 V = cella singola → NON adatta); isolare la guaina; sospettare capacità dichiarata gonfiata (7800 mAh su 18650 = red flag classico) |
+| A5 | Condensatori a distanza >>2 cm dal BD139 | pianificato | perfoboard D/E (X_L parassita ~130% di X_C del 100 nF, già calcolato nel diario 12/10) |
+| A6 | Dita a contatto con la palla in funzione (t=31-37 s) | promemoria sicurezza | evitare nei prossimi run (scottature RF); evento già avvenuto, nessun danno visibile |
+| A7 | Detriti conduttivi sul banco (sferette stagno, viti, macchia umida in F1) | cautela | pulire il banco prima di ogni accensione (corti franco su Li-ion non perdonano) |
+| A8 | Cablaggio spaghetti; un coccodrillo morde solo l'isolamento (F4) | in risoluzione | DF-42 già integrati; risoluzione definitiva = perfoboard D/E |
+
+### Verifiche numeriche (python, 13/10 — niente numeri inventati)
+
+- Video: inizio 16:01:16 + 119,5 s = **fine 16:03:15,5** → le foto F4-F6 (16:07) sono post-run a **+3,9 min**, a luci accese: ispezione a caldo appena smontato il set.
+- Tutti i media (14:21:53 → 16:07:29) precedono la laccatura (~23:00) di **6h52m–8h38m** → l'aspetto lucido della secondaria in F3 è lo smalto del filo, NON il top coat acrilico; la verifica «zone di contatto libere» resta al prossimo banco.
+- LED1 acceso da ~14 s a ≥110 s = **≥96 s consecutivi** = 87% del run ~110 s («1 min 50 s») dichiarato nel diario del 12/10 → il video è quasi certamente la documentazione di quel run.
+- **NESSUNA lettura strumentale leggibile in alcun media** (le punte DMM compaiono, lo strumento mai): nessun nuovo valore di f / assorbimento / distanza da registrare — resta tutto qualitativo.
+
+### Correzione al diario del 12/10 (precisione onesta)
+
+Il diario del 12/10 riporta «LED si accende solo a contatto». Il video mostra di più: nelle finestre **40-50 s e 62-76 s il LED giallo esterno è acceso a pochi cm dalla palla SENZA contatto** (due repliche, 24 s di ripresa totale). Il «solo a contatto» va quindi letto come «accensione robusta a contatto, bagliore a breve distanza»: **il trasferimento d'energia senza fili è già dimostrato**, la fascia 2-5 cm resta da misurare sulla perfoboard.
+
+### Verdetto della sessione documentata
+
+**Banco volante ibrido operativo e run post-fix documentato per intero su video.** Il fix n°1 (spire ravvicinate) e la nuova posizione alla base della primaria sono VISIVAMENTE confermati → **Fase B ✅**. La Fase F resta 🔶 (campo ancora debole, dissipatore caldo — cause già diagnosticate: parassitiche dei collegamenti volanti + caps lontani da Q1). Prima di qualsiasi riaccensione: **gate a 3 verifiche** (fusibile T2A, tensione pack, test diodo BD139).
+
+### Prossimi step
+
+- [ ] **GATE pre-riaccensione:** verifica fusibile T2A in serie (A2) + misura tensione pack a riposo (A4) + test diodo BD139 (obbligatorio post-surriscaldamento; dà anche la conferma pinout E-C-B)
+- [ ] Rifare le 2 saldature interruttore (A1)
+- [ ] Fase D/E perfoboard: caps ≤2 cm da Q1, nodo base unico, emettitore→massa filo diretto (A3, A5, A8)
+- [ ] Al prossimo banco: continuità fondo↔palla ~20 Ω post-laccatura (già pianificato) — primo fuoco non prima di ~23:00 del 13/10 (≥24 h di cura del top coat)
+- [ ] Fase F su perfoboard: misurare f (radio AM ~1,74-1,91 MHz), assorbimento (DMM 10 A in serie), distanza LED (attesa 2-5 cm)
 
 ---
 
