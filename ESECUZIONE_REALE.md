@@ -493,6 +493,21 @@ Foto del banco analizzata con 4 passate (full + 3 crop con zoom). Risultati:
 
 ---
 
+
+### Foto perfoboard n°2 (zoom) — C1 TROVATO ✓ · ⚠️ NUOVO SOSPETTO GROSSO: R1 potrebbe essere 1 kΩ invece di 10 kΩ
+
+- **C1 ceramico: PRESENTE** — disco marroncino tra LED ed elettrolitico (confermato da Mauro + vision). Resta la verifica del COLEGGAMENTO: dove atterrano le sue 2 zampe? (C-E pin addosso = esonerato · binari +12V/GND lontani = da spostare)
+- **⚠️ R1 SOSPETTO:** il corpo blu a bande è la resistenza di base. Vision legge bande **marrone-nero-ROSSO-oro = 1 kΩ** ( NON 10 kΩ!). Se è davvero 1 kΩ: corrente di base ~10× oltre progetto (~11 mA invece di 1,13) → drive durissimo → saturazione profonda e transitori di spegnimento violenti → **spiega le morti per avalanche + il calore**. Da verificare SUBITO: 3ª banda ARANCIO = 10 k ✓ · 3ª banda ROSSO = 1 k 🔴 (o misura col DMM)
+- **Elettrolitico:** sulla ghiera si legge «100» → confermare se è 100 µF (kit ELEGOO?) invece del 1000 µF 25 V della BOM. Impatto modesto (a 1,7 MHz è oltre SRF comunque; il lavoro RF lo fa C1), ma da uniformare alla BOM
+- Le ipotesi kV (sovra-accoppiamento / f spostata) RESTANO in piedi: R1 sbagliato spiega le morti e il calore, non necessariamente il kV basso. Radio AM + slide primaria confermano il resto
+
+### Checklist pre-n°3 aggiornata
+
+- [ ] **Leggere le bande di R1 blu** (o misurarlo): 3ª banda arancio = 10 k ✓ → ok · rosso = 1 k → SOSTITUIRE con 10 k del kit ELEGOO
+- [ ] **Tracciare le 2 zampe di C1** (lato saldature): devono andare sul pin Collettore (o pad +12 V adiacente) e pin Elettrodo, corsa più corta possibile; se sono sui binari lontani → risaldarlo addosso
+- [ ] Verificare valore elettrolitico (1000 µF atteso)
+- [ ] 100–330 Ω in serie al feedback · n°3 diodo-testato · 6 V → radio AM → slide primaria → 12 V (protocollo invariato)
+
 ---
 
 <!-- Le prossime sezioni si aggiungono sotto, una per sessione di lavoro reale:
