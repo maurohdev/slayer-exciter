@@ -440,6 +440,33 @@ Diodo-test su BD139 fresco dal lotto, prima del montaggio: **Base→E = 0,55 V �
 - [ ] Rifare la palla **accartocciata** (non a strati), ricontrollare il giunto filo-stagnola (~20 Ω atteso) e riprovare il LED a contatto
 - [ ] Riportare qui: assorbimento, f, temperatura dissipatore a 30/60/120 s, distanza LED
 
+
+### Analisi foto perfoboard (14/10, vision multi-crop) — **C1 100 nF: NON VISIBLE** 🔴
+
+Foto del banco analizzata con 4 passate (full + 3 crop con zoom). Risultati:
+
+| Elemento | Esito foto |
+|---|---|
+| Transistor montato | ✓ saldato DIRETTO sulla millefori, gambe corte, dissipatore avvitato con vite (buono) |
+| Elettrolitico + LED rosso + resistore sdraiato | ✓ presenti sulla basetta |
+| **C1 ceramico 104** | ❌ **NON identificabile in NESSUNA zona della basetta** — visibili solo elettrolitico, LED, un cilindro sdraiato (resistore/diodo), saldature. Possibile nascosto dietro l'elettrolitico all'angolazione, ma **nessun disco ceramico visto** |
+| Top load | ✓ già rifatto ACCARTOCCIATO (sgualcito, non a strati) — eseguito |
+| Collegamenti bobina | ✓ **Wago a leva** al posto dei coccodrilli (upgrade) |
+| Nota curiosa | l'unico «104» nitido in foto è stampato sul TAPPETINO (coordinata), non su componenti |
+
+**Contesto che spiega il perché:** l'ordine AE 09/10 (kit MLCC 300 pz) aveva l'esplicita dicitura «nessun 104 = 100 nF citato nell'elenco dei tagli» — il check «verificare all'arrivo se il 104 è incluso» (CONFRONTO_INVENTARIO §6 nota) non risulta mai eseguito. **Plausibile che il 100 nF non sia mai stato saldato perché non c'era in casa.** Se confermato: è la causa radice della morte dei transistor — il collettore senza chiusura RF locale martella B-C (avalanche → corto, n°2) e riverbera su B-E (→ aperta, n°1 e n°2), con il circuito ora a massima accoppiamento.
+
+### Azioni immediate (prima del transistor n°3)
+
+- [ ] **Scaccolare il kit MLCC 300 pz alla ricerca del 104** (elenco tagli dell'ordine non lo citava: se manca, mistero risolto)
+- [ ] **Saldare il 100 nF (o 10-47 nF: va bene lo stesso ruolo RF) direttamente tra pin Collettore e pin Elettrodo → filo cortissimo, addosso al corpo** — i 2 cm sono un tetto, non un obiettivo
+- [ ] **100–330 Ω in serie al feedback** (fondo L2 → nodo base)
+- [ ] Transistor n°3 (testato a diodo PRIMA come gli altri): accensione a **6 V** con DMM in serie, poi 12 V solo se a 6 V oscilla pulito
+- [ ] **Ordine distributore UE:** BD139 genuini ×5 (TME/Mouser/RS, ~0,3–0,5 €/pz) + caricabatterie 3S 12,6 V CC/CV + treccia dissaldante + pompetta + (eventuale) 100 nF se il kit non ce l'ha
+- [ ] 3 morti sullo stesso lotto AE: la variabile «contraffatto» resta aperta finché un genuino non sopravvive
+
+---
+
 ---
 
 <!-- Le prossime sezioni si aggiungono sotto, una per sessione di lavoro reale:
