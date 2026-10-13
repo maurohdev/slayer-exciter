@@ -293,6 +293,53 @@ Il diario del 12/10 riporta «LED si accende solo a contatto». Il video mostra 
 
 ---
 
+## 📅 13 Ottobre 2026 (sera) — PERFBOARD SALDATA + diagnosi «flash-e-muore»: pack collassa a 0,5 V sotto carico · test discriminatorio = JX-12050
+
+> Fonte: chat Qwen letta INTEGRALE e verificata 13/10 sera (stesso link) + messaggi Mauro. Continua la sessione di ieri e la sezione misure di stamattina.
+
+### Cronaca (dal vivo, 12→13/10)
+
+1. **Perfoboard saldata** (Fase D/E parzialmente eseguita): BD139 su dissipatore con pasta, saldature al posto dei coccodrilli. Alla prima accensione: **LED clamp flash poi spento, dissipatore FREDDO** (nota bene: il contrario di ieri, quando scaldava).
+2. Diagnostica S1–S5 della chat: **S1 feedback OK** (continuità top load → pin BD139 presente) · **S2 pinout corretto** · **S4 escluso** (il transistor ha girato 110 s ieri) · S3 (ponte stagno) da escludere a vista.
+3. **Misura chiave di Mauro:** tensione ai capi del pack **durante** il tentativo = **~0,5 V** (subito dopo il flash), contro **11,60 V a vuoto** → il circuito non riceve energia: il flash è solo la scarica dei condensatori di rete. Misurato AI CAPI DEL PACK → il problema è interno al pack (BMS OCP, saldatura a punti, cella degradata), NON nel cablaggio.
+4. Conclusione provvisoria: **colpevole probabile = pack** (un 3S sano a ~50-60% SOC NON collassa a 0,5 V sotto 2–3 A). Da discriminare col test su alimentatore da rete.
+5. JX-12050 (quello inventariato stamattina): **NO come caricabatterie** (12,0 V ≠ 12,6 V CC/CV, nessuna terminazione) · **SÌ come fonte da banco** per il test discriminatorio. Mauro ha l'**adattatore femmina DC** per collegarlo.
+
+### Correzioni ai numeri della chat (per non inseguire fantasmi)
+
+| Dato in chat | Valore REALE del progetto |
+|---|---|
+| Attese «15–16 Ω» su secondaria/topload | **bobina 17 Ω · fondo↔palla ~20 Ω** (misurate 13/10) — chiudere il cerchio con questi |
+| «~300 spire da 0,2 mm» | **450 spire da 0,25 mm** (reali) |
+| «il tuo pack ha un BMS integrato» (dato per certo) | **presenza BMS NON verificata** — alla ricarica guardare fili sottili extra sotto la guaina |
+| «11,60 V = 30–35%» poi «≈ metà carica» | ≈ 3,87 V/cella ≈ **50–60% SOC**: pack NON morto → il collasso a 0,5 V è anormale, non «era solo scarico» |
+| — | **Hypotesi «cella singola» (A4) CHIUSA:** 11,6 V a vuoto = multi-cell in serie. Etichetta «3,7V 7800mAH» = marketing fasullo, ma il pacco È 3S |
+| 100 nF «il fantasma» | kit MLCC arrivato 10/10 — **verificare che il 104 sia DAVVERO saldato ≤2 cm dai pin C-E** (non ancora confermato in chat) |
+
+### Protocollo prossimo banco — test discriminatorio su JX-12050
+
+0. **Polarità:** centro+ su etichetta; verificare col DMM sull'adattatore femmina PRIMA di collegare (leggo +12 V = puntali giusti)
+1. **Catena:** JX-12050 → femmina DC → **fusibile T2A** → interruttore → nodo +12 V (MAI pack e alimentatore collegati insieme)
+2. Accensione 10–30 s con DMM in serie (10 A) + radio AM vicina
+
+| Esito | Diagnosi | Mossa |
+|---|---|---|
+| **A** LED clamp debolmente acceso FISSO · 0,4–0,9 A stabile · dissipatore tiepido | circuito SANO — colpevole era il pack | ricarica col caricabatterie 3S 12,6 V CC/CV (da comprare, ~10–15 €) + retest sag; se ricollassa → **pensione pack** |
+| **B** ancora flash-e-muore · corrente bassa · freddo | guadagno d'anello | 100 nF addosso ai pin C-E, rifusione giunto feedback, R1 10k→5k |
+| **C** corrente >1 A costante · scalda | latch/polarità primaria | inversione fili primaria (fix n°1), poi 22k in serie |
+
+### Checklist
+
+- [x] Tensione pack a riposo (gate A4): **11,60 V** — pacco vero 3S, ipotesi cella singola chiusa
+- [x] Collasso sotto carico documentato: **0,5 V** ai capi pack → pack SOSPESO dall'uso finché non ricaricato+ritestato
+- [ ] Verifica fusibile T2A nel percorso (gate A2) — prima di ogni accensione
+- [ ] Test diodo BD139 (baratto: 30 s, zero rischi — S4 escluso solo per logica, non da misura)
+- [ ] Verifica posizionamento 100 nF sulla perfoboard (≤2 cm dai pin C-E)
+- [ ] **Test discriminatorio A/B/C su JX-12050** (prossima accensione)
+- [ ] Comprare: caricabatterie 3S 12,6 V CC/CV (con balance se il pack ha JST-XH)
+
+---
+
 <!-- Le prossime sezioni si aggiungono sotto, una per sessione di lavoro reale:
 ## 📅 <data> — <FASE X>: <titolo>
 -->
