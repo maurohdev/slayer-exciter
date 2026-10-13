@@ -388,9 +388,10 @@ Il diario del 12/10 riporta «LED si accende solo a contatto». Il video mostra 
 
 ### Procedura cambio transistor
 
+0. **Estrazione SENZA dissaldatore** (il morto non va salvato → metodo un-pin-alla-volta): spento e pack/alim SCOLLEGATI → svita il dissipatore → aggiungi un filo di stagno fresco + flussante su ogni pin (abbassa il punto di fusione e porta calore) → scalda il pin n°1 e CONTEMPORANEAMENTE tira/piega quella gamba con la pinza becco DALL'ALTRA FACCIATA mentre è fusa → gamba libera → ripeti su n°2 e n°3 → il morto esce a pezzi, ok così. MAI fare leva col pad freddo (stacchi la piazzola). I fori restano pieni di stagno: o li pulisci con stecchino di legno (scalda il foro e spingi lo stecchino — il legno non si bagna) oppure **monti il nuovo «a guscio»** sopra la piastra con gambe corte saldate sui pad esistenti (anche meglio per l'RF: gambe più corte). Per il futuro: treccia dissaldante (~1–2 €) + pompetta a molla (~3–4 €) nel prossimo ordine
 1. BD139 FRESCO dal lotto ×10 → diodo-test DA SPENTO sul banco PRIMA di montarlo: B-E ~0,6–0,7 V, B-C ~0,6–0,7 V (un verso), OL nell'altro, C-E OL entrambi
 2. Pinout E-C-B (faccia stampata: 1=E, 2=C, 3=B) · dissipatore + pasta
-3. Verifica fisica 100 nF ≤2 cm da C-E (punto critico sopra)
+3. Verifica fisica 100 nF ≤2 cm da C-E (punto critico sopra) — stessa sessione di saldatura
 4. LED1 resta com'è (clamp + spia — dimostrato funzionante)
 5. Accensione attesa: LED clamp debolmente acceso FISSO · 0,4–0,9 A · ronzio radio AM · dissipatore tiepido
 6. Se anche il fresco muore in fretta → STOP, si indaga su C1/posizionamento prima di montarne un terzo
