@@ -1,7 +1,7 @@
 # 📂 slayer-exciter
 
 <!-- AUTO-GENERATED - DO NOT EDIT BELOW THIS LINE -->
-Generated: 2026-10-13
+Generated: 2026-10-13 06:30
 
 | File | Size | Last Modified |
 |------|------|---------------|
@@ -11,11 +11,11 @@ Generated: 2026-10-13
 | CARRELLO_DELLA_SPESA.md | 12.9 KB | 2026-09-28 |
 | CONFRONTO_INVENTARIO.md | 11.5 KB | 2026-10-09 |
 | DRAFT_ORIGINALE.md | 3.2 KB | 2026-09-11 |
-| ESECUZIONE_REALE.md | 18.7 KB | 2026-10-13 |
+| ESECUZIONE_REALE.md | 31.0 KB | 2026-10-13 |
 | LICENSE | 1.0 KB | 2026-09-11 |
 | MANUALE_ASSEMBLAGGIO_E_COLLAUDO.md | 17.2 KB | 2026-09-28 |
 | Mio progetto mini bobina di tesla.md | 139.0 KB | 2026-09-15 |
-| README.md | 5.9 KB | 2026-10-13 |
+| README.md | 6.0 KB | 2026-10-13 |
 | SCRIPT_AUDIO_RIPASSO_2026-09-25.md | 13.2 KB | 2026-09-25 |
 | SCRIPT_AUDIO_RIPASSO_2026-09-25_NOTA_COERENZA.md | 1.0 KB | 2026-09-25 |
 | SHERLOCK_PREZZI.md | 15.2 KB | 2026-09-28 |
@@ -35,3 +35,8 @@ Generated: 2026-10-13
 | ver_amz3.json | 2.3 KB | 2026-09-11 |
 | ver_amz4.json | 936 B | 2026-09-11 |
 | ver_bd139_variant.json | 189 B | 2026-09-11 |
+
+**Totale file:** 30
+
+**Sottocartelle:**
+- `media/` (12 file)

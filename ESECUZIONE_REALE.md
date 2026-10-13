@@ -267,6 +267,31 @@ Il diario del 12/10 riporta «LED si accende solo a contatto». Il video mostra 
 
 ---
 
+## 📅 13 Ottobre 2026 (~11:30) — VERIFICHE POST-LACCATURA: continuità bobina 17 Ω · fondo↔palla 27 Ω
+
+**Contesto:** il check pianificato dopo la laccatura del 12→13/10 (~23:00, top coat acrilico) — verificare che le zone di contatto (capo in basso + crimp in stagnola della pallona) NON siano state coperte dal film, rimisurando le resistenze a 2 fili col multimetro (come in Fase A). Misure riferite da Mauro in chat.
+
+### Misure reali (13/10 ~11:30)
+
+| Misura | Valore | Atteso | Esito |
+|---|---|---|---|
+| Fondo → cima della **secondaria** (450 spire reali) | **17 Ω** | ~20 Ω (misura 10/10) · ~14,5 Ω teorico rame | ✓ **meglio del 10/10** — più vicina al teorico, coerente con la nota R (contatti punte 2 fili 1–3 Ω + tolleranza filo) |
+| **Cima del top load** (pallona) → fondo secondaria | **27 Ω** | ~17–20 Ω (bobina + giunto pulito) | ⚠️ **~10 Ω comparsi nel giunto cima↔stagnola** |
+
+### Lettura tecnica (ricalcolo 13/10, rame 0,25 mm ρ=1,72e-8)
+
+- **La bobina è a posto, anzi migliorata:** 17 Ω contro i 20 Ω del 10/10 — la differenza è nelle punte/contatti del DMM, non nel filo (continuità intatta, il top coat non ha toccato gli avvolgimenti in modo misurabile).
+- **Il giunto cima↔palla pesa ~10 Ω** (27 − 17). Non è un contatto metallo-metallo pulito (atteso ~0–1 Ω, invisibile su questa scala): coincide con lo scenario già segnalato nella sezione laccatura — **top coat o flusso sul punto di crimp della stagnola**, oppure superficie sondata ancora laccata.
+- **Impatto:** 10 Ω in serie alla secondaria = ~37% della R del risonatore (17→27 Ω) → Q giù di circa 1/3, campo più debole, fascia LED più corta. NON bloccante per l'avvio (correnti in secondaria = µA) ma da correggere prima del montaggio su perfoboard.
+
+### Azioni
+
+- [ ] **Ripristinare il contatto filo-cima ↔ stagnola:** scartare il top coat sul punto di crimp (carta vetrata leggera), premere/stagnare il crimp, sondare su metallo nudo, rimisurare — **target: 27 → ~17–18 Ω**
+- [ ] Se non scende: ricreare contatto fresco — ripiegare la punta del filo sotto un nuovo pezzetto di stagnola (il punto d'ingresso resta il critico)
+- [ ] Check rapido a ogni banco futuro: fondo↔palla deve restare ~17–20 Ω
+
+---
+
 <!-- Le prossime sezioni si aggiungono sotto, una per sessione di lavoro reale:
 ## 📅 <data> — <FASE X>: <titolo>
 -->
