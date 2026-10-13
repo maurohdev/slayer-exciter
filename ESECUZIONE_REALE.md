@@ -510,6 +510,17 @@ Foto del banco analizzata con 4 passate (full + 3 crop con zoom). Risultati:
 
 ---
 
+## 📅 14 Ottobre 2026 (sera) — CHIUSURA SESSIONE: giornata intera sul banco · **PIANO COMPLETO di risoluzione pubblicato → [PIANO_RISOLUZIONE_2026-10-14.md](PIANO_RISOLUZIONE_2026-10-14.md)**
+
+Bilancio della giornata (enorme, per essere una sessione sola):
+- 2 transistor diagnosticati morti con firme complete (B-E aperta entrambi; B-C viva→corto = avalanche)
+- Evidenza differenziale kV: 12/10 scintille+LED vs 14/10 zero → ampiezza risonatore crollata
+- C1 trovato presente (foto), R1 sotto sospetto 1 kΩ, elettrolitico sotto verifica (100 µF?)
+- Alimentazione risolta (JX-12050), pack diagnosticato colpevole flash-e-muore, Wago e topload accartocciato al posto di coccodrilli/strati
+- **Correzione conteggio:** i morti sono **2** (non 3 come scritto in una sezione di oggi: n°1 B-E aperta+B-C viva, n°2 B-E aperta+B-C corto)
+
+**Domani (15/10):** eseguire il piano — Fase 0 verifiche statiche (R1! C1 zampe! elettrolitico!) → Fase 1 modifiche (220 Ω feedback) → Fase 2 accensione 6 V → Fase 3 tuning (radio AM + slide primaria = recupero kV) → Fase 4 salita 12 V → Fase 5 ordini UE. Criteri di stop inclusi nel piano.
+
 <!-- Le prossime sezioni si aggiungono sotto, una per sessione di lavoro reale:
 ## 📅 <data> — <FASE X>: <titolo>
 -->
