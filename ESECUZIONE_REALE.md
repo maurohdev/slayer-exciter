@@ -262,12 +262,12 @@ Il diario del 12/10 riporta «LED si accende solo a contatto». Il video mostra 
 - [ ] **GATE pre-riaccensione:** verifica fusibile T2A in serie (A2) + misura tensione pack a riposo (A4) + test diodo BD139 (obbligatorio post-surriscaldamento; dà anche la conferma pinout E-C-B)
 - [ ] Rifare le 2 saldature interruttore (A1)
 - [ ] Fase D/E perfoboard: caps ≤2 cm da Q1, nodo base unico, emettitore→massa filo diretto (A3, A5, A8)
-- [ ] Al prossimo banco: continuità fondo↔palla ~20 Ω post-laccatura (già pianificato) — primo fuoco non prima di ~23:00 del 13/10 (≥24 h di cura del top coat)
+- [x] Continuità fondo↔palla ~20 Ω post-laccatura — eseguita 13/10 ~11:30: **~20 Ω ✓** (v. sezione verifiche post-laccatura) · primo fuoco non prima di ~23:00 del 13/10 (≥24 h di cura del top coat)
 - [ ] Fase F su perfoboard: misurare f (radio AM ~1,74-1,91 MHz), assorbimento (DMM 10 A in serie), distanza LED (attesa 2-5 cm)
 
 ---
 
-## 📅 13 Ottobre 2026 (~11:30) — VERIFICHE POST-LACCATURA: continuità bobina 17 Ω · fondo↔palla 27 Ω
+## 📅 13 Ottobre 2026 (~11:30–11:50) — VERIFICHE POST-LACCATURA: bobina 17 Ω ✓ · fondo↔palla ~20 Ω ✓ (giunto OK)
 
 **Contesto:** il check pianificato dopo la laccatura del 12→13/10 (~23:00, top coat acrilico) — verificare che le zone di contatto (capo in basso + crimp in stagnola della pallona) NON siano state coperte dal film, rimisurando le resistenze a 2 fili col multimetro (come in Fase A). Misure riferite da Mauro in chat.
 
@@ -276,19 +276,20 @@ Il diario del 12/10 riporta «LED si accende solo a contatto». Il video mostra 
 | Misura | Valore | Atteso | Esito |
 |---|---|---|---|
 | Fondo → cima della **secondaria** (450 spire reali) | **17 Ω** | ~20 Ω (misura 10/10) · ~14,5 Ω teorico rame | ✓ **meglio del 10/10** — più vicina al teorico, coerente con la nota R (contatti punte 2 fili 1–3 Ω + tolleranza filo) |
-| **Cima del top load** (pallona) → fondo secondaria | **27 Ω** | ~17–20 Ω (bobina + giunto pulito) | ⚠️ **~10 Ω comparsi nel giunto cima↔stagnola** |
+| **Cima del top load** (pallona) → fondo secondaria | **~20 Ω** (lettura corretta) | ~17–20 Ω (bobina + giunto pulito) | ✓ **giunto OK** — prima lettura 27 Ω = contatto puntali poco pulito / errore DMM (correzione Mauro) |
 
 ### Lettura tecnica (ricalcolo 13/10, rame 0,25 mm ρ=1,72e-8)
 
 - **La bobina è a posto, anzi migliorata:** 17 Ω contro i 20 Ω del 10/10 — la differenza è nelle punte/contatti del DMM, non nel filo (continuità intatta, il top coat non ha toccato gli avvolgimenti in modo misurabile).
-- **Il giunto cima↔palla pesa ~10 Ω** (27 − 17). Non è un contatto metallo-metallo pulito (atteso ~0–1 Ω, invisibile su questa scala): coincide con lo scenario già segnalato nella sezione laccatura — **top coat o flusso sul punto di crimp della stagnola**, oppure superficie sondata ancora laccata.
-- **Impatto:** 10 Ω in serie alla secondaria = ~37% della R del risonatore (17→27 Ω) → Q giù di circa 1/3, campo più debole, fascia LED più corta. NON bloccante per l'avvio (correnti in secondaria = µA) ma da correggere prima del montaggio su perfoboard.
+- **Giunto cima↔palla VERIFICATO OK:** ~20 Ω totali = 17 Ω bobina + ~3 Ω di punte/contatti DMM (rumore normale di una misura a 2 fili). La prima lettura 27 Ω era un artefatto (contatto puntali poco pulito e/o errore del multimetro, correzione Mauro in chat) — lo scenario «top coat sul crimp» è **ritirato**.
+- **Impatto:** nessuno — Q del risonatore intatto (nessuna R parassita extra oltre le punte). Il check post-laccatura pianificato (fondo↔palla ~20 Ω) si considera **SUPERATO**: le zone di contatto sono rimaste libere dal film.
 
 ### Azioni
 
-- [ ] **Ripristinare il contatto filo-cima ↔ stagnola:** scartare il top coat sul punto di crimp (carta vetrata leggera), premere/stagnare il crimp, sondare su metallo nudo, rimisurare — **target: 27 → ~17–18 Ω**
-- [ ] Se non scende: ricreare contatto fresco — ripiegare la punta del filo sotto un nuovo pezzetto di stagnola (il punto d'ingresso resta il critico)
-- [ ] Check rapido a ogni banco futuro: fondo↔palla deve restare ~17–20 Ω
+- [x] Nessun intervento sul giunto necessario (scenario top-coat-sul-crimp ritirato)
+- [ ] Check rapido a ogni banco futuro: fondo↔palla deve restare ~17–20 Ω (se sale di colpo, risospettare il crimp)
+
+**Correzione 13/10 (~11:50):** la lettura 27 Ω riportata in prima battuta è stata corretta da Mauro in **~20 Ω** — contatto puntali poco pulito e/o errore del multimetro. Valori finali: bobina 17 Ω · fondo↔palla ~20 Ω · giunto OK.
 
 ---
 
