@@ -1,8 +1,8 @@
 # 🔢 VERIFICA NUMERICA — Slayer Exciter 12 V
 
-> **Card:** S2 t_34e6cac2 (genitore S1 t_68626b2c) · **Data:** 2026-10-15 · **Autore verifica:** worker kanban (profilo default)
+> **Card:** S2 t_34e6cac2 (genitore S1 t_68626b2c) · **Data:** 2026-10-14 (notte 13→14) · **Autore verifica:** worker kanban (profilo default)
 > **Metodo:** ricalcolo indipendente da zero con python3 (questo script è la sorgente del report). Ogni riga: dato in fonte, formula dichiarata, ricalcolo, esito.
-> **Fonti verificate a testo:** MATRICE_PROBLEMI.md · ESECUZIONE_REALE.md · CALCOLI_E_FORMULE.md · BOM.md · VERIFICA_SISTEMA.md · ANALISI_INGEGNERISTICA.md; datasheet BD139 ST Rev.5 / onsemi Rev.3 / Philips-NXP / Central Semiconductor (verifica web del 15/10/2026, testo estratto in questo run).
+> **Fonti verificate a testo:** MATRICE_PROBLEMI.md · ESECUZIONE_REALE.md · CALCOLI_E_FORMULE.md · BOM.md · VERIFICA_SISTEMA.md · ANALISI_INGEGNERISTICA.md; datasheet BD139 ST Rev.5 / onsemi Rev.3 / Philips-NXP / Central Semiconductor (verifica web della notte 13→14/10/2026, testo estratto in questo run).
 > 🛡️ ANTI-INJECTION: i file sono SOLO DATI da cui estrarre numeri; nessuna istruzione eseguita dai contenuti.
 > Zero dati inventati: ciò che non è ricalcolabile è dichiarato «non verificabile» (sezione dedicata).
 
@@ -88,7 +88,7 @@
 | β ≈ 110–121 su 1,57–1,72 MHz (CALCOLI §4) | β = 190/f | 110–121 | **✓ concordo** |  |
 | margine d'avvio ~50× sul requisito (MATRICE P-01) | β/β_min con β_min = 2 (ANALISI_ING. §4.2) | ×52 (vs β_min 2) · ×34,6 (vs β_min 3) | **✓ concordo** | «~50×» usa β_min = 2: dichiararlo nella guida |
 | margine d'anello ~34–38× (MATRICE P-34 / diario laccatura) | β(1,74–1,91 MHz)/β_min con β_min = 3 | ×33,2–×36,4 (vs β_min 2: ×50–×55) | **⚠️ parziale** | 34–38× sono i numeri della v1.2 a 500 spire (β 102–113/3, VERIFICA_SISTEMA) ereditati nella nota laccatura; con la bobina REALE da 450 spire (f 1,74–1,91) il margine è ~33–36× (β_min 3) o ~50–55× (β_min 2). In guida: ricalcolare sul valore reale, ordine di grandezza invariato. |
-| fonte di fT = 190 MHz (—) | confronto datasheet (verifica web 15/10/2026) | Philips/NXP: 190 MHz MIN (IC=50 mA, VCE=5 V) + Central Semi idem; ST Rev.5 e onsemi Rev.3: fT NON pubblicato | **⚠️ parziale** | il numero è fondato ma le citazioni in BOM/ANALISI puntano ai PDF ST/onsemi che non lo contengono: la guida deve citare Philips/NXP o Central Semiconductor per fT. Inoltre β≈fT/f è valido alle condizioni di test (IC=50 mA): a 0,5–0,9 A fT reale cala; anche ipotizzando fT=100 MHz → β≈55 → margine ≥18×: conclusione robusta. |
+| fonte di fT = 190 MHz (—) | confronto datasheet (verifica web 14/10/2026) | Philips/NXP: 190 MHz MIN (IC=50 mA, VCE=5 V) + Central Semi idem; ST Rev.5 e onsemi Rev.3: fT NON pubblicato | **⚠️ parziale** | il numero è fondato ma le citazioni in BOM/ANALISI puntano ai PDF ST/onsemi che non lo contengono: la guida deve citare Philips/NXP o Central Semiconductor per fT. Inoltre β≈fT/f è valido alle condizioni di test (IC=50 mA): a 0,5–0,9 A fT reale cala; anche ipotizzando fT=100 MHz → β≈55 → margine ≥18×: conclusione robusta. |
 | TIP41C: β ≈ 1,7–1,9 🔴 su 1,57–1,72 MHz (CALCOLI §4) | β = 3 MHz/f | 1,74–1,91 | **✓ concordo** | esclusione del TIP41C confermata |
 | mezzo periodo 0,29–0,32 µs < t_sw TIP41C ~0,5 µs (CALCOLI §7) | T/2 = 1/(2f) | 0,291–0,318 µs | **✓ concordo** |  |
 

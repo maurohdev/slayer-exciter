@@ -1,3 +1,5 @@
+> ⚠️ **CORREZIONE 14/10 pomeriggio:** le date «15/10» citate in questa review (inclusa la riga G8 «VERIFICA R1») sono un'errata datazione notturna: la verifica R1 = 10 kΩ è avvenuta il **14/10 pomeriggio** (chat, durante la ricostruzione). Contenuto della verifica vero, datazione riparata nel diario/GUIDA/MATRICE.
+
 # 🔍 REVIEW_GUIDA.md — S6 · Revisione critica di GUIDA_TROUBLESHOOTING.md vs matrice
 
 **Task:** t_455f0b7c · **Data:** 2026-10-15 · **Reviewer:** worker kanban (profilo default, skill sherlock)

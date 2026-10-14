@@ -1,6 +1,6 @@
 # VERIFICA_FONTI.md — S3 · Verifica fonti esterne (datasheet + standard + comunità)
 
-Task kanban: `t_9e357ab2` · Sherlock (profilo ricerca & verifica) · 15/10/2026 (notte)
+Task kanban: `t_9e357ab2` · Sherlock (profilo ricerca & verifica) · 14/10/2026 (notte 13→14)
 Repo: `/home/mauro/workspace/_progetti/slayer-exciter`
 Metodo: ogni sub-claim confrontato su ≥3 fonti indipendenti dove disponibili (≥2 per le pratiche comunitarie), fonti primarie (datasheet manufacturer) estratte a testo; divergenze tra fonti dichiarate esplicitamente, MAI risolte arbitrandosi.
 Budget ricerca: 9 web_search + 2 web_extract (limite card ~15) — rispettato.

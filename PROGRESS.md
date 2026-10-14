@@ -1,3 +1,5 @@
+> ⚠️ **CORREZIONE 14/10 pomeriggio (sessione Jeff):** le voci «15/10» di questo log sono un'errata datazione notturna: la verifica **R1 = 10 kΩ è avvenuta il 14/10 pomeriggio** in chat durante la ricostruzione (non il 15/10, che non è ancora stato). Le sezioni del diario «15 Ottobre» sono state riparate e fuse nella sezione «14 Ottobre (pomeriggio) — RICOSTRUZIONE TOTALE» (n°3 VIVO, prime misure complete, nuovo sospetto P-46). Vedi diario + MATRICE_PROBLEMI [P-20]/[P-46].
+
 # PROGRESS — t_68626b2c (S1 MINER: MATRICE_PROBLEMI.md)
 
 [HH:MM] formati orari locali Europe/Rome.
@@ -119,3 +121,10 @@
 
 **PRONTO AL PUSH** — consegna alla sentinella di release (commit + tag v1.3.0 + push verificato). Nessun commit/push eseguito da S7.
 
+
+
+## Aggiornamento 14/10 pomeriggio (sessione Jeff — fuori catena)
+
+- Chat Mauro↔Qwen del pomeriggio (10 turni) integrata nel diario: **ricostruzione totale su nuova board** (C1 addosso ai pin C-E, 220 Ω al feedback, componenti nuovi) · **transistor n°3 VIVO** (diodo-test ok prima e dopo le prove) · battesimo 6 V saltato (deviazione documentata) · **prime misure complete**: V_collettore ON 12,4 V · assorbimento 0,37 A @ 12,5 V · P_in ≈ 4,6 W in calore · R feedback 260 Ω → secondaria ≈ 40 Ω ⚠️.
+- Il circuito NON oscilla → nuovo sospetto n°1 = **P-46** (R secondaria anomala) in MATRICE_PROBLEMI.
+- Corrette le datazioni «15/10» su 9 file (R1 verificata 14/10 pom); GUIDA changelog 1.2; PIANO §3 compilato con i valori reali + §4 esecuzione; README stato aggiornato.

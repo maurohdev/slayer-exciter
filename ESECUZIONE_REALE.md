@@ -523,13 +523,62 @@ Bilancio della giornata (enorme, per essere una sessione sola):
 
 ---
 
-## 📅 15 Ottobre 2026 — VERIFICA R1 (Fase 0.1): **CONFERMATA 10 kΩ** ✓
+## 📅 14 Ottobre 2026 (pomeriggio) — VERIFICA R1 (Fase 0.1): **CONFERMATA 10 kΩ** ✓
 
-> Fonte: Mauro in chat (15/10), verifica bande/misura. Chiude il sospetto aperto nella sezione 14/10 («R1 forse 1 kΩ»).
+> Fonte: Mauro in chat (14/10 pomeriggio, durante la ricostruzione — v. sezione sotto), lettura bande + misura. Chiude il sospetto aperto la notte del 14/10 («R1 forse 1 kΩ»).
+> ⚠️ *Correzione di datazione: questa sezione era stata inizialmente datata «15 Ottobre» per un errore off-by-one della catena di documentazione notturna; la verifica è avvenuta il **14/10 pomeriggio**, non il 15 (che non è ancora stato).*
 
 - **R1 base = 10 kΩ CONFERMATA** → ipotesi «drive 10× troppo duro» **SCARTATA** come causa delle morti dei transistor e del calore.
-- Il peso delle ipotesi residue si sposta su: **zampe di C1** (dove atterrano davvero, lato saldature), **elettrolitico** (100 µF vs 1000 µF da confermare), **lotto AE dei BD139** (2 morti stesso lotto — la variabile contraffatto resta aperta finché un genuino UE non sopravvive), transitori di switching con accoppiamento massimo.
+- Il peso delle ipotesi residue si sposta su: **zampe di C1** (sulla NUOVA board saldato direttamente sui pin C-E, v. sotto — resta la conferma foto), **elettrolitico** (100 µF vs 1000 µF da confermare), **lotto AE dei BD139** (2 morti stesso lotto — la variabile contraffatto resta aperta finché un genuino UE non sopravvive), transitori di switching con accoppiamento massimo.
 - Le caselle Fase 0.1 del piano (`PIANO_RISOLUZIONE_2026-10-14.md`) si considerano **esaurite in esito ✓** (10 kΩ → nessuna sostituzione necessaria). Il protocollo resta esemplare: sospetto formulato → verifica → chiusura documentata.
+
+---
+
+## 📅 14 Ottobre 2026 (pomeriggio) — RICOSTRUZIONE TOTALE su nuova perfoboard · **transistor n°3 VIVO ✓** · prime misure complete (ma NON oscilla)
+
+> Fonte: sessione al banco + chat Mauro↔Qwen del 14/10 pomeriggio (10 turni, `https://chat.qwen.ai/s/68e18e20-948e-4fa5-b785-5809c67d21a8`). Esecuzione delle Fasi 0–1 del piano con **una deviazione documentata** (battesimo a 6 V saltato).
+
+### Ricostruzione totale (Fasi 0–1 del piano — eseguite)
+- Nuova perfoboard, **tutti componenti nuovi**, saldature rifatte da zero.
+- **C1 100 nF saldato direttamente sulle zampe C-E del BD139** — il fix n°1 del progetto ([P-19], il «fantasma») diventa vero **per costruzione** sulla nuova board (resta la conferma foto lato saldature).
+- **C2 elettrolitico a un solo foro** di distanza dai pin.
+- **R da 220 Ω in serie al feedback**, al fondo L2 (dentro la finestra 100–330 Ω consigliata).
+- **R1 verificata: 10 kΩ ✓** (sezione sopra) · LED clamp montato nel verso giusto (test a diodo coerente: conduzione solo anodo→catodo).
+- **Transistor n°3** (stesso lotto AE) **diodo-testato prima del montaggio**: ~0,55–0,6 V su B→E e B→C, giunzioni integre.
+
+### ⚠️ Deviazione dal protocollo (documentata onestamente)
+Il **battesimo a 6 V (Fase 2 del piano) è stato saltato**: alimentazione portata direttamente a **12,5 V costanti da un alimentatore da rete** (AC→DC, max 5 A dichiarati), al posto sia del pack 3S (scarico, ritirato dal banco) sia del gradino di sicurezza a 6 V previsto dal piano. Nessun danno questa volta (il n°3 è vivo), ma la deviazione resta annotata: il prossimo transistor nuovo riparte dal protocollo completo.
+
+### 🏆 Vittoria di sistema: le morti a catena si sono FERMATE
+Per la prima volta dalla saldatura su perfoboard, **un BD139 attraversa una sessione completa di accensioni e sopravvive**: diodo-test **ancora sano DOPO le prove** (B→E e B→C ~0,55–0,6 V). Le fix anti-morte (C1 addosso ai pin, R serie al feedback, transistor testato prima) hanno retto. Bilancio lotto AE: 2 morti (n°1, n°2) + **1 vivo (n°3)**.
+
+### Il problema: il circuito NON OSCILLA
+LED clamp spento, **nessun effetto** avvicinando un LED al top load, dissipatore che scalda. Il calore persiste **in entrambi i versi della primaria** → la polarità del feedback (causa del 90% dei «non oscilla») è già stata scartata come causa unica.
+
+### 📊 MISURE (le prime complete del progetto — 14/10 pom)
+| Misura | Valore | Lettura |
+|---|---|---|
+| V collettore–massa, circuito OFF | 0 V | coerenza ✓ |
+| V collettore–massa, ON | **12,4 V** ≈ V_alim | transistor non saturo: compatibile con «commuta ma non oscilla» |
+| Assorbimento (DMM 10 A in serie, coccodrilli) | **0,37 A costanti** | sotto la finestra 0,4–0,9 A dell'oscillazione sana |
+| Potenza in ingresso | 12,5 V × 0,37 A ≈ **4,6 W** | tutta in calore sul dissipatore (LED1 spento = niente campo RF utile) |
+| R1 / R serie feedback | **10 kΩ / 220 Ω** | ✓ corretti |
+| R percorso feedback top load → nodo base | **260 Ω** (di cui 220 = R serie) | ⚠️ **secondaria ≈ 40 Ω contro ~17–20 Ω attesi** → NUOVO SOSPETTO n°1 |
+
+### Diagnosi corrente («oscillazione sterile»)
+Il circuito commuta e assorbe, ma l'energia **non si accumula nella risonanza**: 4,6 W che diventano calore, ampiezza sul risonatore insufficiente ad accendere il LED clamp né a generare kV. Con C1 già addosso ai pin (per costruzione) e R1 verificata, i sospetti in ordine: **(1) R secondaria anomala ~40 Ω** (giunto tra i tubi o contatti degradati che attenuano il feedback), **(2) f fuori finestra** (top load rifatto + loop Wago), **(3) accoppiamento troppo forte** (primaria all'estrema base).
+
+### Prossimo banco (protocollo 5 misure, in ordine)
+1. **Radio AM** a 30–50 cm, banda MW alta: ronzio = emette RF; silenzio = ampiezza collassata.
+2. **R secondaria DA SOLA** (isolare la 220 Ω, punte pulite): 17–20 Ω = sana (i 40 Ω erano artefatto) · 25–40 Ω = giunto tubi sospetto · >50 Ω = interruzione.
+3. **Foto C1 sulla NUOVA board** (conferma visiva zampe su C-E).
+4. **V_base DC** a potenza ON (attesa ~0,6–0,7 V se polarizzata; ~12 V = percorso base aperto; ~0 V = R1 non porta).
+5. **Slide primaria** a passi di 5 mm con LED esterno vicino al top load (massima luminosità = massimo kV, non massima corrente).
+
+Domanda di sessione chiusa in chat: **senso di avvolgimento L1** = antiorario visto dall'alto (opposto a L2); ma invertire i 2 fili della primaria è elettricamente equivalente = fix a costo zero, da provare SEMPRE per primo.
+
+### Progressione
+Prima sessione con **tabella misure completa** (il problema «zero misure» [P-44] inizia a chiudersi) · 3 transistor usati: 2 morti + 1 vivo · piano: Fasi 0–1 fatte ✓, Fase 2 saltata (deviazione), Fasi 3–4 (tuning kV + 12 V stabile) ancora aperte · Fase 5 (ordini UE: BD139 genuini, caricabatterie 3S) pendente. Registro numerico aggiornato in `PIANO_RISOLUZIONE_2026-10-14.md` §3.
 
 <!-- Le prossime sezioni si aggiungono sotto, una per sessione di lavoro reale:
 ## 📅 <data> — <FASE X>: <titolo>

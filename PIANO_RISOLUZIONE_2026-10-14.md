@@ -1,7 +1,7 @@
 # 🔧 PIANO DI RISOLUZIONE — Slayer Exciter perfoboard (14/10/2026)
 
 > Consolidato a fine giornata 14/10 dopo: 3 transistor montati (2 morti), diagnosi progressive, analisi foto, correzioni multiple.
-> **Da usare al prossimo banco (15/10).** Eseguire gli step IN ORDINE, registrare OGNI numero in fondo a questo file o nel diario.
+> **Usato al banco del 14/10 pomeriggio (esito in §4); le voci restanti restano valide per il PROSSIMO banco.** Eseguire gli step IN ORDINE, registrare OGNI numero in fondo a questo file o nel diario.
 
 ---
 
@@ -98,16 +98,31 @@
 
 | Misura | Valore | Quando |
 |---|---|---|
-| R1 letto dalle bande | ___ | Fase 0 |
-| Elettrolitico letto | ___ | Fase 0 |
-| C1 zampe: C-E addosso? | sì / no | Fase 0 |
-| I a 6 V | ___ | Fase 2 |
-| V base a 6 V | ___ | Fase 2 |
-| Radio: ronzio a ___ della banda | ___ | Fase 3 |
-| Posizione primaria ottimale | ___ mm | Fase 3 |
-| I a 12 V | ___ | Fase 4 |
-| Distanza LED | ___ cm | Fase 4 |
-| Temp dissipatore 30/60/120 s | ___ | Fase 4 |
-| Diodo-test n°3 al momento della morte (se muore) | ___ | — |
+| R1 letto dalle bande | **10 kΩ ✓** (bande + misura, in chat) | Fase 0 — 14/10 pom |
+| Elettrolitico letto | ___ (da confermare: stampa «100»?) | Fase 0 — rimasta |
+| C1 zampe: C-E addosso? | **sì PER COSTRUZIONE** (saldato direttamente sui pin sulla nuova board) · conferma foto pendente | Fase 0 — 14/10 pom |
+| I a 6 V | ⚠️ battesimo 6 V SALTATO (deviazione documentata: andati diretti a 12,5 V da rete) | Fase 2 — 14/10 pom |
+| V base a 6 V | ___ (da misurare; a 12,5 V non ancora letta) | Fase 2/3 |
+| Radio: ronzio a ___ della banda | ___ (DA FARE — misura 1 del protocollo) | Fase 3 |
+| Posizione primaria ottimale | ___ mm (DA FARE — slide 5 mm) | Fase 3 |
+| I a 12 V | **0,37 A costanti** @ 12,5 V (alimentatore da rete; atteso 0,4–0,9 se oscilla) | 14/10 pom |
+| V collettore ON | **12,4 V** ≈ V_alim | 14/10 pom |
+| R percorso feedback (top load→base) | **260 Ω** (di cui 220 = R serie → secondaria ≈ **40 Ω** ⚠️ attesi 17–20) | 14/10 pom |
+| Potenza in ingresso | ≈ 4,6 W (tutta in calore: LED1 spento, nessun kV) | 14/10 pom |
+| Distanza LED | 0 cm (nessun effetto nemmeno a contatto) | 14/10 pom |
+| Temp dissipatore 30/60/120 s | non misurata (sensazione: scalda, in entrambi i versi primaria) | — |
+| Diodo-test n°3 al momento della morte (se muore) | **non morto ✓** — sano anche DOPO le prove (~0,55–0,6 V B→E/B→C) | 14/10 pom |
 
 *Ricorda: un «non funziona» con numeri scritti accanto vale più di dieci tentativi a memoria.*
+
+---
+
+## 4. ESECUZIONE 14/10 POMERIGGIO — ESITO
+
+- **Fase 0:** 0.1 ✓ (R1 10 kΩ) · 0.3 soddisfatto per costruzione (C1 sui pin, conferma foto pendente) · 0.2 e 0.4→verifica post-monto: diodo-test n°3 sano prima e dopo · 0.5 parziale (feedback 260 Ω ⚠️).
+- **Fase 1:** ✓ (220 Ω al fondo L2, C1 addosso, C2 a 1 foro).
+- **Fase 2:** ⚠️ **SALTATA** (andati diretti a 12,5 V da alimentatore di rete — deviazione documentata; nessun danno, ma il prossimo transistor nuovo riparte dal protocollo).
+- **Fase 3:** aperta — circuito NON oscilla (LED clamp spento, zero kV, calore in entrambi i versi = polarità scartata come causa unica). Protocollo 5 misure nel diario.
+- **Fase 4:** parziale (assorbimento e V collettore misurati; radio/V_base/slide pendenti).
+- **Fase 5:** pendente.
+- **Esito di sistema:** 🏆 **zero nuove morti — il n°3 è vivo** (le fix anti-morte reggono). Problema aperto: **non oscilla** → nuovo sospetto n°1 = R secondaria ≈ 40 Ω (giunto tubi/contatti) → [P-46] in MATRICE_PROBLEMI.
